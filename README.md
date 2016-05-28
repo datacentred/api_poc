@@ -1,24 +1,13 @@
-# README
+# API Proof of Concept
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Using:
 
-Things you may want to cover:
+* Rails 5 API mode
+* API Pie for documentation
 
-* Ruby version
+Needs to:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Access the Stronghold MySQL database
+* Run via api.datacentred.io
+* Be versioned via the Accept/MIME HTTP headers
+* Use time-limited token-based auth via an auth/secret key pair.
