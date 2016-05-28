@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   apipie
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  namespace :api do
-    resources :users
+  
+  Rails.configuration.api_versions.each do |version|
+    scope module: version.downcase, constraints: ApiVersionConstraint.new(version: version) do
+      extend "ApiRoutes::#{version}".constantize
+    end
   end
 end

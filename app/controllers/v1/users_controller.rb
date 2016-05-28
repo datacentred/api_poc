@@ -1,8 +1,8 @@
-class Api::UsersController < ApplicationController
+class V1::UsersController < ApplicationController
 
   resource_description do
     formats [:json]
-    api_versions 'public'
+    api_versions 'v1'
   end
 
   api :POST, '/users', 'Create user'
