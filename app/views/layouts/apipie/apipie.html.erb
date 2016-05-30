@@ -12,18 +12,21 @@
   <![endif]-->
 </head>
 <body style="padding-top: 0px; padding-left: 0px; padding-right: 0px">
-  <header class="header" id="header" style="padding-left: 10px; padding-right: 10px; background: #213550; position: relative; z-index: 20; height: 98px; margin-bottom: 50px">
+  <header class="header" id="header" style="padding-left: 10px; padding-right: 10px; background: #213550; position: relative; z-index: 20; height: 98px; margin-bottom: 30px">
     <div class="container">
       <div class="wrapper">
         <div class="row">
           <div class="span-sm-7">
-            <%= image_tag 'dc.png', style: "margin-top: 18px" %>
+            <a href='/'>
+              <%= image_tag 'dc.png', style: "margin-top: 18px" %>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </header>
   <div class="container-fluid">
+    <h1 style="margin-bottom: 20px; font-size: 40px">API Reference</h1>
     <div class="row-fluid">
       <div id='container'>
         <%= yield %>
