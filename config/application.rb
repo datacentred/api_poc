@@ -28,7 +28,7 @@ module ApiPoc
     config.api_only = true
 
     config.autoload_paths << Rails.root.join('config/routes')
-    config.api_versions = [:V1,:V2]
+    config.api_versions = [:V1]
     config.latest_api_version = config.api_versions.sort.last
   end
 end
