@@ -23,7 +23,7 @@ module V1::UsersDoc
   param_group :user
   
   example <<-EOS
-    #{curl_method('users', '1', {'X': 'POST', 'd': '{"user": {"foo": "bar"}}'})}
+#{curl_method('users', '1', {'X': 'POST', 'd': '{"user": {"foo": "bar"}}'})}
   EOS
   def create ; end
 
@@ -32,13 +32,13 @@ module V1::UsersDoc
     Foo
   EOS
   example <<-EOS
-    #{curl_method('users','1') }
-    [
-      {
-        "full_name": "Foo",
-        "age": 25
-      }
-    ]
+#{curl_method('users','1') }
+[
+  {
+    "full_name": "Foo",
+    "age": 25
+  }
+]
   EOS
   def index ; end
 
@@ -47,7 +47,7 @@ module V1::UsersDoc
   param :uuid, String, required: true
   param_group :user
   example <<-EOS
-    #{curl_method('users/1', '1', {'X': 'PUT', 'd': '{"user": {"foo": "bar"}}'})}
+#{curl_method('users/1', '1', {'X': 'PUT', 'd': '{"user": {"foo": "bar"}}'})}
   EOS
   def update ; end
 
@@ -55,7 +55,7 @@ module V1::UsersDoc
   description 'Retrieve specified user information'
   param :uuid, String, required: true
   example <<-EOS
-    #{curl_method('users/1', '1')}
+#{curl_method('users/1', '1')}
   EOS
   def show ; end
 
@@ -63,7 +63,7 @@ module V1::UsersDoc
   description 'Remove specified user'
   param :uuid, String, required: true
   example <<-EOS
-    #{curl_method('users/1', '1', {'X': 'DELETE'})}
+#{curl_method('users/1', '1', {'X': 'DELETE'})}
   EOS
   def destroy ; end
 end
