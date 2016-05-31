@@ -1,21 +1,23 @@
 class V1::UsersController < ApplicationController
+  include UsersDoc
 
-  resource_description do
-    formats [:json]
-    api_versions 'v1'
-  end
-
-  api :POST, '/users', 'Create user'
-  description 'Create user with specifed user params'
-  param :user, Hash, desc: 'User information' do
-    param :full_name, String, desc: 'Full name of the user'
-    param :age, Fixnum, desc: 'Age of the user'
-  end
   def create
-    
+    render json: []
   end
 
   def index
+    render json: []
+  end
+
+  def update
+    render json: []
+  end
+
+  def show
+    render json: []
+  end
+
+  def destroy
     render json: []
   end
 end
