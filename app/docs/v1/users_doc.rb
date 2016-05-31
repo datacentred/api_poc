@@ -46,6 +46,7 @@ module V1::UsersDoc
   description 'Update specified user information'
   param :uuid, String, required: true
   param_group :user
+  error 404, "Missing"
   example <<-EOS
 #{curl_method('users/1', '1', {'X': 'PUT', 'd': '{"user": {"foo": "bar"}}'})}
   EOS
