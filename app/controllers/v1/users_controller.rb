@@ -2,22 +2,22 @@ class V1::UsersController < ApplicationController
   include UsersDoc
 
   def create
-    render json: []
+    render json: {'message': 'created'}
   end
 
   def index
-    render json: []
+    render json: [{'foo': 'bar'}]
   end
 
   def update
-    render json: []
+    render json: {'message': 'updated'}
   end
 
   def show
-    render json: []
+    render json: {'foo': 'bar'}
   end
 
   def destroy
-    render json: []
+    render json: {'message': 'destroyed'}
   end
 end
