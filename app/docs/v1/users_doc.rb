@@ -1,4 +1,5 @@
 module V1::UsersDoc
+  extend CurlHelper
 
   def self.superclass
     V1::UsersController
@@ -11,7 +12,7 @@ module V1::UsersDoc
   end
 
   def_param_group :user do
-    param :user, Hash, desc: 'User information' do
+    param :user, Hash, desc: 'User information', required: true do
       param :full_name, String, desc: 'Full name of the user', required: true
       param :age, Fixnum, desc: 'Age of the user', required: true
     end
@@ -22,7 +23,7 @@ module V1::UsersDoc
   param_group :user
   
   example <<-EOS
-    $ curl '#{Apipie.api_base_url}/users' -u 'API_KEY:' -X POST -H 'Accept: application/datacentred+json; version=1' -d '{"user": {"foo": "bar"}}'
+    #{curl_method('users', '1', {'X': 'POST', 'd': '{"user": {"foo": "bar"}}'})}
   EOS
   def create ; end
 
@@ -31,7 +32,7 @@ module V1::UsersDoc
     Foo
   EOS
   example <<-EOS
-    $ curl '#{Apipie.api_base_url}/users' -u 'API_KEY:' -H 'Accept: application/datacentred+json; version=1'
+    #{curl_method('users','1') }
     [
       {
         "full_name": "Foo",
@@ -46,7 +47,7 @@ module V1::UsersDoc
   param :uuid, String, required: true
   param_group :user
   example <<-EOS
-    $ curl '#{Apipie.api_base_url}/users/1' -u API_KEY: -X PUT -H 'Accept: application/datacentred+json; version=1' -d '{"user": {"foo": "bar"}}'
+    #{curl_method('users/1', '1', {'X': 'PUT', 'd': '{"user": {"foo": "bar"}}'})}
   EOS
   def update ; end
 
@@ -54,7 +55,7 @@ module V1::UsersDoc
   description 'Retrieve specified user information'
   param :uuid, String, required: true
   example <<-EOS
-    $ curl '#{Apipie.api_base_url}/users/1' -u API_KEY: -H 'Accept: application/datacentred+json; version=1'
+    #{curl_method('users/1', '1')}
   EOS
   def show ; end
 
@@ -62,7 +63,7 @@ module V1::UsersDoc
   description 'Remove specified user'
   param :uuid, String, required: true
   example <<-EOS
-    $ curl '#{Apipie.api_base_url}/users/1' -u API_KEY: -X DELETE -H 'Accept: application/datacentred+json; version=1'
+    #{curl_method('users/1', '1', {'X': 'DELETE'})}
   EOS
   def destroy ; end
 end
