@@ -7,6 +7,6 @@ class User < ApplicationRecord
 
   def generate_access_key
     return if access_key
-    self.access_key = SecureRandom.urlsafe_base64
+    self.access_key = SecureRandom.hex
   end
 end
