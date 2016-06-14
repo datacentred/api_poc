@@ -14,7 +14,7 @@ Use the `Authorization` header to supply your access key and secret key:
 
 <pre class="prettyprint">
 curl '#{CurlHelper.api_base_display_url}/status' \\
--H 'Authorization: Token e72b2001dd:ff8293d2aa'</pre>
+-H 'Authorization: Token ACCESS_KEY:SECRET_KEY'</pre>
 
 # Versions & Formats
 
