@@ -1,6 +1,6 @@
 module CurlHelper
   def curl_method(path, version, params={})
-    params.merge!({'u' => 'API_KEY:', 'H' => ["Accept: #{Mime::Type.lookup_by_extension(:dc_json)}; version=#{version}"]})
+    params.merge!({'H' => ["Accept: #{Mime::Type.lookup_by_extension(:dc_json)}; version=#{version}", "Authorization: Token ACCESS_KEY:SECRET_KEY"]})
     "curl '#{CurlHelper.api_base_display_url}/#{path}' #{to_args(params)}"
   end
 
