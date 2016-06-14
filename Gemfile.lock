@@ -41,6 +41,7 @@ GEM
     apipie-rails (0.3.6)
       json
     arel (7.0.0)
+    bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.4)
     concurrent-ruby (1.0.2)
@@ -128,6 +129,7 @@ PLATFORMS
 
 DEPENDENCIES
   apipie-rails
+  bcrypt
   byebug
   listen (~> 3.0.5)
   maruku

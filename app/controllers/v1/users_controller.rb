@@ -1,4 +1,4 @@
-class V1::UsersController < ApplicationController
+class V1::UsersController < AuthorizedController
   include UsersDoc
 
   def create
