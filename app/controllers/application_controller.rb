@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   resource_description do
-    formats [:json]
+    formats [:json, :xml, :csv]
   end
 
   def respond_with(content)
