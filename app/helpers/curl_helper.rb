@@ -1,7 +1,11 @@
 module CurlHelper
   def curl_method(path, version, params={})
     params.merge!({'u' => 'API_KEY:', 'H' => ["Accept: #{Mime::Type.lookup_by_extension(:dc_json)}; version=#{version}"]})
-    "curl '#{Apipie.api_base_url}/#{path}' #{to_args(params)}"
+    "curl '#{CurlHelper.api_base_display_url}/#{path}' #{to_args(params)}"
+  end
+
+  def self.api_base_display_url
+    'https://calm-cove-59936.herokuapp.com'
   end
 
   private
