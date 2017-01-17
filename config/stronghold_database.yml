@@ -6,21 +6,21 @@ default: &default
 
 development:
   <<: *default
-  database: harbour_development
+  database: stronghold_development
 
 test:
   <<: *default
-  database: harbour_test
+  database: stronghold_test
 
 staging:
   <<: *default
-  database: harbour_staging
+  database: stronghold_staging
   password: root
 
 production:
   <<: *default
   host:     db0.datacentred.io
   port:     3306
-  username: harbour
-  password: <%= ENV["DB_PASSWORD"] %>
-  database: harbour_production
+  username: stronghold
+  password: <%= ENV["STRONGHOLD_DB_PASSWORD"] %>
+  database: stronghold_production
