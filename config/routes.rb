@@ -3,7 +3,6 @@ Rails.configuration.api_versions.each do |v|
 end
 
 Harbour::Engine.routes.draw do
-  apipie
 
   root :to => redirect('/api/docs')
   

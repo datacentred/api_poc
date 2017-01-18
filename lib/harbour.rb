@@ -8,8 +8,8 @@ module Harbour
   Apipie.configure do |config|
     config.app_name                = "DataCentred RESTful API"
     config.copyright               = "DataCentred Ltd #{Time.now.year}"
-    config.api_base_url            = "/api"
-    config.doc_base_url            = "/docs"
+    config.api_base_url            = ""
+    config.doc_base_url            = "/api/docs"
     config.default_version         = Harbour::Engine.config.latest_api_version.downcase.to_s
     config.api_controllers_matcher = "#{Harbour::Engine.root}/app/controllers/harbour/**/*.rb"
     config.markup                  = Apipie::Markup::Markdown.new
