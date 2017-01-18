@@ -8,8 +8,3 @@ dependencies:
   post:
     - bin/bundle-audit update
     - bin/bundle-audit
-
-database:
-  override:
-    - cp config/database.yml.ci config/database.yml
-    - RACK_ENV=test RAILS_ENV=test bin/rails db:create db:schema:load --trace
