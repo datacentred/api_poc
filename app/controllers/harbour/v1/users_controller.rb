@@ -10,7 +10,7 @@ module Harbour
       end
 
       def index
-        respond_with([{'foo': 'bar'}])
+        respond_with(User.all.includes(:projects))
       end
 
       def update
