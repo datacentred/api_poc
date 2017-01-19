@@ -50,7 +50,7 @@ module Harbour
       param_group :user
       error 404, "Missing"
       example <<-EOS
-    #{curl_method('users/1', '1', {'X': 'PUT', 'd': '{"user": {"foo": "bar"}}'})}
+    #{curl_method('users/612bfb90f93c4b6e9ba515d51bb16022', '1', {'X': 'PUT', 'd': '{"user": {"foo": "bar"}}'})}
       EOS
       def update ; end
 
@@ -58,7 +58,7 @@ module Harbour
       description 'Retrieve specified user information'
       param :uuid, String, required: true
       example <<-EOS
-    #{curl_method('users/1', '1')}
+    #{curl_method('users/612bfb90f93c4b6e9ba515d51bb16022', '1')}
       EOS
       def show ; end
 
@@ -66,7 +66,7 @@ module Harbour
       description 'Remove specified user'
       param :uuid, String, required: true
       example <<-EOS
-    #{curl_method('users/1', '1', {'X': 'DELETE'})}
+    #{curl_method('users/612bfb90f93c4b6e9ba515d51bb16022', '1', {'X': 'DELETE'})}
       EOS
       def destroy ; end
     end
