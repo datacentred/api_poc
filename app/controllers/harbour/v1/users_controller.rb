@@ -10,7 +10,9 @@ module Harbour
       end
 
       def index
-        respond_with(User.where(organization_id: current_organization.id).includes(:projects))
+        respond_with User.where(organization_id: current_organization.id).includes(:projects).map do |u|
+          UserDecorator.new(u)
+        end
       end
 
       def update
