@@ -10,7 +10,7 @@ module Harbour
       end
 
       def index
-        respond_with(User.all.includes(:projects))
+        respond_with(User.where(organization_id: current_organization.id).includes(:projects))
       end
 
       def update
