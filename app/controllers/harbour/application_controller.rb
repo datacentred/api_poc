@@ -1,5 +1,5 @@
 module Harbour
-  class ApplicationController < ActionController::Base
+  class ApplicationController < ActionController::API
     resource_description do
       formats [:json, :xml, :csv]
     end
