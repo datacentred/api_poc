@@ -10,7 +10,10 @@ module Harbour
       end
 
       def index
-        respond_with(Project.all.includes(:users))
+        projects = scoped_projects.map do |p|
+          Harbour::V1::ProjectDecorator.new(p)
+        end
+        respond_with projects
       end
 
       def update
@@ -18,11 +21,29 @@ module Harbour
       end
 
       def show
-        respond_with({'foo': 'bar'})
+        if project
+          respond_with Harbour::V1::ProjectDecorator.new(project).as_json
+        else
+          head :not_found
+        end
       end
 
       def destroy
-        respond_with({'message': 'destroyed'})
+        if project.destroy
+          head :no_content
+        else
+          head :not_found
+        end
+      end
+
+      private
+
+      def project
+        scoped_projects.find_by(uuid: params[:id])
+      end
+
+      def scoped_projects
+        Harbour::Project.where(organization: current_organization).includes(:users)
       end
     end
   end

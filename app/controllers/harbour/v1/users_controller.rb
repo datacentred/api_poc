@@ -10,9 +10,10 @@ module Harbour
       end
 
       def index
-        respond_with User.where(organization_id: current_organization.id).includes(:projects).map do |u|
-          UserDecorator.new(u)
+        users = scoped_users.map do |u|
+          Harbour::V1::UserDecorator.new(u)
         end
+        respond_with users
       end
 
       def update
@@ -20,11 +21,29 @@ module Harbour
       end
 
       def show
-        respond_with({'foo': 'bar'})
+        if user
+          respond_with Harbour::V1::UserDecorator.new(user).as_json
+        else
+          head :not_found
+        end
       end
 
       def destroy
-        respond_with({'message': 'destroyed'})
+        if user.destroy
+          head :no_content
+        else
+          head :not_found
+        end
+      end
+
+      private
+
+      def user
+        scoped_users.find_by(uuid: params[:id])
+      end
+
+      def scoped_users
+        Harbour::User.where(organization: current_organization).includes(:projects)
       end
     end
   end
