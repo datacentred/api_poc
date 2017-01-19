@@ -4,6 +4,7 @@ module ApiRoutes
       router.instance_exec do
         resources :users
         resources :projects
+        resources :status, only: [:index]
       end
     end
   end
