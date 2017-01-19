@@ -6,7 +6,7 @@ module Harbour
     end
 
     def self.api_base_display_url
-      'https://calm-cove-59936.herokuapp.com'
+      Rails.env.development? ? "http://localhost:3000/api" : "https://my.datacentred.io/api"
     end
 
     private
