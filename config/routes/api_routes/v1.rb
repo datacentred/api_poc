@@ -3,6 +3,7 @@ module ApiRoutes
     def self.extended(router)
       router.instance_exec do
         resources :users
+        resources :projects
       end
     end
   end
