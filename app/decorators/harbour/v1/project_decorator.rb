@@ -1,6 +1,6 @@
 module Harbour
   module V1
-    class ProjectDecorator < ModelBase
+    class ProjectDecorator < DecoratorBase
       def as_json(options={})
         {
           uuid:  model.uuid,
