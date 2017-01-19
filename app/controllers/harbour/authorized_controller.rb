@@ -9,10 +9,10 @@ module Harbour
     private
 
     def validate_credentials
-      authenticate_or_request_with_http_token do |token, _|
-        access, secret = token.split(':')
-        User.find_by_access_key(access)&.authenticate(secret)
-      end
+      # authenticate_or_request_with_http_token do |token, _|
+      #   access, secret = token.split(':')
+      #   Stronghold::ApiUser.find_by_access_key(access)&.authenticate(secret)
+      # end
     end
   end
 end
