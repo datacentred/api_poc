@@ -2,11 +2,7 @@ module Harbour
   module CurlHelper
     def curl_method(path, version, params={})
       params.merge!({'H' => ["Accept: #{Mime::Type.lookup_by_extension(:dc_json)}; version=#{version}", "Authorization: Token ACCESS_KEY:SECRET_KEY"]})
-      "curl '#{CurlHelper.api_base_display_url}/#{path}' #{to_args(params)}"
-    end
-
-    def self.api_base_display_url
-      Rails.env.development? ? "http://localhost:3000/api" : "https://my.datacentred.io/api"
+      "curl '#{Harbour::Engine.config.public_url}/#{path}' #{to_args(params)}"
     end
 
     private

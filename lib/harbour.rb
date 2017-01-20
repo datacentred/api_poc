@@ -20,7 +20,7 @@ module Harbour
   Use the `Authorization` header to supply your access key and secret key:
 
   <pre class="prettyprint">
-  curl '#{CurlHelper.api_base_display_url}/status' \\
+  curl '#{Harbour::Engine.config.public_url}' \\
   -H 'Authorization: Token ACCESS_KEY:SECRET_KEY'</pre>
 
   # Versions & Formats
@@ -28,7 +28,7 @@ module Harbour
   Target specific versions and formats by using the `Accept` header:
 
   <pre class="prettyprint">
-  curl '#{CurlHelper.api_base_display_url}/status' \\
+  curl '#{Harbour::Engine.config.public_url}' \\
   -H 'Accept: application/vnd.datacentred.api+json; version=1'</pre>
     EOS
   end

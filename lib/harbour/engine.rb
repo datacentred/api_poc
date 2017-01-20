@@ -4,5 +4,6 @@ module Harbour
 
     config.api_versions = [:V1]
     config.latest_api_version = config.api_versions.sort.last
+    config.public_url = Rails.env.development? ? "http://localhost:3000/api" : "https://my.datacentred.io/api"
   end
 end

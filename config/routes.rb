@@ -6,7 +6,7 @@ Harbour::Engine.routes.draw do
 
   root :to => redirect('/api/docs')
   
-  Rails.configuration.api_versions.each do |version|
+  Harbour::Engine.config.api_versions.each do |version|
     scope module: version.downcase, constraints: Harbour::ApiVersionConstraint.new(version: version) do
       extend "ApiRoutes::#{version}".constantize
     end
