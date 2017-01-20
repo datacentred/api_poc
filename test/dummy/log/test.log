@@ -242,3 +242,1405 @@ Started GET "/api/" for 127.0.0.1 at 2017-01-20 14:15:27 +0000
 Harbour::Test: test_truth
 -------------------------
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 14:16:48 UTC], ["updated_at", 2017-01-20 14:16:48 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------
+Harbour::Test: test_truth
+-------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+VersionControllerTest: test_shows_available_versions
+----------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 14:16:48 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 14:20:25 UTC], ["updated_at", 2017-01-20 14:20:25 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+VersionControllerTest: test_shows_available_versions
+----------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 14:20:25 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------
+Harbour::Test: test_truth
+-------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 14:26:07 UTC], ["updated_at", 2017-01-20 14:26:07 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+VersionControllerTest: test_shows_available_versions
+----------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 14:26:07 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------
+Harbour::Test: test_truth
+-------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 14:49:57 UTC], ["updated_at", 2017-01-20 14:49:57 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------
+Harbour::Test: test_truth
+-------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+VersionControllerTest: test_shows_available_versions
+----------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 14:49:58 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 14:50:25 UTC], ["updated_at", 2017-01-20 14:50:25 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------
+Harbour::Test: test_truth
+-------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+VersionControllerTest: test_shows_available_versions
+----------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 14:50:26 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 14:59:44 UTC], ["updated_at", 2017-01-20 14:59:44 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions
+-------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 14:59:45 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:01:33 UTC], ["updated_at", 2017-01-20 15:01:33 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions
+-------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:01:33 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:01:56 UTC], ["updated_at", 2017-01-20 15:01:56 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions
+-------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:01:56 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:02:06 UTC], ["updated_at", 2017-01-20 15:02:06 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions
+-------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:02:06 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:05:55 UTC], ["updated_at", 2017-01-20 15:05:55 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+Harbour::V1::UsersControllerTest: test_api_user_must_be_authorized_to_access_users
+----------------------------------------------------------------------------------
+Started GET "/api/users?format=dc_json" for 127.0.0.1 at 2017-01-20 15:05:56 +0000
+Processing by Harbour::V1::UsersController#index as DC_JSON
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:05:56 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:06:10 UTC], ["updated_at", 2017-01-20 15:06:10 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:06:10 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+Harbour::V1::UsersControllerTest: test_api_user_must_be_authorized_to_access_users
+----------------------------------------------------------------------------------
+Started GET "/api/users?format=dc_json" for 127.0.0.1 at 2017-01-20 15:06:10 +0000
+Processing by Harbour::V1::UsersController#index as DC_JSON
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:06:36 UTC], ["updated_at", 2017-01-20 15:06:36 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:06:36 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+Harbour::V1::UsersControllerTest: test_api_user_must_be_authorized_to_access_users
+----------------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 15:06:36 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:07:23 UTC], ["updated_at", 2017-01-20 15:07:23 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+Harbour::V1::UsersControllerTest: test_api_user_must_be_authorized_to_access_users
+----------------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 15:07:24 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:07:24 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 15:07:24 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:09:16 UTC], ["updated_at", 2017-01-20 15:09:16 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:09:17 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 15:09:17 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+Harbour::V1::UsersControllerTest: test_api_user_must_be_authorized_to_access_users
+----------------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 15:09:17 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 15:09:17 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 15:09:17 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 15:09:17 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"user"=>{"email"=>"foo@bar.com"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 15:09:17 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:11:23 UTC], ["updated_at", 2017-01-20 15:11:23 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+Harbour::V1::UsersControllerTest: test_api_user_must_be_authorized_to_access_users
+----------------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 15:11:24 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 15:11:24 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 15:11:24 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 15:11:24 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 15:11:24 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:11:24 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 15:11:24 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:14:39 UTC], ["updated_at", 2017-01-20 15:14:39 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 15:14:39 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:14:39 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::V1::ProjectsTest: test_api_user_must_be_authorized_to_access_projects
+------------------------------------------------------------------------------
+Started GET "/api/projects" for 127.0.0.1 at 2017-01-20 15:14:39 +0000
+Processing by Harbour::V1::ProjectsController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:14:39 +0000
+Processing by Harbour::V1::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/projects" for 127.0.0.1 at 2017-01-20 15:14:39 +0000
+Processing by Harbour::V1::ProjectsController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Started PUT "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:14:39 +0000
+Processing by Harbour::V1::ProjectsController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:14:39 +0000
+Processing by Harbour::V1::ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+Harbour::V1::UsersTest: test_api_user_must_be_authorized_to_access_users
+------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 15:14:39 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 15:14:40 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 15:14:40 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 15:14:40 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 15:14:40 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:15:07 UTC], ["updated_at", 2017-01-20 15:15:07 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 15:15:07 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:15:07 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::V1::ProjectsTest: test_api_user_must_be_authorized_to_access_projects
+------------------------------------------------------------------------------
+Started GET "/api/projects" for 127.0.0.1 at 2017-01-20 15:15:07 +0000
+Processing by Harbour::V1::ProjectsController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:15:07 +0000
+Processing by Harbour::V1::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/projects" for 127.0.0.1 at 2017-01-20 15:15:07 +0000
+Processing by Harbour::V1::ProjectsController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:15:07 +0000
+Processing by Harbour::V1::ProjectsController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:15:07 +0000
+Processing by Harbour::V1::ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+Harbour::V1::UsersTest: test_api_user_must_be_authorized_to_access_users
+------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 15:15:07 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 15:15:07 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 15:15:08 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 15:15:08 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 15:15:08 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:16:34 UTC], ["updated_at", 2017-01-20 15:16:34 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+Harbour::V1::UsersTest: test_api_user_must_be_authorized_to_access_users
+------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::V1::ProjectsTest: test_api_user_must_be_authorized_to_access_projects
+------------------------------------------------------------------------------
+Started GET "/api/projects" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::ProjectsController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/projects" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::ProjectsController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::ProjectsController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:16:34 +0000
+Processing by Harbour::V1::ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:19:38 UTC], ["updated_at", 2017-01-20 15:19:38 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::V1::ProjectsTest: test_api_user_must_be_authorized_to_access_projects
+------------------------------------------------------------------------------
+Started GET "/api/projects" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::ProjectsController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/projects" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::ProjectsController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::ProjectsController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+Harbour::V1::UsersTest: test_api_user_must_be_authorized_to_access_users
+------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+Harbour::V1::UsersTest: test_GET_/api/users
+-------------------------------------------
+Started GET "/api/users?format=dc_json" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::V1::UsersController#index as DC_JSON
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:19:39 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "api_credentials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "access_key" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170120152038')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2017-01-20 15:21:39 UTC], ["updated_at", 2017-01-20 15:21:39 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+Harbour::V1::UsersTest: test_GET_/api/users
+-------------------------------------------
+Started GET "/api/users?format=dc_json" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::UsersController#index as DC_JSON
+  [1m[36mApiCredential Load (0.1ms)[0m  [1m[34mSELECT  "api_credentials".* FROM "api_credentials" WHERE "api_credentials"."access_key" = ? LIMIT ?[0m  [["access_key", "key"], ["LIMIT", 1]]
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 10ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+Harbour::V1::UsersTest: test_api_user_must_be_authorized_to_access_users
+------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::V1::ProjectsTest: test_api_user_must_be_authorized_to_access_projects
+------------------------------------------------------------------------------
+Started GET "/api/projects" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::ProjectsController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/projects" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::ProjectsController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::ProjectsController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/projects/1" for 127.0.0.1 at 2017-01-20 15:21:40 +0000
+Processing by Harbour::V1::ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", 2017-01-20 16:00:48 UTC], ["key", "environment"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "api_credentials"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "api_credentials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "access_key" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "organizations"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "organizations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "projects"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uuid" varchar, "name" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "user_project_roles"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "user_project_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "role_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uuid" varchar, "first_name" varchar, "last_name" varchar, "email" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bill's bodacious organization!"], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ted's tubular organization!"], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Bill S."], ["last_name", "Preston"], ["email", "bill.s.preston@bodacious.com"], ["organization_id", 1], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Ted 'Theodore'"], ["last_name", "Logan"], ["email", "ted.t.logan@tubular.com"], ["organization_id", 2], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("uuid", "name", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "444cc250-2355-481f-834a-ca421d75664d"], ["name", "bogus"], ["organization_id", 1], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("uuid", "name", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "7992c2e7-2596-499e-8f6e-130ff64f42b3"], ["name", "excellent"], ["organization_id", 1], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "projects" ("uuid", "name", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "5ce613ab-a73d-4dba-a14f-086b1f27ada3"], ["name", "rad"], ["organization_id", 2], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("uuid", "name", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "b49c2a33-2de8-4d59-8f25-0197ca8e9bc1"], ["name", "station"], ["organization_id", 2], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "user_project_roles" ON "users"."id" = "user_project_roles"."user_id" WHERE "user_project_roles"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_project_roles" ("user_id", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 1], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "user_project_roles" ON "users"."id" = "user_project_roles"."user_id" WHERE "user_project_roles"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_project_roles" ("user_id", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["project_id", 3], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "api_credentials" ("user_id", "access_key", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["access_key", "bill"], ["password_digest", "$2a$04$DdfM/3XFATClTyQp8E/P3uip/d5sYN.jvb.js9LwA4jyLGtT/8Xni"], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "api_credentials" ("user_id", "access_key", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["access_key", "ted"], ["password_digest", "$2a$04$Rd4AvKia.a1T3qQtwS9C6ukH3.mND3rWq2EPDELVVfDWp7h44I1qe"], ["created_at", 2017-01-20 16:00:51 UTC], ["updated_at", 2017-01-20 16:00:51 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+Harbour::V1::UsersTest: test_GET_/api/users
+-------------------------------------------
+Started GET "/api/users?format=dc_json" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::UsersController#index as DC_JSON
+  [1m[36mApiCredential Load (0.3ms)[0m  [1m[34mSELECT  "api_credentials".* FROM "api_credentials" WHERE "api_credentials"."access_key" = ? LIMIT ?[0m  [["access_key", "bill"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "api_credentials".* FROM "api_credentials" WHERE "api_credentials"."access_key" = ? LIMIT ?[0m  [["access_key", "bill"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.1ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."organization_id" = 1[0m
+  [1m[36mUserProjectRole Load (0.1ms)[0m  [1m[34mSELECT "user_project_roles".* FROM "user_project_roles" WHERE "user_project_roles"."user_id" = 1[0m
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 1[0m
+Completed 200 OK in 122ms (Views: 0.3ms | ActiveRecord: 3.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+Harbour::V1::UsersTest: test_api_user_must_be_authorized_to_access_users
+------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::V1::ProjectsTest: test_api_user_must_be_authorized_to_access_projects
+------------------------------------------------------------------------------
+Started GET "/api/projects" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::ProjectsController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/projects" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::ProjectsController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::ProjectsController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:01:23 +0000
+Processing by Harbour::V1::ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+Harbour::V1::UsersTest: test_GET_/api/users
+-------------------------------------------
+Started GET "/api/users?format=dc_json" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::UsersController#index as DC_JSON
+  [1m[36mApiCredential Load (0.2ms)[0m  [1m[34mSELECT  "api_credentials".* FROM "api_credentials" WHERE "api_credentials"."access_key" = ? LIMIT ?[0m  [["access_key", "bill"], ["LIMIT", 1]]
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 28ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+Harbour::V1::UsersTest: test_api_user_must_be_authorized_to_access_users
+------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::V1::ProjectsTest: test_api_user_must_be_authorized_to_access_projects
+------------------------------------------------------------------------------
+Started GET "/api/projects" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::ProjectsController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/projects" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::ProjectsController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::ProjectsController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:01:34 +0000
+Processing by Harbour::V1::ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+Harbour::V1::UsersTest: test_GET_/api/users
+-------------------------------------------
+Started GET "/api/users?format=dc_json" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::UsersController#index as DC_JSON
+  [1m[36mApiCredential Load (0.2ms)[0m  [1m[34mSELECT  "api_credentials".* FROM "api_credentials" WHERE "api_credentials"."access_key" = ? LIMIT ?[0m  [["access_key", "bill"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "api_credentials".* FROM "api_credentials" WHERE "api_credentials"."access_key" = ? LIMIT ?[0m  [["access_key", "bill"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.1ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."organization_id" = 1[0m
+  [1m[36mUserProjectRole Load (0.1ms)[0m  [1m[34mSELECT "user_project_roles".* FROM "user_project_roles" WHERE "user_project_roles"."user_id" = 1[0m
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 1[0m
+Completed 200 OK in 117ms (Views: 0.4ms | ActiveRecord: 2.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+Harbour::V1::UsersTest: test_api_user_must_be_authorized_to_access_users
+------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::V1::ProjectsTest: test_api_user_must_be_authorized_to_access_projects
+------------------------------------------------------------------------------
+Started GET "/api/projects" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::ProjectsController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/projects" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::ProjectsController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::ProjectsController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:01:50 +0000
+Processing by Harbour::V1::ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (9.3ms)[0m  [1m[35mDROP TABLE "api_credentials"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "api_credentials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "access_key" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "organizations"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "organizations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "projects"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uuid" varchar, "name" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "user_project_roles"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "user_project_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "project_id" integer, "role_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uuid" varchar, "first_name" varchar, "last_name" varchar, "email" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bill's bodacious organization!"], ["created_at", 2017-01-20 16:02:45 UTC], ["updated_at", 2017-01-20 16:02:45 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ted's tubular organization!"], ["created_at", 2017-01-20 16:02:45 UTC], ["updated_at", 2017-01-20 16:02:45 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("uuid", "first_name", "last_name", "email", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uuid", "23f8d260-b69a-4136-aec9-fda66e9c6557"], ["first_name", "Bill S."], ["last_name", "Preston"], ["email", "bill.s.preston@bodacious.com"], ["organization_id", 1], ["created_at", 2017-01-20 16:02:45 UTC], ["updated_at", 2017-01-20 16:02:45 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("uuid", "first_name", "last_name", "email", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["uuid", "a132a2e6-8988-41e7-b5a5-bfce545b3f9f"], ["first_name", "Ted 'Theodore'"], ["last_name", "Logan"], ["email", "ted.t.logan@tubular.com"], ["organization_id", 2], ["created_at", 2017-01-20 16:02:45 UTC], ["updated_at", 2017-01-20 16:02:45 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("uuid", "name", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "b89a6688-8fdb-4ff2-a2b6-af98445e6ccc"], ["name", "bogus"], ["organization_id", 1], ["created_at", 2017-01-20 16:02:45 UTC], ["updated_at", 2017-01-20 16:02:45 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("uuid", "name", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "51a97771-e850-4d04-86c1-ab66facb780e"], ["name", "excellent"], ["organization_id", 1], ["created_at", 2017-01-20 16:02:45 UTC], ["updated_at", 2017-01-20 16:02:45 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("uuid", "name", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "0c0bc5a0-bd56-4a64-8d62-171607721456"], ["name", "rad"], ["organization_id", 2], ["created_at", 2017-01-20 16:02:45 UTC], ["updated_at", 2017-01-20 16:02:45 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("uuid", "name", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uuid", "1fa862f8-81ba-4875-a6b8-89ef1ab6f724"], ["name", "station"], ["organization_id", 2], ["created_at", 2017-01-20 16:02:45 UTC], ["updated_at", 2017-01-20 16:02:45 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "user_project_roles" ON "users"."id" = "user_project_roles"."user_id" WHERE "user_project_roles"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_project_roles" ("user_id", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["project_id", 1], ["created_at", 2017-01-20 16:02:46 UTC], ["updated_at", 2017-01-20 16:02:46 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "user_project_roles" ON "users"."id" = "user_project_roles"."user_id" WHERE "user_project_roles"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_project_roles" ("user_id", "project_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["project_id", 3], ["created_at", 2017-01-20 16:02:46 UTC], ["updated_at", 2017-01-20 16:02:46 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "api_credentials" ("user_id", "access_key", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["access_key", "bill"], ["password_digest", "$2a$04$Xck4b2SmO8C1TOiSGovy5O212dLE6wYXpQqtO/VzZs0t9naVmm00u"], ["created_at", 2017-01-20 16:02:46 UTC], ["updated_at", 2017-01-20 16:02:46 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "api_credentials" ("user_id", "access_key", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["access_key", "ted"], ["password_digest", "$2a$04$xglpRMmH7iW4NCFRBdx5N.Mp4Cpc3QigE.xImngofyTs0A1/vTyrC"], ["created_at", 2017-01-20 16:02:46 UTC], ["updated_at", 2017-01-20 16:02:46 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_shows_available_versions_without_authorization_headers
+-------------------------------------------------------------------------------------------
+Started GET "/api/?format=dc_json" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::VersionsController#index as DC_JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::VersionControllerTest: test_redirects_to_docs_when_requested_via_HTML
+------------------------------------------------------------------------------
+Started GET "/api/" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+Harbour::V1::UsersTest: test_GET_/api/users
+-------------------------------------------
+Started GET "/api/users?format=dc_json" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::UsersController#index as DC_JSON
+  [1m[36mApiCredential Load (0.2ms)[0m  [1m[34mSELECT  "api_credentials".* FROM "api_credentials" WHERE "api_credentials"."access_key" = ? LIMIT ?[0m  [["access_key", "bill"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "api_credentials".* FROM "api_credentials" WHERE "api_credentials"."access_key" = ? LIMIT ?[0m  [["access_key", "bill"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.1ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."organization_id" = 1[0m
+  [1m[36mUserProjectRole Load (0.2ms)[0m  [1m[34mSELECT "user_project_roles".* FROM "user_project_roles" WHERE "user_project_roles"."user_id" = 1[0m
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 1[0m
+Completed 200 OK in 126ms (Views: 0.3ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------
+Harbour::V1::UsersTest: test_api_user_must_be_authorized_to_access_users
+------------------------------------------------------------------------
+Started GET "/api/users" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::UsersController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/users/1" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/users" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::UsersController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/users/1" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::UsersController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/users/1" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+Harbour::V1::ProjectsTest: test_api_user_must_be_authorized_to_access_projects
+------------------------------------------------------------------------------
+Started GET "/api/projects" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::ProjectsController#index as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started POST "/api/projects" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::ProjectsController#create as HTML
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started PUT "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::ProjectsController#update as HTML
+  Parameters: {"foo"=>{"bar"=>"baz"}, "id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Started DELETE "/api/projects/1" for 127.0.0.1 at 2017-01-20 16:02:57 +0000
+Processing by Harbour::V1::ProjectsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Filter chain halted as :current_user rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

@@ -14,10 +14,11 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,lib}/**/*", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.0.0", ">= 5.0.0.1"
+  s.add_dependency "rails", "5.0.1"
 
   s.add_dependency "apipie-rails", "~> 0.3"
   s.add_dependency "maruku", "~> 0.3"
   s.add_development_dependency "bundler-audit", "~> 0.5"
   s.add_development_dependency "sqlite3", "~> 1.3"
+  s.add_development_dependency "bcrypt", "~> 3.1"
 end
