@@ -15,8 +15,9 @@ module Harbour
 
       def_param_group :user do
         param :user, Hash, desc: 'User information', required: true do
-          param :full_name, String, desc: 'Full name of the user', required: true
-          param :age, Fixnum, desc: 'Age of the user', required: true
+          param :email, String, desc: "User's email address", required: true
+          param :first_name, String, desc: "User's first name", required: false
+          param :last_name,  String, desc: "User's last name", required: false
         end
       end
 
@@ -25,7 +26,7 @@ module Harbour
       param_group :user
       
       example <<-EOS
-    #{curl_method('users', '1', {'X': 'POST', 'd': '{"user": {"foo": "bar"}}'})}
+    #{curl_method('users', '1', {'X': 'POST', 'd': '{"user": {"email": "bill.s.preston@bogus.com", "first_name": "Bill S.", "last_name": "Preston Esq"}}'})}
       EOS
       def create ; end
 
