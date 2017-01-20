@@ -5,8 +5,10 @@ module Harbour
         {
           uuid:  model.uuid,
           name:  model.name,
-          users: model.users.map{|user| user.as_json(only: [:uuid, :email])}
-        }
+          links: [{"href": "#{Harbour::Engine.config.public_url}/projects/#{model.uuid}", "rel": "self"}]
+        }.merge(
+          (!options[:only] || options[:only].include?(:users)) ? { users: model.users.map{|user| Harbour::V1::UserDecorator.new(user).as_json(only: [:email, :first_name, :last_name])} } : {}
+        )
       end
     end
   end
