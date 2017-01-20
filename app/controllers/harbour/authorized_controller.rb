@@ -7,11 +7,11 @@ module Harbour
     before_action :current_user
 
     def current_user
-      # authenticate_or_request_with_http_token do |token, _|
-      #   access, secret = token.split(':')
-      #   Stronghold::ApiUser.find_by_access_key(access)&.authenticate(secret)
-      # end
-      @current_user ||= User.first
+      authenticate_or_request_with_http_token do |token, _|
+        access, secret = token.split(':')
+        api_credential = ApiCredential.find_by_access_key(access)
+        api_credential&.authenticate(secret) ? api_credential.user : false
+      end
     end
 
     def current_organization
