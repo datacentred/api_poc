@@ -1,7 +1,7 @@
 module Harbour
   class ApplicationController < ActionController::API
     resource_description do
-      formats [:json, :xml, :csv]
+      formats [:json]
     end
 
     def respond_with(content)

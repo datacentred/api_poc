@@ -30,8 +30,6 @@ module Harbour
   <pre class="prettyprint">
   curl '#{CurlHelper.api_base_display_url}/status' \\
   -H 'Accept: application/vnd.datacentred.api+json; version=1'</pre>
-
-  Supported formats: json, xml, csv
     EOS
   end
 end
