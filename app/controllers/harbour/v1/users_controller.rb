@@ -43,7 +43,7 @@ module Harbour
       end
 
       def scoped_users
-        Harbour::User.where(organization: current_organization).includes(:projects)
+        User.where(organization: current_organization).includes(:projects)
       end
     end
   end
