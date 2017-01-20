@@ -22,7 +22,7 @@ module Harbour
 
       def show
         if project
-          respond_with Harbour::V1::ProjectDecorator.new(project).as_json
+          respond_with Harbour::V1::ProjectDecorator.new(project)
         else
           head :not_found
         end

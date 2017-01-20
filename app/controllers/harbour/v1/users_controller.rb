@@ -22,7 +22,7 @@ module Harbour
 
       def show
         if user
-          respond_with Harbour::V1::UserDecorator.new(user).as_json
+          respond_with Harbour::V1::UserDecorator.new(user)
         else
           head :not_found
         end

@@ -5,7 +5,7 @@ module Harbour
     end
 
     def respond_with(content)
-      render json: content, content_type: Mime::Type.lookup_by_extension(:dc_json).to_s
+      render json: content.as_json, content_type: Mime::Type.lookup_by_extension(:dc_json).to_s
     end
   end
 end
