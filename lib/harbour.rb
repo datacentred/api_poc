@@ -1,4 +1,6 @@
 require "harbour/engine"
+require "apipie-rails"
+require "maruku"
 
 require_relative "../app/helpers/harbour/curl_helper"
 

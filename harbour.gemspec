@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency "apipie-rails", "~> 0.3"
   s.add_dependency "maruku", "~> 0.3"
   s.add_development_dependency "bundler-audit", "~> 0.5"
+  s.add_development_dependency "sqlite3", "~> 1.3"
 end

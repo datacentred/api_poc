@@ -10,10 +10,7 @@ module Harbour
       end
 
       def index
-        projects = scoped_projects.map do |p|
-          Harbour::V1::ProjectDecorator.new(p)
-        end
-        respond_with projects
+        respond_with decorated_projects
       end
 
       def update
@@ -22,7 +19,7 @@ module Harbour
 
       def show
         if project
-          respond_with Harbour::V1::ProjectDecorator.new(project)
+          respond_with project
         else
           head :not_found
         end
@@ -39,11 +36,18 @@ module Harbour
       private
 
       def project
-        scoped_projects.find_by(uuid: params[:id])
+        project = scoped_projects.find_by(uuid: params[:id])
+        Harbour::V1::ProjectDecorator.new(project) if project
       end
 
       def scoped_projects
         Project.where(organization: current_organization).includes(:users)
+      end
+
+      def decorated_projects
+        scoped_projects.map do |p|
+          Harbour::V1::ProjectDecorator.new(p).as_json
+        end
       end
     end
   end

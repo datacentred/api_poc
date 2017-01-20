@@ -10,10 +10,7 @@ module Harbour
       end
 
       def index
-        users = scoped_users.map do |u|
-          Harbour::V1::UserDecorator.new(u)
-        end
-        respond_with users
+        respond_with decorated_users
       end
 
       def update
@@ -22,7 +19,7 @@ module Harbour
 
       def show
         if user
-          respond_with Harbour::V1::UserDecorator.new(user)
+          respond_with user
         else
           head :not_found
         end
@@ -39,11 +36,18 @@ module Harbour
       private
 
       def user
-        scoped_users.find_by(uuid: params[:id])
+        user = scoped_users.find_by(uuid: params[:id])
+        Harbour::V1::UserDecorator.new(user) if user
       end
 
       def scoped_users
         User.where(organization: current_organization).includes(:projects)
+      end
+
+      def decorated_users
+        scoped_users.map do |u|
+          Harbour::V1::UserDecorator.new(u).as_json
+        end
       end
     end
   end
