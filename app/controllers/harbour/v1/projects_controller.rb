@@ -6,11 +6,11 @@ module Harbour
       include ProjectsDoc
 
       def create
-        respond_with({'message': 'created'})
+        respond_with 'message': 'created'
       end
 
       def index
-        respond_with decorated_projects
+        respond_with projects: decorated_projects
       end
 
       def update
@@ -19,7 +19,7 @@ module Harbour
 
       def show
         if project
-          respond_with project
+          respond_with project: project
         else
           head :not_found
         end

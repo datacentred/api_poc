@@ -6,20 +6,20 @@ module Harbour
       include UsersDoc
 
       def create
-        respond_with({'message': 'created'})
+        respond_with 'message': 'created'
       end
 
       def index
-        respond_with decorated_users
+        respond_with users: decorated_users
       end
 
       def update
-        respond_with({'message': 'updated'})
+        respond_with 'message': 'updated'
       end
 
       def show
         if user
-          respond_with user
+          respond_with user: user
         else
           head :not_found
         end

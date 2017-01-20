@@ -49,5 +49,12 @@ module Harbour
 
       assert statuses.all?{|s| s == 401 }
     end
+
+    def assert_format_matches(format, object)
+      assert_equal format.keys, object.keys
+      object.each do |k, v|
+        assert_equal format[k], v.class
+      end
+    end
   end
 end
