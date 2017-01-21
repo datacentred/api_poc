@@ -49,6 +49,34 @@ module Harbour
         get '/api/projects/1', authorized_headers  
         assert_format_matches project_format, response_body['project']
       end
+
+      test "create project succeeds with valid params" do
+      end
+
+      test "create project fails with invalid params" do
+      end
+
+      test "create project with user memberships" do
+      end
+
+      test "update project succeeds with valid params" do
+      end
+
+      test "update project fails with invalid params" do
+      end
+
+      test "update project with user memberships" do
+      end
+
+      test "delete project succeeds if project exists" do
+      end
+
+      test "delete project fails if project can't be found" do
+      end
+
+      test "delete project fails with suitable error if project can't be removed" do
+        # e.g. if it's the primary project
+      end
     end
   end
 end

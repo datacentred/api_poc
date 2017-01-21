@@ -51,6 +51,37 @@ module Harbour
         get '/api/users/1', authorized_headers  
         assert_format_matches user_format, response_body['user']
       end
+
+      test "create user succeeds with valid params" do
+      end
+
+      test "create user fails with invalid params" do
+      end
+
+      test "create user with project memberships" do
+      end
+
+      test "update user succeeds with valid params" do
+      end
+
+      test "update user fails with invalid params" do
+      end
+
+      test "update user with project memberships" do
+      end
+
+      test "change user password" do
+      end
+
+      test "delete user succeeds if user exists" do
+      end
+
+      test "delete user fails if user can't be found" do
+      end
+
+      test "delete user fails with suitable error if user can't be removed" do
+        # e.g. if it's the current user
+      end
     end
   end
 end
