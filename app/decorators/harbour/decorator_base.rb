@@ -9,6 +9,10 @@ module Harbour
       model.class
     end
 
+    def to_json
+      as_json
+    end
+
     private
 
     def model
