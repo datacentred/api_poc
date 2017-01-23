@@ -73,6 +73,7 @@ module Harbour
         post '/api/users', params: params, headers: authorized_headers
         assert_response :created
         p response_body
+        flunk # to do: fix later
       end
 
       test "update user succeeds with valid params" do
@@ -86,22 +87,44 @@ module Harbour
       end
 
       test "update user fails with invalid params" do
+        params = {user: {email: 'death@afterlife.com', password: 'melvin'}}.merge(api_params)
+        post '/api/users', params: params, headers: authorized_headers
+        uuid = response_body['user']['uuid']
+        params = {id: uuid, user: {password: ''}}.merge(api_params)
+        put "/api/users/#{uuid}", params: params, headers: authorized_headers
+        assert_response :unprocessable_entity
+        p response_body
       end
 
       test "update user with project memberships" do
       end
 
       test "change user password" do
+        params = {user: {email: 'death@afterlife.com', password: 'melvin'}}.merge(api_params)
+        post '/api/users', params: params, headers: authorized_headers
+        uuid = response_body['user']['uuid']
+        params = {id: uuid, user: {password: 'station'}}.merge(api_params)
+        put "/api/users/#{uuid}", params: params, headers: authorized_headers
+        assert_response :ok
       end
 
       test "delete user succeeds if user exists" do
+        params = {user: {email: 'death@afterlife.com', password: 'melvin'}}.merge(api_params)
+        post '/api/users', params: params, headers: authorized_headers
+        uuid = response_body['user']['uuid']
+        delete "/api/users/#{uuid}", authorized_headers_and_params
+        assert_response :no_content
       end
 
       test "delete user fails if user can't be found" do
+        delete "/api/users/notarealuser", authorized_headers_and_params
+        assert_response :not_found
       end
 
       test "delete user fails with suitable error if user can't be removed" do
-        # e.g. if it's the current user
+        # user can't delete self
+        delete "/api/users/1", authorized_headers_and_params
+        assert_response :unprocessable_entity
       end
     end
   end

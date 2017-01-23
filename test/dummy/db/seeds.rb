@@ -22,5 +22,6 @@ project4 = organization2.projects.create! name: "station",   uuid: "4"
 project1.update_attributes users: [user1]
 project3.update_attributes users: [user2]
 
+
 user1.api_credentials.create! access_key: "bill", password: "ilovejoanna"
 user2.api_credentials.create! access_key: "ted",  password: "iloveelizabeth"

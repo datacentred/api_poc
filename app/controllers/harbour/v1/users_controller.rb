@@ -7,7 +7,8 @@ module Harbour
 
       def create
         user = current_organization.users.create!(create_params)
-        respond_with({user: Harbour::V1::UserDecorator.new(user).as_json},
+        set_project_memberships(user.id, create_params[:projects]) if create_params[:projects]&.any?
+        respond_with({user: Harbour::V1::UserDecorator.new(user.reload).as_json},
                      status: :created)
       end
 
@@ -29,8 +30,14 @@ module Harbour
       end
 
       def destroy
-        if user.destroy
-          head :no_content
+        if user
+          if user.id == current_user.id
+            respond_with({message: "You can't delete yourself."},
+                         status: :unprocessable_entity)
+          else
+            user.destroy
+            head :no_content
+          end
         else
           head :not_found
         end
@@ -57,12 +64,11 @@ module Harbour
         params.require(:user).permit(:first_name, :last_name, :password, :projects)
       end
 
-      def set_project_memberships(user_uuid, project_uuids)
-        project_ids = project_uuids.map{|uuid| Project.find_by(uuid)&.id }.compact
-        user_id     = scoped_users.find_by(uuid: user_uuid).id
+      def set_project_memberships(user_id, project_uuids)
+        project_ids = project_uuids.map{|uuid| scoped_projects.find_by(uuid)&.id }.compact
         project_ids.each do |project_id|
           UserProjectRole.required_role_ids.collect do |role_uuid|
-            UserProjectRole.find_or_create_by(user_id: user_id, project_id: @project.id, role_uuid: role_uuid)
+            UserProjectRole.find_or_create_by(user_id: user_id, project_id: project_id, role_uuid: role_uuid)
           end
         end
       end
