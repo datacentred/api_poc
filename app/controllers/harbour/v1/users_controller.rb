@@ -6,7 +6,8 @@ module Harbour
       include UsersDoc
 
       def create
-        respond_with 'message': 'created'
+        user = current_organization.users.create!(create_params)
+        respond_with(Harbour::V1::UserDecorator.new(user).as_json, status: :created)
       end
 
       def index
@@ -48,6 +49,10 @@ module Harbour
         scoped_users.map do |u|
           Harbour::V1::UserDecorator.new(u).as_json
         end
+      end
+
+      def create_params
+        params.require(:user).permit(:email, :first_name, :last_name, :password, :projects)
       end
     end
   end

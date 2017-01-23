@@ -13,6 +13,8 @@ require "rails/test_help"
 # to be shown.
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new
 
+require 'database_cleaner'
+DatabaseCleaner.strategy = :truncation
 
 # Load fixtures from the engine
 if ActiveSupport::TestCase.respond_to?(:fixture_path=)
@@ -28,8 +30,16 @@ module Harbour
       JSON.parse(response.body)
     end
 
+    def authorized_headers_and_params
+      {params: api_params, headers: authorized_headers}
+    end
+
+    def api_params
+      {format: :dc_json}
+    end
+
     def authorized_headers
-      {params: { format: :dc_json }, headers: {authorization: "Token token=\"bill:ilovejoanna\""}}
+      {authorization: "Token token=\"bill:ilovejoanna\""}
     end
 
     def assert_resource_is_unauthorized(resource)
@@ -58,6 +68,10 @@ module Harbour
       object.each do |k, v|
         assert_equal format[k], v.class
       end
+    end
+
+    def teardown
+      DatabaseCleaner.clean
     end
   end
 end
