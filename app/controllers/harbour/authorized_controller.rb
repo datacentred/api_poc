@@ -17,5 +17,13 @@ module Harbour
     def current_organization
       @current_organization ||= current_user.organization
     end
+
+    def scoped_users
+      User.where(organization: current_organization).includes(:projects)
+    end
+
+    def scoped_projects
+      Project.where(organization: current_organization).includes(:users)
+    end
   end
 end

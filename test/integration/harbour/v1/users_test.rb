@@ -56,20 +56,33 @@ module Harbour
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}.merge(api_params)
         post '/api/users', params: params, headers: authorized_headers
         assert_response :created
-        assert_operator response_body['uuid'].length, :>, 0
+        assert_operator response_body['user']['uuid'].length, :>, 0
       end
 
       test "create user fails with invalid params" do
         params = {user: {email: 'death@afterlife.com'}}.merge(api_params)
         post '/api/users', params: params, headers: authorized_headers
         assert_response :unprocessable_entity
-        p response.body
+        assert_operator response_body['errors'].length, :>, 0
+        assert_equal "user",     response_body['errors'][0]["resource"]
+        assert_equal "password", response_body['errors'][0]["field"]
       end
 
       test "create user with project memberships" do
+        params = {user: {email: 'death@afterlife.com', password: 'melvin', projects: ['1','2']}}.merge(api_params)
+        post '/api/users', params: params, headers: authorized_headers
+        assert_response :created
+        p response_body
       end
 
       test "update user succeeds with valid params" do
+        params = {user: {email: 'death@afterlife.com', password: 'melvin'}}.merge(api_params)
+        post '/api/users', params: params, headers: authorized_headers
+        uuid = response_body['user']['uuid']
+        params = {id: uuid, user: {first_name: 'Grim'}}.merge(api_params)
+        put "/api/users/#{uuid}", params: params, headers: authorized_headers
+        assert_response :ok
+        assert_equal 'Grim', response_body['user']['first_name']
       end
 
       test "update user fails with invalid params" do

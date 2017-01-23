@@ -40,10 +40,6 @@ module Harbour
         Harbour::V1::ProjectDecorator.new(project) if project
       end
 
-      def scoped_projects
-        Project.where(organization: current_organization).includes(:users)
-      end
-
       def decorated_projects
         scoped_projects.map do |p|
           Harbour::V1::ProjectDecorator.new(p).as_json
