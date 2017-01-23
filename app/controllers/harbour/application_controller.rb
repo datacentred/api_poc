@@ -21,23 +21,12 @@ module Harbour
     end
 
     rescue_from ActiveRecord::RecordInvalid,  with: :render_unprocessable_entity_response
-    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
-    rescue_from StandardError,                with: :render_error_response
 
     def render_unprocessable_entity_response(exception)
-      respond_with({
-        message: "Validation Failed",
+      render json: {
         errors: ValidationErrorsSerializer.new(exception.record).serialize
-      }, status: :unprocessable_entity)
+      }, status: :unprocessable_entity
     end
 
-    def render_not_found_response
-      head :not_found
-    end
-    
-    def render_error_response(exception)
-      # Honeybadger.notify(exception)
-      render json: { message: exception.message, code: exception.code }, status: exception.http_status
-    end
   end
 end
