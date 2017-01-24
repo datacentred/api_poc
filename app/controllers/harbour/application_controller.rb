@@ -7,6 +7,16 @@ module Harbour
 
     protected
 
+    before_action :restrict_content_type
+
+    def restrict_content_type
+      if['POST', 'PUT'].include?(request.method)
+        unless request.content_type == 'application/json'
+          render json: {error:  'Content-Type must be application/json'}, status: 406
+        end
+      end
+    end
+
     def respond_with(content, args={})
       params = {json: content, content_type: Mime::Type.lookup_by_extension(:dc_json).to_s}
       render params.merge(args)
