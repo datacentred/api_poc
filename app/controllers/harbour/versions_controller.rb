@@ -2,6 +2,8 @@ require_dependency "harbour/application_controller"
 
 module Harbour
   class VersionsController < ApplicationController
+    include VersionsDoc
+
     def index
       respond_with(
         {
