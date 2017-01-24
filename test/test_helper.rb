@@ -26,6 +26,7 @@ end
 
 module Harbour
   class ApiTest < ActionDispatch::IntegrationTest
+
     def response_body
       JSON.parse(response.body)
     end
@@ -35,11 +36,13 @@ module Harbour
     end
 
     def api_params
-      {format: :dc_json}
+      {format: :json}
     end
 
     def authorized_headers
-      {authorization: "Token token=\"bill:ilovejoanna\""}
+      {
+        authorization: "Token token=\"bill:ilovejoanna\""
+      }
     end
 
     def assert_resource_is_unauthorized(resource)
