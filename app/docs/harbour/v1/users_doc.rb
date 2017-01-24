@@ -24,9 +24,10 @@ module Harbour
       api :POST, '/users', 'Create user'
       description 'Create user with specifed user params'
       param_group :user
-      
+      error code: 201, desc: "Created"
+      error code: 422, desc: "Validation failed"
       example <<-EOS
-    #{curl_method('users', '1', {'X': 'POST', 'd': '{"user": {"email": "bill.s.preston@bogus.com", "first_name": "Bill S.", "last_name": "Preston Esq"}}'})}
+#{curl_method('users', '1', {'X': 'POST', 'd': '{"user": {"email": "bill.s.preston@bogus.com", "first_name": "Bill S.", "last_name": "Preston Esq"}}'})}
       EOS
       def create ; end
 

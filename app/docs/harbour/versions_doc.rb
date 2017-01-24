@@ -24,9 +24,11 @@ module Harbour
         * Currently supported but soon to be retired.
       <div class="bg-info"><strong>💡 Note:</strong> This resource does not require authentication.</div>
     EOS
+    error code: 200, desc: "Success"
     example <<-EOS
 # List all available API versions
-curl '#{Harbour::Engine.config.public_url}'
+$ #{curl_method('', '1')}
+
 {
   "versions": [
     {
