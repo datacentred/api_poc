@@ -17,36 +17,36 @@ module Harbour
       end
 
       test "projects index has two projects" do
-        get '/api/projects', authorized_headers_and_params
+        get '/api/projects', headers: authorized_headers
         assert_response :success
         assert_equal 2, response_body['projects'].count
       end
 
       test "projects index projects belong to org1" do
-        get '/api/projects', authorized_headers_and_params
+        get '/api/projects', headers: authorized_headers
         names = response_body['projects'].map{|u| u['name']}
         assert names.include? "bogus"
         assert names.include? "excellent"
       end
 
       test "index project matches format" do
-        get '/api/projects', authorized_headers_and_params
+        get '/api/projects', headers: authorized_headers
         user = response_body['projects'][1]
         assert_format_matches project_format, user
       end
 
       test "can find project 1" do
-        get '/api/projects/1', authorized_headers_and_params
+        get '/api/projects/1', headers: authorized_headers
         assert_response :success
       end
 
       test "can't find project 3" do
-        get '/api/projects/3', authorized_headers_and_params
+        get '/api/projects/3', headers: authorized_headers
         assert_response :not_found
       end
 
       test "project 1 matches format" do
-        get '/api/projects/1', authorized_headers_and_params  
+        get '/api/projects/1', headers: authorized_headers  
         assert_format_matches project_format, response_body['project']
       end
 

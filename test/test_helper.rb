@@ -31,36 +31,39 @@ module Harbour
       JSON.parse(response.body)
     end
 
-    def authorized_headers_and_params
-      {params: api_params, headers: authorized_headers}
-    end
-
-    def api_params
-      {format: :json}
-    end
-
     def authorized_headers
+      valid_headers.dup.merge 'Authorization' => "Token token=\"bill:ilovejoanna\""
+    end
+
+    def valid_headers
       {
-        authorization: "Token token=\"bill:ilovejoanna\""
+        'Accept'        => Mime::Type.lookup_by_extension(:dc_json).to_s,
+        'Content-Type'  => Mime[:json].to_s
       }
     end
 
     def assert_resource_is_unauthorized(resource)
       statuses = []
       
-      get "/api/#{resource}"
+      get "/api/#{resource}", headers: valid_headers
       statuses << response.status
 
-      get "/api/#{resource}/1"
+      get "/api/#{resource}/1", headers: valid_headers
       statuses << response.status
 
-      post "/api/#{resource}"
+      post "/api/#{resource}", headers: valid_headers
       statuses << response.status
 
-      put "/api/#{resource}/1", params: {"foo": {"bar": "baz"}}
+      put "/api/#{resource}/1", params: {"foo": {"bar": "baz"}}.to_json, headers: valid_headers
       statuses << response.status
 
-      delete "/api/#{resource}/1"
+      delete "/api/#{resource}/1", headers: valid_headers
+      statuses << response.status
+
+      head "/api/#{resource}", headers: valid_headers
+      statuses << response.status
+
+      head "/api/#{resource}/1", headers: valid_headers
       statuses << response.status
 
       assert statuses.all?{|s| s == 401 }
