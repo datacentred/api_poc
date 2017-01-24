@@ -6,12 +6,21 @@ module Harbour
 
     before_action :set_api_version_header, :current_user
 
-    def current_user
-      authenticate_or_request_with_http_token do |token, _|
+    def authenticate_token
+      authenticate_with_http_token do |token, _|
         access, secret = token.split(':')
         api_credential = ApiCredential.find_by_access_key(access)
         api_credential&.authenticate(secret) ? api_credential.user : false
       end
+    end
+
+    def current_user
+      authenticate_token || render_unauthorized
+    end
+
+    def render_unauthorized
+      self.headers['WWW-Authenticate'] = 'Token realm="DataCentred"'
+      render json: {error: "Token authentication failed"}, status: 401
     end
 
     def current_organization
