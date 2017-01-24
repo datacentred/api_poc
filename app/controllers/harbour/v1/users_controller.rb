@@ -7,7 +7,7 @@ module Harbour
 
       def create
         user = current_organization.users.create!(create_params)
-        set_project_memberships(user.id, create_params[:projects]) if create_params[:projects]&.any?
+        #set_project_memberships(user.id, create_params[:projects]) if create_params[:projects]&.any?
         respond_with({user: Harbour::V1::UserDecorator.new(user.reload).as_json},
                      status: :created)
       end
