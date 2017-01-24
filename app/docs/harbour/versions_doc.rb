@@ -9,6 +9,7 @@ module Harbour
 
     resource_description do
       resource_id 'Versions'
+      api_versions *Harbour::Engine.config.api_versions.map(&:downcase)
     end
 
     api :GET, '', 'List all available API versions'
@@ -21,11 +22,10 @@ module Harbour
         *  A supported older version.
       * `DEPRECATED`
         * Currently supported but soon to be retired.
-
-      ## Note
-      This resource does not require authentication.
+      <div class="bg-info"><strong>💡 Note:</strong> This resource does not require authentication.</div>
     EOS
     example <<-EOS
+# List all available API versions
 curl '#{Harbour::Engine.config.public_url}'
 {
   "versions": [

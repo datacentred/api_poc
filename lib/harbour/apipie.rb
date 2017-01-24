@@ -29,15 +29,20 @@ Use the `Authorization` header to supply your access key and secret key:
 
 <pre class="prettyprint">
 curl '#{Harbour::Engine.config.public_url}/users' \\
--H 'Authorization: Token ACCESS_KEY:SECRET_KEY'</pre>
+-H 'Authorization: Token token=<strong>"access_key:secret_key"</strong>'
+{"users":[{"uuid":"55a927f50f...}]}</pre>
+
+<div class="bg-info"><strong>💡 Note:</strong> Your token should be your access key and your secret key separated by a colon.</div>
 
 ## 📌 API Versioning
 
 Target specific versions and formats by using the `Accept` header:
 
 <pre class="prettyprint">
-curl '#{Harbour::Engine.config.public_url}' \\
--H 'Accept: application/vnd.datacentred.api+json; version=1'</pre>
+curl '#{Harbour::Engine.config.public_url}/projects' \\
+-H 'Authorization: Token token="access_key:secret_key"' \\
+-H 'Accept: application/vnd.datacentred.api+json; <strong>version=1</strong>'
+{"projects":[{"uuid":"55a927f50f...}]}</pre>
     EOS
   end
 
