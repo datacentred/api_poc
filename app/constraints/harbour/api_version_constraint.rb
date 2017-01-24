@@ -19,7 +19,7 @@ module Harbour
     end
 
     def default_version?(request)
-      Rails.configuration.latest_api_version == version
+      Harbour::Engine.config.latest_api_version == version
     end
   end
 end
