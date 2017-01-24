@@ -5,7 +5,7 @@ end
 Harbour::Engine.routes.draw do
 
   root :to => redirect('/api/docs'), constraints: lambda { |req| req.format == :html } 
-  root :to => "versions#index",  constraints: lambda { |req| req.format == :dc_json } 
+  root :to => "versions#index",      constraints: lambda { |req| req.format != :html } 
   
   Harbour::Engine.config.api_versions.each do |version|
     scope module: version.downcase, constraints: Harbour::ApiVersionConstraint.new(version: version) do
