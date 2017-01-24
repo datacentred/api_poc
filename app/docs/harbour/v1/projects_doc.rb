@@ -4,7 +4,7 @@ module Harbour
       extend CurlHelper
 
       def self.superclass
-        V1::ProjectsController
+        Harbour::V1::ProjectsController
       end
       extend Apipie::DSL::Concern
 
