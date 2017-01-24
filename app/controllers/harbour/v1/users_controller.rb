@@ -8,12 +8,12 @@ module Harbour
       def create
         user = current_organization.users.create!(create_params)
         #set_project_memberships(user.id, create_params[:projects]) if create_params[:projects]&.any?
-        respond_with({user: Harbour::V1::UserDecorator.new(user.reload).as_json},
+        respond_with({user: user.reload},
                      status: :created)
       end
 
       def index
-        respond_with users: decorated_users
+        respond_with users: scoped_users
       end
 
       def update
@@ -46,14 +46,7 @@ module Harbour
       private
 
       def user
-        user = scoped_users.find_by(uuid: params[:id])
-        Harbour::V1::UserDecorator.new(user) if user
-      end
-
-      def decorated_users
-        scoped_users.map do |u|
-          Harbour::V1::UserDecorator.new(u).as_json
-        end
+        @user ||= scoped_users.find_by(uuid: params[:id])
       end
 
       def create_params
