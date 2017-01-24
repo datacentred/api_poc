@@ -1,6 +1,7 @@
 api:
   resources:
     user: user
+    project: project
   fields:
     user:
       email: email
