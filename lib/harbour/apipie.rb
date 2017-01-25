@@ -30,7 +30,24 @@ Use the `Authorization` header to supply your access key and secret key:
 <pre class="prettyprint">
 curl '#{Harbour::Engine.config.public_url}/users' \\
 -H 'Authorization: Token token=<strong>"access_key:secret_key"</strong>'
-{"users":[{"uuid":"55a927f50f...}]}</pre>
+{
+  "users":[
+    {
+      "uuid": "4fd35cf93ff94a76ab206b11ae3d21e0",
+      "email": "bill.s.preston@bogus.com",
+      "first_name": "Bill S.",
+      "last_name": "Preston",
+      "links":[
+        {
+          "href": "http://localhost:3000/api/users/4fd35cf93ff94a76ab206b11ae3d21e0",
+          "rel": "self"
+        }
+      ],
+      "projects":[]
+    }
+  ]
+}
+</pre>
 
 <div class="bg-info"><strong>💡 Note:</strong> Your token should be your access key and your secret key separated by a colon.</div>
 
@@ -42,7 +59,22 @@ Target specific versions and formats by using the `Accept` header:
 curl '#{Harbour::Engine.config.public_url}/projects' \\
 -H 'Authorization: Token token="access_key:secret_key"' \\
 -H 'Accept: application/vnd.datacentred.api+json; <strong>version=1</strong>'
-{"projects":[{"uuid":"55a927f50f...}]}</pre>
+{
+  "projects":[
+    {
+      "uuid": "24c1de959cb943e0bf11e5ca6c8f8ad8",
+      "name": "wyld_stalyns",
+      "links":[
+        {
+          "href": "http://localhost:3000/api/projects/24c1de959cb943e0bf11e5ca6c8f8ad8",
+          "rel": "self"
+        }
+      ],
+      "users":[]
+    }
+  ]
+}
+</pre>
     EOS
   end
 
