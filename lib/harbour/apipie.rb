@@ -88,5 +88,6 @@ curl '#{Harbour::Engine.config.public_url}/projects' \\
     config.markup                  = Apipie::Markup::Markdown.new
     config.validate                = false
     config.app_info                = Harbour::app_info
+    config.link_extension          = ''
   end
 end
