@@ -80,17 +80,25 @@ module Harbour
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
         post '/api/users', params: params.to_json, headers: authorized_headers
         uuid = response_body['user']['uuid']
-        params = {id: uuid, user: {first_name: 'Grim'}}
+        params = {user: {first_name: 'Grim'}}
         put "/api/users/#{uuid}", params: params.to_json, headers: authorized_headers
         assert_response :ok
         assert_equal 'Grim', response_body['user']['first_name']
+      end
+
+      test "update unknown user fails" do
+        params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
+        post '/api/users', params: params.to_json, headers: authorized_headers
+        params = {user: {first_name: 'Grim'}}
+        put "/api/users/unknown", params: params.to_json, headers: authorized_headers
+        assert_response :not_found
       end
 
       test "update user fails with invalid params" do
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
         post '/api/users', params: params.to_json, headers: authorized_headers
         uuid = response_body['user']['uuid']
-        params = {id: uuid, user: {password: 'tiny'}}
+        params = {user: {password: 'tiny'}}
         put "/api/users/#{uuid}", params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
       end
@@ -103,7 +111,7 @@ module Harbour
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
         post '/api/users', params: params.to_json, headers: authorized_headers
         uuid = response_body['user']['uuid']
-        params = {id: uuid, user: {password: 'station'}}
+        params = {user: {password: 'station'}}
         put "/api/users/#{uuid}", params: params.to_json, headers: authorized_headers
         assert_response :ok
       end

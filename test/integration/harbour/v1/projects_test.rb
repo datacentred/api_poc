@@ -94,6 +94,14 @@ module Harbour
         assert_equal "name",    response_body['errors'][0]["field"]
       end
 
+      test "update unknown project fails" do
+        params = {project: {name: 'wild_stalyns_rock'}}
+        post '/api/projects', params: params.to_json, headers: authorized_headers
+        params = {project: {name: 'wild_stalyns'}}
+        put "/api/projects/unknown", params: params.to_json, headers: authorized_headers
+        assert_response :not_found
+      end
+
       test "update project with user memberships" do
         skip
       end
@@ -113,6 +121,7 @@ module Harbour
 
       test "delete project fails with suitable error if project can't be removed" do
         # e.g. if it's the primary project
+        skip
       end
     end
   end

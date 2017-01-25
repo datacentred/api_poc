@@ -22,24 +22,16 @@ module Harbour
       end
 
       def show
-        if user
-          respond_with user: user
-        else
-          head :not_found
-        end
+        respond_with user: user
       end
 
       def destroy
-        if user
-          if user.id == current_user.id
-            respond_with({message: "You can't delete yourself."},
-                         status: :unprocessable_entity)
-          else
-            user.destroy
-            head :no_content
-          end
+        if user.id == current_user.id
+          respond_with({message: "You can't delete yourself."},
+                       status: :unprocessable_entity)
         else
-          head :not_found
+          user.destroy
+          head :no_content
         end
       end
 
@@ -47,7 +39,8 @@ module Harbour
 
       def user
         user = scoped_users.find_by(uuid: params[:id])
-        Harbour::V1::UserDecorator.new(user) if user
+        raise ActionController::RoutingError.new('Not Found') unless user
+        Harbour::V1::UserDecorator.new(user)
       end
 
       def decorated_users

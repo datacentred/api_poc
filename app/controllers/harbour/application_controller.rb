@@ -31,5 +31,11 @@ module Harbour
       }, status: :unprocessable_entity
     end
 
+    rescue_from ActionController::RoutingError, with: :render_not_found
+
+    def render_not_found
+      head :not_found
+    end
+
   end
 end

@@ -22,26 +22,19 @@ module Harbour
       end
 
       def show
-        if project
-          respond_with project: project
-        else
-          head :not_found
-        end
+        respond_with project: project
       end
 
       def destroy
-        if project
-          head :no_content if project.destroy
-        else
-          head :not_found
-        end
+        head :no_content if project.destroy
       end
 
       private
 
       def project
         project = scoped_projects.find_by(uuid: params[:id])
-        Harbour::V1::ProjectDecorator.new(project) if project
+        raise ActionController::RoutingError.new('Not Found') unless project
+        Harbour::V1::ProjectDecorator.new(project)
       end
 
       def decorated_projects
