@@ -5,7 +5,7 @@ module Harbour
     require 'responders'
 
     def public_url
-      case Rails.env.development?
+      case Rails.env
       when 'production'
         "https://my.datacentred.io/api"
       when 'staging'
