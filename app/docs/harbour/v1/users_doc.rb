@@ -28,7 +28,7 @@ module Harbour
       error code: 201, desc: "Created successfully."
       error code: 422, desc: "Failed validation. Details of failure returned in body."
       example <<-EOS
-# Createw new user
+# Create new user
 #{curl_method('users', '1', {'X': 'POST', 'd': '{"user": {"email": "bill.s.preston@bogus.com", "first_name": "Bill S.", "last_name": "Preston Esq", "password": "ilovejoanna"}}'})}
 # =>
 {

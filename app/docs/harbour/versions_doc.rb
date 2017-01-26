@@ -27,8 +27,7 @@ module Harbour
     error code: 200, desc: "Success"
     example <<-EOS
 # List all available API versions
-$ #{curl_method('', '1')}
-
+curl -s '#{Harbour::Engine.config.public_url}' -H 'Content-Type: application/json'
 {
   "versions": [
     {

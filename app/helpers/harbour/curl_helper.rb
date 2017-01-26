@@ -5,7 +5,7 @@ module Harbour
                              "Authorization: Token token=\"ACCESS_KEY:SECRET_KEY\"",
                              "Content-Type: application/json"
                             ]})
-      "curl '#{Harbour::Engine.config.public_url}/#{path}' \\\n#{to_args(params)}"
+      "curl -s '#{Harbour::Engine.config.public_url}/#{path}' \\\n#{to_args(params)}"
     end
 
     private
