@@ -10,7 +10,7 @@ module Harbour
       authenticate_with_http_token do |token, _|
         access, secret = token.split(':')
         api_credential = ApiCredential.find_by_access_key(access)
-        api_credential&.authenticate(secret) ? api_credential.user : false
+        api_credential&.authenticate_and_authorize(secret) ? api_credential.user : false
       end
     end
 
@@ -20,7 +20,7 @@ module Harbour
 
     def render_unauthorized
       self.headers['WWW-Authenticate'] = 'Token realm="DataCentred"'
-      render json: {error: "Token authentication failed"}, status: 401
+      render json: {error: "Token authentication failed. Invalid credentials or API access is not authorized."}, status: 401
     end
 
     def current_organization
