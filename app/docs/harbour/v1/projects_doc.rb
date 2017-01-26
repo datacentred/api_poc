@@ -84,8 +84,8 @@ EOS
       EOS
       def index ; end
 
-      api :GET, '/projects/:uuid', 'Show project'
-      description 'Show specified project'
+      api :GET, '/projects/:uuid', 'Show a project'
+      description 'Show the specified project'
       param :uuid, String, desc: 'The unique identifier for this project', required: true
       error 200, "Success"
       error 404, "Project couldn't be found"
@@ -110,7 +110,7 @@ EOS
       def show ; end
 
       api :PUT, '/projects/:uuid', 'Update a project'
-      description 'Update specified project'
+      description 'Update the specified project'
       param :uuid, String, desc: 'The unique identifier for this project', required: true
       param_group :project, as: :name
       error 200, "Updated project successfully"
@@ -136,7 +136,7 @@ EOS
       EOS
       def update ; end
 
-      api :DELETE, '/projects/:uuid', 'Delete project'
+      api :DELETE, '/projects/:uuid', 'Delete a project'
       description 'Permanently remove the specified project.'
       param :uuid, String, desc: 'The unique identifier for this project', required: true
       error 204, "Removed project successfully"

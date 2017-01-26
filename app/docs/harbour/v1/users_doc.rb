@@ -75,8 +75,8 @@ module Harbour
       EOS
       def index ; end
 
-      api :GET, '/users/:uuid', 'Show user'
-      description 'Show specified user'
+      api :GET, '/users/:uuid', 'Show a user'
+      description 'Show the specified user'
       param :uuid, String, desc: 'The unique identifier for this user', required: true
       error 200, "Success"
       error 404, "User couldn't be found"
@@ -103,7 +103,7 @@ module Harbour
       def show ; end
 
       api :PUT, '/users/:uuid', 'Update a user'
-      description 'Update specified user'
+      description 'Update the specified user'
       param :uuid, String, desc: 'The unique identifier for this user', required: true
       param_group :user, as: :update
       error 200, "Updated user successfully"
@@ -131,7 +131,7 @@ module Harbour
       EOS
       def update ; end
 
-      api :DELETE, '/users/:uuid', 'Delete user'
+      api :DELETE, '/users/:uuid', 'Delete a user'
       description 'Permanently remove the specified user.'
       param :uuid, String, desc: 'The unique identifier for this user', required: true
       error 204, "Removed project successfully"
