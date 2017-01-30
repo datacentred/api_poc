@@ -1,5 +1,6 @@
 require "apipie-rails"
 require "maruku"
+require "json-schema"
 
 require "harbour/engine"
 require "harbour/apipie"

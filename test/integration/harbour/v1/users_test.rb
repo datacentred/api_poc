@@ -3,17 +3,6 @@ require 'test_helper'
 module Harbour
   module V1
     class UsersTest < ApiTest
-      def user_format
-        {
-          "uuid"       => String,
-          "email"      => String,
-          "first_name" => String,
-          "last_name"  => String,
-          "links"      => Array,
-          "projects"   => Array
-        }
-      end
-
       test "api user must be authorized to access users" do
         assert_resource_is_unauthorized "users"
       end
@@ -35,7 +24,8 @@ module Harbour
       test "index user matches format" do
         get '/api/users', headers: authorized_headers
         user = response_body['users'][1]
-        assert_format_matches user_format, user
+
+        JSON::Validator.validate!(schema(1, "user"), user)
       end
 
       test "can find user 1" do
@@ -56,7 +46,8 @@ module Harbour
         get '/api/users',   headers: authorized_headers
         uuid = response_body['users'][0]['uuid']
         get "/api/users/#{uuid}", headers: authorized_headers  
-        assert_format_matches user_format, response_body['user']
+        user = response_body['user']
+        JSON::Validator.validate!(schema(1, "user"), user)
       end
 
       test "create user succeeds with valid params" do

@@ -3,15 +3,6 @@ require 'test_helper'
 module Harbour
   module V1
     class ProjectsTest < ApiTest
-      def project_format
-        {
-          "uuid"       => String,
-          "name"       => String,
-          "links"      => Array,
-          "users"      => Array
-        }
-      end
-
       test "api user must be authorized to access projects" do
         assert_resource_is_unauthorized "projects"
       end
@@ -32,8 +23,8 @@ module Harbour
 
       test "index project matches format" do
         get '/api/projects', headers: authorized_headers
-        user = response_body['projects'][1]
-        assert_format_matches project_format, user
+        project = response_body['projects'][1]
+        JSON::Validator.validate!(schema(1, "project"), project)
       end
 
       test "can find project 1" do
@@ -54,7 +45,8 @@ module Harbour
         get '/api/projects', headers: authorized_headers
         uuid = response_body['projects'][1]['uuid']
         get "/api/projects/#{uuid}", headers: authorized_headers 
-        assert_format_matches project_format, response_body['project']
+        project = response_body['project']
+        JSON::Validator.validate!(schema(1, "project"), project)
       end
 
       test "create project succeeds with valid params" do
