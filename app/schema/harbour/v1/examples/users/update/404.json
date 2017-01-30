@@ -1,0 +1,12 @@
+{
+  "verb": "PUT",
+  "path": "/api/users/unknown",
+  "request_data": {
+    "user": {
+      "first_name": "Grim"
+    }
+  },
+  "response_data": null,
+  "head": 404,
+  "api_version": 1
+}

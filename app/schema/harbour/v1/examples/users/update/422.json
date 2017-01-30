@@ -1,0 +1,20 @@
+{
+  "verb": "PUT",
+  "path": "/api/users/27d17a2fda2691c2460d70aae99cb927",
+  "request_data": {
+    "user": {
+      "password": "tiny"
+    }
+  },
+  "response_data": {
+    "errors": [
+      {
+        "resource": "user",
+        "field": "password",
+        "detail": "User password too short."
+      }
+    ]
+  },
+  "head": 422,
+  "api_version": 1
+}

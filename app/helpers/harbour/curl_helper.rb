@@ -1,11 +1,15 @@
 module Harbour
   module CurlHelper
-    def curl_method(path, version, params={})
-      params.merge!({'H' => ["Accept: #{Mime::Type.lookup_by_extension(:dc_json)}; version=#{version}",
+    def curl_method(example)
+      headers = {'H' => ["Accept: #{Mime::Type.lookup_by_extension(:dc_json)}; version=#{example['api_version']}",
                              "Authorization: Token token=\"ACCESS_KEY:SECRET_KEY\"",
                              "Content-Type: application/json"
-                            ]})
-      "curl -s '#{Harbour::Engine.config.public_url}/#{path}' \\\n#{to_args(params)}"
+                            ],
+                  'X' => example['verb'],
+                }
+      command = "curl -s '#{Harbour::Engine.config.public_url}#{example['path']}' \\\n#{to_args(headers)}"
+      command = "#{command} \\\n-d #{JSON.generate(example['request_data']) rescue '{}'}" if example['request_data']
+      "#{command}\n# => \nStatus: #{example['head']}\nBody: #{JSON.pretty_generate(example['response_data']) rescue 'null'}"
     end
 
     private

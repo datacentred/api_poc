@@ -1,0 +1,10 @@
+{
+  "verb": "DELETE",
+  "path": "/api/users/1",
+  "request_data": null,
+  "response_data": {
+    "message": "You can't delete yourself."
+  },
+  "head": 422,
+  "api_version": 1
+}

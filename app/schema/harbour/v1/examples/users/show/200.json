@@ -1,0 +1,33 @@
+{
+  "verb": "GET",
+  "path": "/api/users/1",
+  "request_data": null,
+  "response_data": {
+    "user": {
+      "uuid": "1",
+      "email": "bill.s.preston@bodacious.com",
+      "first_name": "Bill S.",
+      "last_name": "Preston",
+      "links": [
+        {
+          "href": "https://my.datacentred.io/api/users/1",
+          "rel": "self"
+        }
+      ],
+      "projects": [
+        {
+          "uuid": "1",
+          "name": "bogus",
+          "links": [
+            {
+              "href": "https://my.datacentred.io/api/projects/1",
+              "rel": "self"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "head": 200,
+  "api_version": 1
+}

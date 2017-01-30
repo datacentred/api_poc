@@ -24,64 +24,11 @@ module Harbour
       param_group :project, as: :create
       error 201, "Created successfully."
       error 422, "Failed validation. Details of failure returned in body."
-      
-      example <<-EOS
-# Create new project
-#{curl_method('projects', '1', {'X': 'POST', 'd': '{"project": {"name": "wyld_stalyns"}}'})}
-# =>
-{
-  "project":{
-    "uuid":"24c1de959cb943e0bf11e5ca6c8f8ad8",
-    "name":"wyld_stalyns",
-    "links":[
-      {
-        "href":"#{Harbour::Engine.config.public_url}/projects/24c1de959cb943e0bf11e5ca6c8f8ad8",
-        "rel":"self"
-      }
-    ],
-    "users":[]
-  }
-}
-EOS
-example <<-EOS
-# Create new project when name is already taken
-#{curl_method('projects', '1', {'X': 'POST', 'd': '{"project": {"name": "already_taken"}}'})}
-# =>
-{
-  "errors":[
-    {
-      "resource": "project",
-      "field": "name",
-      "detail": "Project name is already in use."
-    }
-  ]
-}
-EOS
       def create ; end
 
       api :GET, '/projects', 'List all available projects'
       description "Show a list of all the projects."
       error 200, "Success"
-      example <<-EOS
-# List all available projects
-#{curl_method('projects','1')}
-# =>
-{
-  "projects":[
-    {
-      "uuid": "24c1de959cb943e0bf11e5ca6c8f8ad8",
-      "name": "wyld_stalyns",
-      "links":[
-        {
-          "href": "http://localhost:3000/api/projects/24c1de959cb943e0bf11e5ca6c8f8ad8",
-          "rel": "self"
-        }
-      ],
-      "users":[]
-    }
-  ]
-}
-      EOS
       def index ; end
 
       api :GET, '/projects/:uuid', 'Show a project'
@@ -89,24 +36,6 @@ EOS
       param :uuid, String, desc: 'The unique identifier for this project', required: true
       error 200, "Success"
       error 404, "Project couldn't be found"
-      example <<-EOS
-# Show specified project
-#{curl_method('projects/24c1de959cb943e0bf11e5ca6c8f8ad8', '1')}
-# =>
-{
-  "project":{
-    "uuid": "24c1de959cb943e0bf11e5ca6c8f8ad8",
-    "name": "wyld_stalyns",
-    "links":[
-      {
-        "href": "http://localhost:3000/api/projects/24c1de959cb943e0bf11e5ca6c8f8ad8",
-        "rel": "self"
-      }
-    ],
-    "users":[]
-  }
-}
-      EOS
       def show ; end
 
       api :PUT, '/projects/:uuid', 'Update a project'
@@ -116,24 +45,6 @@ EOS
       error 200, "Updated project successfully"
       error 404, "Project couldn't be found"
       error 422, "Failed validation. Details of failure returned in body."
-      example <<-EOS
-# Rename project
-#{curl_method('projects/24c1de959cb943e0bf11e5ca6c8f8ad8', '1', {'X': 'PUT', 'd': '{"project": {"name": "wyld_stalyns_rock"}}'})}
-# =>
-{
-  "project":{
-    "uuid": "24c1de959cb943e0bf11e5ca6c8f8ad8",
-    "name": "wyld_stalyns_rock",
-    "links":[
-      {
-        "href": "http://localhost:3000/api/projects/24c1de959cb943e0bf11e5ca6c8f8ad8",
-        "rel": "self"
-      }
-    ],
-    "users":[]
-  }
-}
-      EOS
       def update ; end
 
       api :DELETE, '/projects/:uuid', 'Delete a project'
@@ -142,12 +53,6 @@ EOS
       error 204, "Removed project successfully"
       error 404, "Project UUID couldn't be found"
       error 422, "Couldn't delete project. Details of failure returned in body."
-      example <<-EOS
-# Delete project
-#{curl_method('projects/24c1de959cb943e0bf11e5ca6c8f8ad8', '1', {'X': 'DELETE', 'I': nil})}
-# =>
-HTTP/1.1 204 No Content
-      EOS
       def destroy ; end
     end
   end

@@ -1,0 +1,8 @@
+{
+  "verb": "DELETE",
+  "path": "/api/projects/notarealproject",
+  "request_data": null,
+  "response_data": null,
+  "head": 404,
+  "api_version": 1
+}

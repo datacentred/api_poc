@@ -1,0 +1,20 @@
+{
+  "verb": "POST",
+  "path": "/api/projects",
+  "request_data": {
+    "project": {
+      "name": "wild_stalyns"
+    }
+  },
+  "response_data": {
+    "errors": [
+      {
+        "resource": "project",
+        "field": "name",
+        "detail": "Project name is already in use."
+      }
+    ]
+  },
+  "head": 422,
+  "api_version": 1
+}

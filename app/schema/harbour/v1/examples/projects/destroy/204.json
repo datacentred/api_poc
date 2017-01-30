@@ -1,0 +1,8 @@
+{
+  "verb": "DELETE",
+  "path": "/api/projects/031b31fc7fda1ea402a42d3f6f93d9f4",
+  "request_data": null,
+  "response_data": null,
+  "head": 204,
+  "api_version": 1
+}

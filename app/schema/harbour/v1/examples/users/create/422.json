@@ -1,0 +1,25 @@
+{
+  "verb": "POST",
+  "path": "/api/users",
+  "request_data": {
+    "user": {
+      "email": "death@afterlife.com"
+    }
+  },
+  "response_data": {
+    "errors": [
+      {
+        "resource": "user",
+        "field": "password",
+        "detail": "User password can't be blank."
+      },
+      {
+        "resource": "user",
+        "field": "password",
+        "detail": "User password can't be blank."
+      }
+    ]
+  },
+  "head": 422,
+  "api_version": 1
+}

@@ -1,0 +1,26 @@
+{
+  "verb": "PUT",
+  "path": "/api/projects/502539e1a7d5c8bbd111ab7595204884",
+  "request_data": {
+    "project": {
+      "name": "wild_stalyns_rock"
+    }
+  },
+  "response_data": {
+    "project": {
+      "uuid": "502539e1a7d5c8bbd111ab7595204884",
+      "name": "wild_stalyns_rock",
+      "links": [
+        {
+          "href": "https://my.datacentred.io/api/projects/502539e1a7d5c8bbd111ab7595204884",
+          "rel": "self"
+        }
+      ],
+      "users": [
+
+      ]
+    }
+  },
+  "head": 200,
+  "api_version": 1
+}

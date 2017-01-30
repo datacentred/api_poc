@@ -1,0 +1,12 @@
+{
+  "verb": "PUT",
+  "path": "/api/projects/unknown",
+  "request_data": {
+    "project": {
+      "name": "wild_stalyns"
+    }
+  },
+  "response_data": null,
+  "head": 404,
+  "api_version": 1
+}

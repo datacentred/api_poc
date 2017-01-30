@@ -1,0 +1,8 @@
+{
+  "verb": "DELETE",
+  "path": "/api/users/f0656fe413030668bf575d3dfd5605da",
+  "request_data": null,
+  "response_data": null,
+  "head": 204,
+  "api_version": 1
+}

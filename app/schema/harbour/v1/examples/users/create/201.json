@@ -1,0 +1,29 @@
+{
+  "verb": "POST",
+  "path": "/api/users",
+  "request_data": {
+    "user": {
+      "email": "death@afterlife.com",
+      "password": "melvin"
+    }
+  },
+  "response_data": {
+    "user": {
+      "uuid": "db1be9c301470c164c0f7573b0e2d9a7",
+      "email": "death@afterlife.com",
+      "first_name": null,
+      "last_name": null,
+      "links": [
+        {
+          "href": "https://my.datacentred.io/api/users/db1be9c301470c164c0f7573b0e2d9a7",
+          "rel": "self"
+        }
+      ],
+      "projects": [
+
+      ]
+    }
+  },
+  "head": 201,
+  "api_version": 1
+}

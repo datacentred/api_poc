@@ -1,0 +1,28 @@
+{
+  "verb": "PUT",
+  "path": "/api/users/016915071d1d26deb71680eab01f1817",
+  "request_data": {
+    "user": {
+      "first_name": "Grim"
+    }
+  },
+  "response_data": {
+    "user": {
+      "uuid": "016915071d1d26deb71680eab01f1817",
+      "email": "death@afterlife.com",
+      "first_name": "Grim",
+      "last_name": null,
+      "links": [
+        {
+          "href": "https://my.datacentred.io/api/users/016915071d1d26deb71680eab01f1817",
+          "rel": "self"
+        }
+      ],
+      "projects": [
+
+      ]
+    }
+  },
+  "head": 200,
+  "api_version": 1
+}

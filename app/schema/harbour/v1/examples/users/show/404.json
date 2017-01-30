@@ -1,0 +1,8 @@
+{
+  "verb": "GET",
+  "path": "/api/users/2",
+  "request_data": null,
+  "response_data": null,
+  "head": 404,
+  "api_version": 1
+}

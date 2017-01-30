@@ -1,0 +1,26 @@
+{
+  "verb": "POST",
+  "path": "/api/projects",
+  "request_data": {
+    "project": {
+      "name": "wild_stalyns"
+    }
+  },
+  "response_data": {
+    "project": {
+      "uuid": "bfcebd72e78b72da74a63b6f9d9466d2",
+      "name": "wild_stalyns",
+      "links": [
+        {
+          "href": "https://my.datacentred.io/api/projects/bfcebd72e78b72da74a63b6f9d9466d2",
+          "rel": "self"
+        }
+      ],
+      "users": [
+
+      ]
+    }
+  },
+  "head": 201,
+  "api_version": 1
+}

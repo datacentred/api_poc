@@ -1,0 +1,20 @@
+{
+  "verb": "PUT",
+  "path": "/api/projects/87f17cdb27931a7b7baea26947b2a423",
+  "request_data": {
+    "project": {
+      "name": "wild_stalyns_rock"
+    }
+  },
+  "response_data": {
+    "errors": [
+      {
+        "resource": "project",
+        "field": "name",
+        "detail": "Project name is already in use."
+      }
+    ]
+  },
+  "head": 422,
+  "api_version": 1
+}

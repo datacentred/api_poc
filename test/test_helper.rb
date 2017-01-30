@@ -79,5 +79,26 @@ module Harbour
     def teardown
       DatabaseCleaner.clean
     end
+
+    def save_example
+      version   = Harbour.api_version(controller)
+      base_file_path = Harbour::Engine.root.join("app/schema/harbour/v#{version}/examples/#{controller.controller_name}/#{controller.action_name}/")
+      FileUtils.mkdir_p base_file_path
+      file_path = "#{base_file_path}/#{response.status}.json"
+      request_object = request.request_parameters
+      request_object = nil if request_object&.values&.first == {}
+      response_data = JSON.parse(response.body) rescue nil
+
+      output = {
+        "verb" => request.method,
+        "path" => request.path,
+        "request_data" => request_object,
+        "response_data" => response_data,
+        "head" => response.status,
+        "api_version" => version
+      }
+
+      File.write(file_path, JSON.pretty_generate(output))
+    end
   end
 end
