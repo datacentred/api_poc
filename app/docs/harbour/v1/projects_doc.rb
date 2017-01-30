@@ -24,11 +24,17 @@ module Harbour
       param_group :project, as: :create
       error 201, "Created successfully."
       error 422, "Failed validation. Details of failure returned in body."
+      Harbour.examples('1', 'projects', 'create').each do |ex|
+        example curl_method(ex)
+      end
       def create ; end
 
       api :GET, '/projects', 'List all available projects'
       description "Show a list of all the projects."
       error 200, "Success"
+      Harbour.examples('1', 'projects', 'index').each do |ex|
+        example curl_method(ex)
+      end
       def index ; end
 
       api :GET, '/projects/:uuid', 'Show a project'
@@ -36,6 +42,9 @@ module Harbour
       param :uuid, String, desc: 'The unique identifier for this project', required: true
       error 200, "Success"
       error 404, "Project couldn't be found"
+      Harbour.examples('1', 'projects', 'show').each do |ex|
+        example curl_method(ex)
+      end
       def show ; end
 
       api :PUT, '/projects/:uuid', 'Update a project'
@@ -45,6 +54,9 @@ module Harbour
       error 200, "Updated project successfully"
       error 404, "Project couldn't be found"
       error 422, "Failed validation. Details of failure returned in body."
+      Harbour.examples('1', 'projects', 'update').each do |ex|
+        example curl_method(ex)
+      end
       def update ; end
 
       api :DELETE, '/projects/:uuid', 'Delete a project'
@@ -53,6 +65,9 @@ module Harbour
       error 204, "Removed project successfully"
       error 404, "Project UUID couldn't be found"
       error 422, "Couldn't delete project. Details of failure returned in body."
+      Harbour.examples('1', 'projects', 'destroy').each do |ex|
+        example curl_method(ex)
+      end
       def destroy ; end
     end
   end
