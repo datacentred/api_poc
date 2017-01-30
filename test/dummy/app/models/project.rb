@@ -11,7 +11,7 @@ class Project < ApplicationRecord
 
   def generate_uuid
     if self.new_record? && valid?
-      self.uuid = SecureRandom.hex unless self.uuid
+      self.uuid = Digest::MD5.hexdigest(name) unless self.uuid
     end
   end
 end

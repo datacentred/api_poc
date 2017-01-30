@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   def generate_uuid
     if self.new_record? && valid?
-      self.uuid = SecureRandom.hex unless self.uuid
+      self.uuid = Digest::MD5.hexdigest(email) unless self.uuid
     end
   end
 

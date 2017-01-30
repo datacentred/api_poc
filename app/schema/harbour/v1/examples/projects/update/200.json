@@ -1,6 +1,6 @@
 {
   "verb": "PUT",
-  "path": "/api/projects/502539e1a7d5c8bbd111ab7595204884",
+  "path": "/api/projects/a6cefae377c4e7345a49b3ce41b6f0ad",
   "request_data": {
     "project": {
       "name": "wild_stalyns_rock"
@@ -8,11 +8,11 @@
   },
   "response_data": {
     "project": {
-      "uuid": "502539e1a7d5c8bbd111ab7595204884",
+      "uuid": "a6cefae377c4e7345a49b3ce41b6f0ad",
       "name": "wild_stalyns_rock",
       "links": [
         {
-          "href": "https://my.datacentred.io/api/projects/502539e1a7d5c8bbd111ab7595204884",
+          "href": "https://my.datacentred.io/api/projects/a6cefae377c4e7345a49b3ce41b6f0ad",
           "rel": "self"
         }
       ],

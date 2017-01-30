@@ -9,13 +9,13 @@
   },
   "response_data": {
     "user": {
-      "uuid": "db1be9c301470c164c0f7573b0e2d9a7",
+      "uuid": "6d5277716c4b10d2177814af50b77175",
       "email": "death@afterlife.com",
       "first_name": null,
       "last_name": null,
       "links": [
         {
-          "href": "https://my.datacentred.io/api/users/db1be9c301470c164c0f7573b0e2d9a7",
+          "href": "https://my.datacentred.io/api/users/6d5277716c4b10d2177814af50b77175",
           "rel": "self"
         }
       ],

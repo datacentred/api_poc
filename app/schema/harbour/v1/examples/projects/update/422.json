@@ -1,6 +1,6 @@
 {
   "verb": "PUT",
-  "path": "/api/projects/87f17cdb27931a7b7baea26947b2a423",
+  "path": "/api/projects/a6cefae377c4e7345a49b3ce41b6f0ad",
   "request_data": {
     "project": {
       "name": "wild_stalyns_rock"
