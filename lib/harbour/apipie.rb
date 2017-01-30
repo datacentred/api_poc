@@ -28,24 +28,11 @@ Your API access key and secret key can be obtained via [my.datacentred.io](https
 Use the `Authorization` header to supply your access key and secret key:
 
 <pre class="prettyprint">
-curl '#{Harbour::Engine.config.public_url}/users' \\
+curl -s '#{Harbour::Engine.config.public_url}/api/users' \\
 -H 'Authorization: Token token=<strong>"access_key:secret_key"</strong>'
+Status: 404
 {
-  "users":[
-    {
-      "uuid": "4fd35cf93ff94a76ab206b11ae3d21e0",
-      "email": "bill.s.preston@bogus.com",
-      "first_name": "Bill S.",
-      "last_name": "Preston",
-      "links":[
-        {
-          "href": "http://localhost:3000/api/users/4fd35cf93ff94a76ab206b11ae3d21e0",
-          "rel": "self"
-        }
-      ],
-      "projects":[]
-    }
-  ]
+  "error": "Token authentication failed. Invalid credentials or API access is not authorized."
 }
 </pre>
 
@@ -56,25 +43,14 @@ curl '#{Harbour::Engine.config.public_url}/users' \\
 Target specific versions and formats by using the `Accept` header:
 
 <pre class="prettyprint">
-curl '#{Harbour::Engine.config.public_url}/projects' \\
--H 'Authorization: Token token="access_key:secret_key"' \\
--H 'Accept: application/vnd.datacentred.api+json; <strong>version=1</strong>'
-{
-  "projects":[
-    {
-      "uuid": "24c1de959cb943e0bf11e5ca6c8f8ad8",
-      "name": "wyld_stalyns",
-      "links":[
-        {
-          "href": "http://localhost:3000/api/projects/24c1de959cb943e0bf11e5ca6c8f8ad8",
-          "rel": "self"
-        }
-      ],
-      "users":[]
-    }
-  ]
-}
+curl -I -s '#{Harbour::Engine.config.public_url}/api/projects' \\
+-H "Accept: application/vnd.datacentred.api+json; <strong>version=1</strong>" -H "Authorization: Token token="$DATACENTRED_ACCESS:$DATACENTRED_SECRET""
+HTTP/1.1 200 OK
+X-API-Version: 1
+Content-Type: application/vnd.datacentred.api+json; charset=utf-8
 </pre>
+
+You can discover information about API versions by visiting <a href="/api/docs/v1/versions/index">the versions index</a>.
     EOS
   end
 
