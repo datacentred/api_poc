@@ -7,11 +7,11 @@ module Harbour
     def public_url
       case Rails.env
       when 'development'
-        "http://localhost:3000/api"
+        "http://localhost:3000"
       when 'staging'
-        "https://staging-my.datacentred.io/api"
+        "https://staging-my.datacentred.io"
       else
-        "https://my.datacentred.io/api"
+        "https://my.datacentred.io"
       end
     end
 

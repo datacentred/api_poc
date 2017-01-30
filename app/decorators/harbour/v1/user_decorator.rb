@@ -7,7 +7,7 @@ module Harbour
           email:      model.email,
           first_name: model.first_name,
           last_name:  model.last_name,
-          links:      [{"href": "#{Harbour::Engine.config.public_url}/users/#{model.uuid}", "rel": "self"}]
+          links:      [{"href": "#{Harbour::Engine.config.public_url}/api/users/#{model.uuid}", "rel": "self"}]
         }.merge(
           (!options[:only] || options[:only].include?(:projects)) ? {projects: model.projects.map{|project| Harbour::V1::ProjectDecorator.new(project).as_json(only: [:uuid, :name]) }} : {}
         )
