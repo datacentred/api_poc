@@ -1,4 +1,5 @@
 {
+  "description": "Update a non-existent user",
   "verb": "PUT",
   "path": "/api/users/unknown",
   "request_data": {

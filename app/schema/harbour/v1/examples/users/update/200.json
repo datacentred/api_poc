@@ -1,4 +1,5 @@
 {
+  "description": "Update user 6d5277716c4b10d2177814af50b77175 with a new first name",
   "verb": "PUT",
   "path": "/api/users/6d5277716c4b10d2177814af50b77175",
   "request_data": {

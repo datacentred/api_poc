@@ -1,4 +1,5 @@
 {
+  "description": "Create a new project",
   "verb": "POST",
   "path": "/api/projects",
   "request_data": {

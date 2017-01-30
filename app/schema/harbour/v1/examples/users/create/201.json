@@ -1,4 +1,5 @@
 {
+  "description": "Create a new user with a password",
   "verb": "POST",
   "path": "/api/users",
   "request_data": {

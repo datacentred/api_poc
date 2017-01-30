@@ -1,4 +1,5 @@
 {
+  "description": "Delete a project",
   "verb": "DELETE",
   "path": "/api/projects/a6cefae377c4e7345a49b3ce41b6f0ad",
   "request_data": null,

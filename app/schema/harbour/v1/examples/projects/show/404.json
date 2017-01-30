@@ -1,6 +1,7 @@
 {
+  "description": "Can't find non-existent project",
   "verb": "GET",
-  "path": "/api/projects/3",
+  "path": "/api/projects/not_found",
   "request_data": null,
   "response_data": null,
   "head": 404,

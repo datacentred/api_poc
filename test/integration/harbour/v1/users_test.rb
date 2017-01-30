@@ -22,7 +22,7 @@ module Harbour
         get '/api/users', headers: authorized_headers
         assert_response :success
         assert_equal 2, response_body['users'].count
-        save_example
+        save_example "Get users index"
       end
 
       test "users index users belong to org1" do
@@ -43,13 +43,13 @@ module Harbour
         uuid = response_body['users'][0]['uuid']
         get "/api/users/#{uuid}", headers: authorized_headers
         assert_response :success
-        save_example
+        save_example "Show user #{uuid}"
       end
 
       test "can't find user 2" do
-        get '/api/users/2', headers: authorized_headers
+        get '/api/users/not_found', headers: authorized_headers
         assert_response :not_found
-        save_example
+        save_example "Can't find non-existent user"
       end
 
       test "user 1 matches format" do
@@ -64,7 +64,7 @@ module Harbour
         post '/api/users', params: params.to_json, headers: authorized_headers
         assert_response :created
         assert_operator response_body['user']['uuid'].length, :>, 0
-        save_example
+        save_example "Create a new user with a password"
       end
 
       test "create user fails with invalid params" do
@@ -74,7 +74,7 @@ module Harbour
         assert_operator response_body['errors'].length, :>, 0
         assert_equal "user",     response_body['errors'][0]["resource"]
         assert_equal "password", response_body['errors'][0]["field"]
-        save_example
+        save_example "Create a new user without a password"
       end
 
       test "create user with project memberships" do
@@ -82,7 +82,6 @@ module Harbour
         params = {user: {email: 'death@afterlife.com', password: 'melvin', projects: ['1','2']}}
         post '/api/users', params: params.to_json, headers: authorized_headers
         assert_response :created
-        p response_body
       end
 
       test "update user succeeds with valid params" do
@@ -93,7 +92,7 @@ module Harbour
         put "/api/users/#{uuid}", params: params.to_json, headers: authorized_headers
         assert_response :ok
         assert_equal 'Grim', response_body['user']['first_name']
-        save_example
+        save_example "Update user #{uuid} with a new first name"
       end
 
       test "update unknown user fails" do
@@ -102,7 +101,7 @@ module Harbour
         params = {user: {first_name: 'Grim'}}
         put "/api/users/unknown", params: params.to_json, headers: authorized_headers
         assert_response :not_found
-        save_example
+        save_example "Update a non-existent user"
       end
 
       test "update user fails with invalid params" do
@@ -112,7 +111,7 @@ module Harbour
         params = {user: {password: 'tiny'}}
         put "/api/users/#{uuid}", params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
-        save_example
+        save_example "Update a user with a password that's too short"
       end
 
       test "update user with project memberships" do
@@ -134,19 +133,19 @@ module Harbour
         uuid = response_body['user']['uuid']
         delete "/api/users/#{uuid}", headers: authorized_headers
         assert_response :no_content
-        save_example
+        save_example "Delete a user"
       end
 
       test "delete user fails if user can't be found" do
         delete "/api/users/notarealuser", headers: authorized_headers
         assert_response :not_found
-        save_example
+        save_example "Can't delete a non-existent user"
       end
 
       test "delete user fails with suitable error if user can't be removed" do
         delete "/api/users/#{current_user.uuid}", headers: authorized_headers
         assert_response :unprocessable_entity
-        save_example
+        save_example "User can't delete themselves"
       end
     end
   end

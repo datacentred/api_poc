@@ -1,4 +1,5 @@
 {
+  "description": "User can't delete themselves",
   "verb": "DELETE",
   "path": "/api/users/293c38b7ec52c355414c6e975cde882f",
   "request_data": null,

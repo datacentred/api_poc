@@ -7,7 +7,7 @@ module Harbour
                             ],
                   'X' => example['verb'],
                 }
-      command = "curl -s '#{Harbour::Engine.config.public_url}#{example['path']}' \\\n#{to_args(headers)}"
+      command = "# #{example['description']}\ncurl -s '#{Harbour::Engine.config.public_url}#{example['path']}' \\\n#{to_args(headers)}"
       command = "#{command} \\\n-d #{JSON.generate(example['request_data'], space: ' ') rescue '{}'}" if example['request_data']
       "#{command}\n# => \nStatus: #{example['head']}\nBody: #{JSON.pretty_generate(example['response_data']) rescue 'null'}"
     end

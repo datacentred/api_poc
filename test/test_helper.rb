@@ -84,7 +84,7 @@ module Harbour
       DatabaseCleaner.clean
     end
 
-    def save_example
+    def save_example(description)
       version   = Harbour.api_version(controller)
       base_file_path = Harbour::Engine.root.join("app/schema/harbour/v#{version}/examples/#{controller.controller_name}/#{controller.action_name}/")
       FileUtils.mkdir_p base_file_path
@@ -94,6 +94,7 @@ module Harbour
       response_data = JSON.parse(response.body) rescue nil
 
       output = {
+        "description" => description,
         "verb" => request.method,
         "path" => request.path,
         "request_data" => request_object,

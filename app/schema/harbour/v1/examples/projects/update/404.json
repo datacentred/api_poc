@@ -1,4 +1,5 @@
 {
+  "description": "Update a non-existent project",
   "verb": "PUT",
   "path": "/api/projects/unknown",
   "request_data": {

@@ -1,4 +1,5 @@
 {
+  "description": "Can't delete a non-existent project",
   "verb": "DELETE",
   "path": "/api/projects/notarealproject",
   "request_data": null,

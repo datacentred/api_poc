@@ -1,4 +1,5 @@
 {
+  "description": "Update project a6cefae377c4e7345a49b3ce41b6f0ad with a new name",
   "verb": "PUT",
   "path": "/api/projects/a6cefae377c4e7345a49b3ce41b6f0ad",
   "request_data": {

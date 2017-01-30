@@ -1,4 +1,5 @@
 {
+  "description": "Get users index",
   "verb": "GET",
   "path": "/api/users",
   "request_data": null,
