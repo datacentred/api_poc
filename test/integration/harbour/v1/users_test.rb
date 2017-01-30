@@ -39,7 +39,9 @@ module Harbour
       end
 
       test "can find user 1" do
-        get '/api/users/1', headers: authorized_headers
+        get '/api/users',   headers: authorized_headers
+        uuid = response_body['users'][0]['uuid']
+        get "/api/users/#{uuid}", headers: authorized_headers
         assert_response :success
         save_example
       end
@@ -51,7 +53,9 @@ module Harbour
       end
 
       test "user 1 matches format" do
-        get '/api/users/1', headers: authorized_headers  
+        get '/api/users',   headers: authorized_headers
+        uuid = response_body['users'][0]['uuid']
+        get "/api/users/#{uuid}", headers: authorized_headers  
         assert_format_matches user_format, response_body['user']
       end
 
@@ -140,7 +144,7 @@ module Harbour
       end
 
       test "delete user fails with suitable error if user can't be removed" do
-        delete "/api/users/1", headers: authorized_headers
+        delete "/api/users/#{current_user.uuid}", headers: authorized_headers
         assert_response :unprocessable_entity
         save_example
       end

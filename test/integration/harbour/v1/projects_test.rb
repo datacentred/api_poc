@@ -37,7 +37,9 @@ module Harbour
       end
 
       test "can find project 1" do
-        get '/api/projects/1', headers: authorized_headers
+        get '/api/projects', headers: authorized_headers
+        uuid = response_body['projects'][0]['uuid']
+        get "/api/projects/#{uuid}", headers: authorized_headers
         assert_response :success
         save_example
       end
@@ -49,7 +51,9 @@ module Harbour
       end
 
       test "project 1 matches format" do
-        get '/api/projects/1', headers: authorized_headers  
+        get '/api/projects', headers: authorized_headers
+        uuid = response_body['projects'][1]['uuid']
+        get "/api/projects/#{uuid}", headers: authorized_headers 
         assert_format_matches project_format, response_body['project']
       end
 

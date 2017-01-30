@@ -5,23 +5,23 @@
   "response_data": {
     "users": [
       {
-        "uuid": "1",
+        "uuid": "293c38b7ec52c355414c6e975cde882f",
         "email": "bill.s.preston@bodacious.com",
         "first_name": "Bill S.",
         "last_name": "Preston",
         "links": [
           {
-            "href": "https://my.datacentred.io/api/users/1",
+            "href": "https://my.datacentred.io/api/users/293c38b7ec52c355414c6e975cde882f",
             "rel": "self"
           }
         ],
         "projects": [
           {
-            "uuid": "1",
+            "uuid": "90affbd9a1954ec9ff029b7ad7183a16",
             "name": "bogus",
             "links": [
               {
-                "href": "https://my.datacentred.io/api/projects/1",
+                "href": "https://my.datacentred.io/api/projects/90affbd9a1954ec9ff029b7ad7183a16",
                 "rel": "self"
               }
             ]
@@ -29,13 +29,13 @@
         ]
       },
       {
-        "uuid": "3",
+        "uuid": "fdd7020adf1ddff29b0f6b41a5a8a919",
         "email": "elizabeth@ironmaiden.com",
         "first_name": "Elizabeth",
         "last_name": "Princess",
         "links": [
           {
-            "href": "https://my.datacentred.io/api/users/3",
+            "href": "https://my.datacentred.io/api/users/fdd7020adf1ddff29b0f6b41a5a8a919",
             "rel": "self"
           }
         ],

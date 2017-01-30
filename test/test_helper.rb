@@ -31,6 +31,10 @@ module Harbour
       JSON.parse(response.body)
     end
 
+    def current_user
+      User.find_by email: "bill.s.preston@bodacious.com"
+    end
+
     def authorized_headers
       valid_headers.dup.merge 'Authorization' => "Token token=\"bill:ilovejoanna\""
     end

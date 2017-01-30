@@ -1,6 +1,6 @@
 {
   "verb": "DELETE",
-  "path": "/api/users/1",
+  "path": "/api/users/293c38b7ec52c355414c6e975cde882f",
   "request_data": null,
   "response_data": {
     "message": "You can't delete yourself."
