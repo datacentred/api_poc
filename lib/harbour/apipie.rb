@@ -49,7 +49,7 @@ curl '#{Harbour::Engine.config.public_url}/users' \\
 }
 </pre>
 
-<div class="bg-info"><strong>💡 Note:</strong> Your token should be your access key and your secret key separated by a colon.</div>
+<div class="bg-info"><strong>💡 Note:</strong> The examples in this documentation export two <a href="https://en.wikipedia.org/wiki/Environment_variable#Assignment">environment variables</a> to be defined: $DATACENTRED_ACCESS and $DATACENTRED_SECRET.</div>
 
 ## 📌 API Versioning
 
