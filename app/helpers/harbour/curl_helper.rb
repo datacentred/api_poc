@@ -9,7 +9,7 @@ module Harbour
                 }
       command = "# #{example['description']}\ncurl -s '#{Harbour::Engine.config.public_url}#{example['path']}' \\\n#{to_args(headers)}"
       command = "#{command} \\\n-d #{JSON.generate(example['request_data'], space: ' ') rescue '{}'}" if example['request_data']
-      "#{command}\n# => \nStatus: #{example['head']}\nBody: #{JSON.pretty_generate(example['response_data']) rescue 'null'}"
+      "#{command}\n\n# HTTP/1.1 #{example['head']} #{Rack::Utils::HTTP_STATUS_CODES[example['head']]} \n#{JSON.pretty_generate(example['response_data']) rescue 'null'}"
     end
 
     private
