@@ -14,6 +14,8 @@
       "email": "death@afterlife.com",
       "first_name": null,
       "last_name": null,
+      "created_at": "2017-02-01T16:20:00.000Z",
+      "updated_at": "2017-02-01T16:20:00.000Z",
       "links": [
         {
           "href": "https://my.datacentred.io/api/users/6d5277716c4b10d2177814af50b77175",

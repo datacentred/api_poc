@@ -19,10 +19,11 @@ Gem::Specification.new do |s|
   s.add_dependency "apipie-rails", "~> 0.3"
   s.add_dependency "maruku", "~> 0.3"
   s.add_dependency "responders", "~> 2.2"
+  s.add_dependency "json-schema", "~> 2.7"
   s.add_development_dependency "bundler-audit", "~> 0.5"
   s.add_development_dependency "sqlite3", "~> 1.3"
   s.add_development_dependency "bcrypt", "~> 3.1"
   s.add_development_dependency "simplecov", "~> 0.10"
   s.add_development_dependency "database_cleaner", "~> 1.5"
-  s.add_dependency "json-schema", "~> 2.7"
+  s.add_development_dependency "timecop", "~> 0.8"
 end

@@ -2,6 +2,7 @@
 ENV["RAILS_ENV"] = "test"
 
 require "json-schema"
+require "timecop"
 
 require 'simplecov'
 SimpleCov.start
@@ -78,6 +79,11 @@ module Harbour
     def schema(version, entity)
       schema_path = Harbour::Engine.root.join("app/schema/harbour/v#{version}/#{entity}.json")
       schema = File.read(schema_path)
+    end
+
+    def setup
+      t = Time.local(2017, 2, 1, 16, 20, 0)
+      Timecop.freeze(t)
     end
 
     def teardown

@@ -2,12 +2,34 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
+    "uuid": {
+      "description": "Unique identifier for this project",
+      "type": "string"
+    },
     "name": {
       "description": "Project's unique name",
       "type": "string"
+    },
+    "created_at": {
+      "description": "Date/time this project was created",
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "description": "Date/time this project was last updated",
+      "type": "string",
+      "format": "date-time"
+    },
+    "users": {
+      "description": "Users who can access this project",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object"
+      }
     }
   },
   "required": [
-    "name"
+    "uuid", "name"
   ]
 }

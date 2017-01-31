@@ -7,6 +7,8 @@
     "project": {
       "uuid": "90affbd9a1954ec9ff029b7ad7183a16",
       "name": "bogus",
+      "created_at": "2017-01-30T18:52:05.180Z",
+      "updated_at": "2017-01-30T18:52:05.180Z",
       "links": [
         {
           "href": "https://my.datacentred.io/api/projects/90affbd9a1954ec9ff029b7ad7183a16",
@@ -19,6 +21,8 @@
           "email": "bill.s.preston@bodacious.com",
           "first_name": "Bill S.",
           "last_name": "Preston",
+          "created_at": "2017-01-30T18:52:05.142Z",
+          "updated_at": "2017-01-30T18:52:05.142Z",
           "links": [
             {
               "href": "https://my.datacentred.io/api/users/293c38b7ec52c355414c6e975cde882f",

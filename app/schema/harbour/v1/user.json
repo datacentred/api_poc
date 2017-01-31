@@ -2,13 +2,44 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
+    "uuid": {
+      "description": "Unique identifier for this user",
+      "type": "string"
+    },
     "email": {
       "description": "User's email address",
       "type": "string",
       "format": "email"
+    },
+    "first_name": {
+      "description": "User's first name",
+      "type": "string"
+    },
+    "last_name": {
+      "description": "User's last name",
+      "type": "string"
+    },
+    "created_at": {
+      "description": "Date/time this user was created",
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "description": "Date/time this user was last updated",
+      "type": "string",
+      "format": "date-time"
+    },
+    "projects": {
+      "description": "Projects this user can access",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object"
+      }
     }
   },
   "required": [
-    "email"
+    "uuid", "email"
   ]
 }
+
