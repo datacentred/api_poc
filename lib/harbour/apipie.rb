@@ -76,7 +76,7 @@ curl -I -s '#{Harbour::Engine.config.public_url}/api/projects' \\
 
   Apipie.configure do |config|
     config.app_name                = "DataCentred API"
-    config.copyright               = "DataCentred Ltd #{Time.now.year}"
+    config.copyright               = "© DataCentred Ltd #{Time.now.year}"
     config.api_base_url            = ""
     config.doc_base_url            = "/api/docs"
     config.default_version         = Harbour::Engine.config.latest_api_version.downcase.to_s
