@@ -55,7 +55,6 @@ or
 </pre>
 </li>
 </ol>
-<div class="bg-info"><strong>💡 Note:</strong> The examples in this documentation export two <a href="https://en.wikipedia.org/wiki/Environment_variable#Assignment">environment variables</a> to be defined: $DATACENTRED_ACCESS and $DATACENTRED_SECRET.</div>
 
 ## 📌 API Versioning
 
@@ -70,7 +69,8 @@ curl -I -s '#{Harbour::Engine.config.public_url}/api/projects' \\
 # Content-Type: application/vnd.datacentred.api+json; charset=utf-8
 </pre>
 
-You can discover information about API versions by visiting <a href="/api/docs/v1/versions/index">the versions index</a>.
+<div class="bg-info"><strong>💡 Note:</strong> You can discover information about API versions by visiting <a href="/api/docs/v1/versions/index">the versions index</a>.</div>
+
     EOS
   end
 
