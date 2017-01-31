@@ -1,6 +1,8 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
+require "json-schema"
+
 require 'simplecov'
 SimpleCov.start
 

@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "bcrypt", "~> 3.1"
   s.add_development_dependency "simplecov", "~> 0.10"
   s.add_development_dependency "database_cleaner", "~> 1.5"
-  s.add_development_dependency "json-schema", "~> 2.7"
+  s.add_dependency "json-schema", "~> 2.7"
 end
