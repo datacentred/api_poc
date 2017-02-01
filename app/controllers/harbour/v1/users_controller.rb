@@ -8,21 +8,21 @@ module Harbour
       def create
         user = current_organization.users.create!(create_params)
         #set_project_memberships(user.id, create_params[:projects]) if create_params[:projects]&.any?
-        respond_with({user: Harbour::V1::UserDecorator.new(user.reload).as_json},
+        respond_with({user: Harbour::V1::UserSerializer.new(user.reload).serialize},
                      status: :created)
       end
 
       def index
-        respond_with users: decorated_users
+        respond_with users: serialized_users
       end
 
       def update
         user.update!(update_params)
-        respond_with user: user
+        respond_with user: Harbour::V1::UserSerializer.new(user).serialize
       end
 
       def show
-        respond_with user: user
+        respond_with user: Harbour::V1::UserSerializer.new(user).serialize
       end
 
       def destroy
@@ -40,12 +40,12 @@ module Harbour
       def user
         user = scoped_users.find_by(uuid: params[:id])
         raise ActionController::RoutingError.new('Not Found') unless user
-        Harbour::V1::UserDecorator.new(user)
+        user
       end
 
-      def decorated_users
+      def serialized_users
         scoped_users.map do |u|
-          Harbour::V1::UserDecorator.new(u).as_json
+          Harbour::V1::UserSerializer.new(u).serialize
         end
       end
 

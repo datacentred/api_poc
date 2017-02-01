@@ -8,21 +8,21 @@ module Harbour
       def create
         project = current_organization.projects.create!(create_or_update_params)
         #set_project_memberships(user.id, create_params[:projects]) if create_params[:projects]&.any?
-        respond_with({project: Harbour::V1::ProjectDecorator.new(project.reload).as_json},
+        respond_with({project: Harbour::V1::ProjectSerializer.new(project.reload).serialize},
                      status: :created)
       end
 
       def index
-        respond_with projects: decorated_projects
+        respond_with projects: serialized_projects
       end
 
       def update
         project.update!(create_or_update_params)
-        respond_with project: project
+        respond_with project: Harbour::V1::ProjectSerializer.new(project).serialize
       end
 
       def show
-        respond_with project: project
+        respond_with project: Harbour::V1::ProjectSerializer.new(project).serialize
       end
 
       def destroy
@@ -34,12 +34,12 @@ module Harbour
       def project
         project = scoped_projects.find_by(uuid: params[:id])
         raise ActionController::RoutingError.new('Not Found') unless project
-        Harbour::V1::ProjectDecorator.new(project)
+        project
       end
 
-      def decorated_projects
+      def serialized_projects
         scoped_projects.map do |p|
-          Harbour::V1::ProjectDecorator.new(p).as_json
+          Harbour::V1::ProjectSerializer.new(p).serialize
         end
       end
 
