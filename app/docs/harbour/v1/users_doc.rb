@@ -1,12 +1,11 @@
 module Harbour
   module V1
     module UsersDoc
-      extend CurlHelper
-
       def self.superclass
         Harbour::V1::UsersController
       end
       extend Apipie::DSL::Concern
+      extend Harbour::Utils
 
       resource_description do
         resource_id 'Users'
@@ -27,17 +26,13 @@ module Harbour
       param_group :user, as: :create
       error code: 201, desc: "Created successfully."
       error code: 422, desc: "Failed validation. Details of failure returned in body."
-      Harbour.examples('1', 'users', 'create').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'create'
       def create ; end
 
       api :GET, '/users', 'List all available users'
       description "Show a list of all the users"
       error 200, "Success"
-      Harbour.examples('1', 'users', 'index').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'index'
       def index ; end
 
       api :GET, '/users/:uuid', 'Show a user'
@@ -45,9 +40,7 @@ module Harbour
       param :uuid, String, desc: 'The unique identifier for this user', required: true
       error 200, "Success"
       error 404, "User couldn't be found"
-      Harbour.examples('1', 'users', 'show').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'show'
       def show ; end
 
       api :PUT, '/users/:uuid', 'Update a user'
@@ -57,9 +50,7 @@ module Harbour
       error 200, "Updated user successfully"
       error 404, "User couldn't be found"
       error 422, "Failed validation. Details of failure returned in body."
-      Harbour.examples('1', 'users', 'update').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'update'
       def update ; end
 
       api :DELETE, '/users/:uuid', 'Delete a user'
@@ -68,9 +59,7 @@ module Harbour
       error 204, "Removed project successfully"
       error 404, "Project UUID couldn't be found"
       error 422, "Couldn't delete user. Details of failure returned in body."
-      Harbour.examples('1', 'users', 'destroy').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'destroy'
       def destroy ; end
     end
   end

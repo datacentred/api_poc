@@ -91,7 +91,7 @@ module Harbour
     end
 
     def save_example(description)
-      version   = Harbour.api_version(controller)
+      version   = Harbour::Utils.api_version(controller.class)
       base_file_path = Harbour::Engine.root.join("app/schema/harbour/v#{version}/examples/#{controller.controller_name}/#{controller.action_name}/")
       FileUtils.mkdir_p base_file_path
       file_path = "#{base_file_path}/#{response.status}.json"

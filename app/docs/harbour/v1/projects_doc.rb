@@ -1,12 +1,11 @@
 module Harbour
   module V1
     module ProjectsDoc
-      extend CurlHelper
-
       def self.superclass
         Harbour::V1::ProjectsController
       end
       extend Apipie::DSL::Concern
+      extend Harbour::Utils
 
       resource_description do
         resource_id 'Projects'
@@ -24,17 +23,13 @@ module Harbour
       param_group :project, as: :create
       error 201, "Created successfully."
       error 422, "Failed validation. Details of failure returned in body."
-      Harbour.examples('1', 'projects', 'create').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'create'
       def create ; end
 
       api :GET, '/projects', 'List all available projects'
       description "Show a list of all the projects."
       error 200, "Success"
-      Harbour.examples('1', 'projects', 'index').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'index'
       def index ; end
 
       api :GET, '/projects/:uuid', 'Show a project'
@@ -42,9 +37,7 @@ module Harbour
       param :uuid, String, desc: 'The unique identifier for this project', required: true
       error 200, "Success"
       error 404, "Project couldn't be found"
-      Harbour.examples('1', 'projects', 'show').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'show'
       def show ; end
 
       api :PUT, '/projects/:uuid', 'Update a project'
@@ -54,9 +47,7 @@ module Harbour
       error 200, "Updated project successfully"
       error 404, "Project couldn't be found"
       error 422, "Failed validation. Details of failure returned in body."
-      Harbour.examples('1', 'projects', 'update').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'update'
       def update ; end
 
       api :DELETE, '/projects/:uuid', 'Delete a project'
@@ -65,9 +56,7 @@ module Harbour
       error 204, "Removed project successfully"
       error 404, "Project UUID couldn't be found"
       error 422, "Couldn't delete project. Details of failure returned in body."
-      Harbour.examples('1', 'projects', 'destroy').each do |ex|
-        example curl_method(ex)
-      end
+      examples 'destroy'
       def destroy ; end
     end
   end

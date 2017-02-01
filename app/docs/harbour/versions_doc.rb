@@ -1,6 +1,5 @@
 module Harbour
   module VersionsDoc
-    extend CurlHelper
 
     def self.superclass
       VersionsController
