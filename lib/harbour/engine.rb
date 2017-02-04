@@ -19,7 +19,7 @@ module Harbour
       g.scaffold_controller :responders_controller
     end
 
-    config.api_versions = [:V1]
+    config.api_versions = [:V1, :V2]
     config.latest_api_version = config.api_versions.sort.last
     config.public_url = public_url
   end
