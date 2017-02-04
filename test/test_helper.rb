@@ -43,8 +43,9 @@ module Harbour
     end
 
     def valid_headers
+      mime = Mime::Type.lookup_by_extension(:dc_json).to_s
       {
-        'Accept'        => Mime::Type.lookup_by_extension(:dc_json).to_s,
+        'Accept'        => "#{mime}; version=#{Harbour::Utils.api_version(self.class)}",
         'Content-Type'  => Mime[:json].to_s
       }
     end
