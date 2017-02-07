@@ -63,6 +63,8 @@ Target specific versions by using the `Accept` header:
 <pre class="prettyprint">
 curl -I -s '#{Harbour::Engine.config.public_url}/api/projects' \\
 -H "Accept: application/vnd.datacentred.api+json; <strong>version=1</strong>" -H "Authorization: Token token="$DATACENTRED_ACCESS:$DATACENTRED_SECRET""
+</pre>
+<pre class="prettyprint">
 # HTTP/1.1 200 OK
 # X-API-Version: 1
 # X-Request-Id: 5c91637e-a827-41ba-8f6d-416fa4d549d1

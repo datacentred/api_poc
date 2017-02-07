@@ -27,6 +27,8 @@ module Harbour
     example <<-EOS
 # List all available API versions
 curl -s '#{Harbour::Engine.config.public_url}/api' -H 'Content-Type: application/json'
+EOS
+    example <<-EOS
 {
   "versions": [
     {
