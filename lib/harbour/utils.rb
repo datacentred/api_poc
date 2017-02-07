@@ -19,7 +19,7 @@ module Harbour
       controller = Harbour::Utils.controller_name(@@base)
       base_file_path = Harbour::Engine.root.join("app/schema/harbour/v#{version}/examples/#{controller}/#{action}/*.json")
       Dir[base_file_path].map do |file|
-        @@base.example curl_method JSON.parse File.read file
+        curl_method(JSON.parse(File.read(file))).each{|ex| @@base.example ex }
       end
     end
 
@@ -32,9 +32,10 @@ module Harbour
                             ],
                   'X' => example['verb'],
                 }
-      command = "# #{example['description']}\ncurl -s '#{Harbour::Engine.config.public_url}#{example['path']}' \\\n#{to_args(headers)}"
-      command = "#{command} \\\n-d '#{JSON.generate(example['request_data'], space: ' ') rescue '{}'}'" if example['request_data']
-      "#{command}\n\n# HTTP/1.1 #{example['head']} #{Rack::Utils::HTTP_STATUS_CODES[example['head']]} \n#{JSON.pretty_generate(example['response_data']) rescue 'null'}"
+      command  = "# #{example['description']}\ncurl -s '#{Harbour::Engine.config.public_url}#{example['path']}' \\\n#{to_args(headers)}"
+      command  = "#{command} \\\n-d '#{JSON.generate(example['request_data'], space: ' ') rescue '{}'}'" if example['request_data']
+      response = "# HTTP/1.1 #{example['head']} #{Rack::Utils::HTTP_STATUS_CODES[example['head']]} \n#{JSON.pretty_generate(example['response_data']) rescue 'null'}"
+      [command, response]
     end
 
     def to_args(params)
