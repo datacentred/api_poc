@@ -8,7 +8,7 @@ module Harbour
 
     protected
 
-    before_action :restrict_content_type
+    before_action :restrict_content_type, :set_api_version_header
 
     def restrict_content_type
       if['POST', 'PUT'].include?(request.method)
@@ -35,6 +35,23 @@ module Harbour
 
     def render_not_found
       head :not_found
+    end
+
+    def set_api_version_header
+      version = request.headers.fetch(:accept)&.scan(/version=(\d+)/)&.first&.first
+      if version
+        unless Harbour::Engine.config.api_versions.include?("V#{version}".to_sym)
+          render json: {
+            error: "Unknown API version #{version}.",
+            links: [
+              {href: Harbour::Engine.config.public_url, rel: 'help'}
+            ] 
+          }, status: 406
+        end
+      else
+        version = Harbour::Engine.config.latest_api_version.to_s.scan(/V(\d+)/).first.first
+      end
+      response.headers['X-API-Version'] = version
     end
 
   end
