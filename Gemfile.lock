@@ -5,6 +5,7 @@ PATH
       apipie-rails (~> 0.4)
       json-schema (~> 2.7)
       maruku (~> 0.3)
+      nokogiri (~> 1.7.1)
       rails (= 5.0.2)
       responders (~> 2.2)
 
@@ -48,7 +49,7 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    addressable (2.5.0)
+    addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     apipie-rails (0.4.0)
       json
@@ -63,8 +64,8 @@ GEM
     database_cleaner (1.5.3)
     docile (1.1.5)
     erubis (2.7.0)
-    globalid (0.3.7)
-      activesupport (>= 4.1.0)
+    globalid (0.4.0)
+      activesupport (>= 4.2.0)
     i18n (0.8.1)
     json (2.0.3)
     json-schema (2.8.0)
@@ -81,7 +82,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     nio4r (2.0.0)
-    nokogiri (1.7.0.1)
+    nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     public_suffix (2.0.5)
     rack (2.0.1)
@@ -129,7 +130,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     timecop (0.8.1)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
@@ -151,4 +152,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.7
+   1.14.6
