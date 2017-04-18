@@ -1,0 +1,15 @@
+{
+  "description": "Add non-existent member to role",
+  "verb": "PUT",
+  "path": "/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b/users/boom",
+  "request_data": null,
+  "response_data": {
+    "errors": [
+      {
+        "detail": "No such user 'boom'"
+      }
+    ]
+  },
+  "head": 404,
+  "api_version": 1
+}

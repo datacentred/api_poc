@@ -11,13 +11,13 @@
     "errors": [
       {
         "resource": "user",
-        "field": "password",
-        "detail": "User password can't be blank."
+        "detail": "User password can't be blank.",
+        "field": "password"
       },
       {
         "resource": "user",
-        "field": "password",
-        "detail": "User password can't be blank."
+        "detail": "User password can't be blank.",
+        "field": "password"
       }
     ]
   },

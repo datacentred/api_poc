@@ -1,0 +1,32 @@
+{
+  "description": "Update role 5e93407bb64839f1cba5a12af9f64bd0 with new permissions",
+  "verb": "PUT",
+  "path": "/api/roles/5e93407bb64839f1cba5a12af9f64bd0",
+  "request_data": {
+    "role": {
+      "permissions": [
+        "usage.read"
+      ]
+    }
+  },
+  "response_data": {
+    "role": {
+      "uuid": "5e93407bb64839f1cba5a12af9f64bd0",
+      "name": "Finance Team",
+      "admin": false,
+      "permissions": [
+        "usage.read"
+      ],
+      "created_at": "2017-02-01T16:20:00.000Z",
+      "updated_at": "2017-02-01T16:20:00.000Z",
+      "links": [
+        {
+          "href": "https://my.datacentred.io/api/roles/5e93407bb64839f1cba5a12af9f64bd0",
+          "rel": "self"
+        }
+      ]
+    }
+  },
+  "head": 200,
+  "api_version": 1
+}

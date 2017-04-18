@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "description": "Unique identifier for this role",
+      "type": "string"
+    },
+    "name": {
+      "description": "Role's name",
+      "type": "string"
+    },
+    "admin": {
+      "description": "Is this role an admin role?",
+      "type": "boolean"
+    },
+    "permissions": {
+      "description": "Role permissions",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "created_at": {
+      "description": "Date/time this role was created",
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "description": "Date/time this role was last updated",
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "uuid", "name"
+  ]
+}

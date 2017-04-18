@@ -19,14 +19,6 @@
       "description": "Date/time this project was last updated",
       "type": "string",
       "format": "date-time"
-    },
-    "users": {
-      "description": "Users who can access this project",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "object"
-      }
     }
   },
   "required": [

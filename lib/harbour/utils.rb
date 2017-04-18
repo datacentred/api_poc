@@ -14,9 +14,7 @@ module Harbour
       doc_class[0, doc_class.length-3].downcase
     end
 
-    def examples(action)
-      version    = Harbour::Utils.api_version(@@base)
-      controller = Harbour::Utils.controller_name(@@base)
+    def examples(action, controller=Harbour::Utils.controller_name(@@base), version=Harbour::Utils.api_version(@@base))
       base_file_path = Harbour::Engine.root.join("app/schema/harbour/v#{version}/examples/#{controller}/#{action}/*.json")
       Dir[base_file_path].map do |file|
         curl_method(JSON.parse(File.read(file))).each{|ex| @@base.example ex }

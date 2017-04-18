@@ -11,8 +11,8 @@
     "errors": [
       {
         "resource": "project",
-        "field": "name",
-        "detail": "Project name is already in use."
+        "detail": "Project name is already in use.",
+        "field": "name"
       }
     ]
   },

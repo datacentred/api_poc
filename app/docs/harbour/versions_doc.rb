@@ -36,7 +36,7 @@ EOS
       "status": "CURRENT",
       "links": [
         {
-          "href": "http://localhost:3000/api",
+          "href": "#{Harbour::Engine.config.public_url}/api",
           "rel":"self"
         }
       ]

@@ -116,11 +116,6 @@ module Harbour
         assert_response :not_found
         save_example "Can't delete a non-existent project"
       end
-
-      test "delete project fails with suitable error if project can't be removed" do
-        # e.g. if it's the primary project
-        skip
-      end
     end
   end
 end

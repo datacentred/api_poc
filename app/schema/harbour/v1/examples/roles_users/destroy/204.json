@@ -1,0 +1,9 @@
+{
+  "description": "Remove member from role",
+  "verb": "DELETE",
+  "path": "/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b/users/fdd7020adf1ddff29b0f6b41a5a8a919",
+  "request_data": null,
+  "response_data": null,
+  "head": 204,
+  "api_version": 1
+}

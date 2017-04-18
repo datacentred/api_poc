@@ -1,0 +1,26 @@
+{
+  "description": "Show role 7b7bc2512ee1fedcd76bdc68926d4f7b",
+  "verb": "GET",
+  "path": "/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b",
+  "request_data": null,
+  "response_data": {
+    "role": {
+      "uuid": "7b7bc2512ee1fedcd76bdc68926d4f7b",
+      "name": "Administrator",
+      "admin": true,
+      "permissions": [
+
+      ],
+      "created_at": "2017-02-01T16:20:00.000Z",
+      "updated_at": "2017-02-01T16:20:00.000Z",
+      "links": [
+        {
+          "href": "https://my.datacentred.io/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b",
+          "rel": "self"
+        }
+      ]
+    }
+  },
+  "head": 200,
+  "api_version": 1
+}

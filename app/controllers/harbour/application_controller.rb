@@ -23,7 +23,7 @@ module Harbour
       render params.merge(args)
     end
 
-    rescue_from ActiveRecord::RecordInvalid,  with: :render_unprocessable_entity_response
+    rescue_from ActiveRecord::RecordInvalid, ActiveRecord::RecordNotDestroyed,  with: :render_unprocessable_entity_response
 
     def render_unprocessable_entity_response(exception)
       render json: {
@@ -33,8 +33,18 @@ module Harbour
 
     rescue_from ActionController::RoutingError, with: :render_not_found
 
-    def render_not_found
-      head :not_found
+    def render_not_found(exception)
+      if exception.failures.none?
+        head :not_found
+      else
+        render json: {
+          errors: exception.failures.map do |failure|
+            {
+              detail: failure
+            }
+          end
+        }, status: :not_found
+      end
     end
 
     def set_api_version_header

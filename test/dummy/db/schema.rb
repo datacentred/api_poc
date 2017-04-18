@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418084415) do
+ActiveRecord::Schema.define(version: 20170425120000) do
 
   create_table "api_credentials", force: :cascade do |t|
     t.integer  "user_id"
@@ -39,6 +39,23 @@ ActiveRecord::Schema.define(version: 20170418084415) do
     t.integer  "organization_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.text     "permissions"
+    t.boolean  "power_user",      default: false, null: false
+    t.integer  "organization_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "uuid"
+  end
+
+  create_table "roles_users", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_project_roles", force: :cascade do |t|
