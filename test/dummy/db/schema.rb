@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120154529) do
+ActiveRecord::Schema.define(version: 20170418084415) do
 
   create_table "api_credentials", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "organization_id"
     t.string   "access_key"
     t.string   "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -26,12 +27,18 @@ ActiveRecord::Schema.define(version: 20170120154529) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "organizations_users", force: :cascade do |t|
+    t.integer "organization_id",                 null: false
+    t.integer "user_id",                         null: false
+    t.boolean "primary",         default: false, null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "uuid"
     t.string   "name"
     t.integer  "organization_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "user_project_roles", force: :cascade do |t|
@@ -47,8 +54,8 @@ ActiveRecord::Schema.define(version: 20170120154529) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.integer  "organization_id"
     t.string   "password_digest"
+    t.integer  "organization_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

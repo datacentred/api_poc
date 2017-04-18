@@ -2,7 +2,8 @@ class User < ApplicationRecord
 
   attr_readonly :email
 
-  belongs_to :organization
+  has_many :organization_users, dependent: :destroy
+  has_many :organizations, through: :organization_users
   has_many :api_credentials
   has_many :user_project_roles, dependent: :destroy
   has_many :projects, -> { distinct }, :through => :user_project_roles
@@ -11,7 +12,7 @@ class User < ApplicationRecord
   after_initialize :generate_uuid
 
   validates :email, :uniqueness => true
-  validates :email, :organization_id, :presence => true
+  validates :email, :presence => true
   validates :password, :presence => true, :on => :create
   validate :password_complexity
 

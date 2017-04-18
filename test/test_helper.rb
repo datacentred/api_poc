@@ -12,12 +12,15 @@ ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../test/dummy/db
 ActiveRecord::Migrator.migrations_paths << File.expand_path('../../db/migrate', __FILE__)
 require "rails/test_help"
 
+require 'database_cleaner'
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
+
+require File.expand_path("../../test/dummy/db/seeds.rb", __FILE__)
+
 # Filter out Minitest backtrace while allowing backtrace from other libraries
 # to be shown.
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new
-
-require 'database_cleaner'
-DatabaseCleaner.strategy = :truncation
 
 # Load fixtures from the engine
 if ActiveSupport::TestCase.respond_to?(:fixture_path=)

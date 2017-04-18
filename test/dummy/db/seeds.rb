@@ -23,5 +23,5 @@ project1.update_attributes users: [user1]
 project3.update_attributes users: [user2]
 
 
-user1.api_credentials.create! access_key: "bill", password: "ilovejoanna"
-user2.api_credentials.create! access_key: "ted",  password: "iloveelizabeth"
+user1.api_credentials.create! organization: organization1, access_key: "bill", password: "ilovejoanna"
+user2.api_credentials.create! organization: organization2, access_key: "ted",  password: "iloveelizabeth"
