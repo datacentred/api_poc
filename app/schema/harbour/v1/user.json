@@ -28,14 +28,6 @@
       "description": "Date/time this user was last updated",
       "type": "string",
       "format": "date-time"
-    },
-    "projects": {
-      "description": "Projects this user can access",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "object"
-      }
     }
   },
   "required": [

@@ -16,9 +16,7 @@ module Harbour
           created_at: user.created_at,
           updated_at: user.updated_at,
           links:      [{"href": "#{Harbour::Engine.config.public_url}/api/users/#{user.uuid}", "rel": "self"}]
-        }.merge(
-          (!options[:only] || options[:only].include?(:projects)) ? {projects: user.projects.map{|project| Harbour::V1::ProjectSerializer.new(project).serialize(only: [:uuid, :name]) }} : {}
-        )
+        }
       end
     end
   end
