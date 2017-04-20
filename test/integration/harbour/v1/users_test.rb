@@ -68,13 +68,6 @@ module Harbour
         save_example "Create a new user without a password"
       end
 
-      test "create user with project memberships" do
-        skip
-        params = {user: {email: 'death@afterlife.com', password: 'melvin', projects: ['1','2']}}
-        post '/api/users', params: params.to_json, headers: authorized_headers
-        assert_response :created
-      end
-
       test "update user succeeds with valid params" do
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
         post '/api/users', params: params.to_json, headers: authorized_headers
@@ -103,10 +96,6 @@ module Harbour
         put "/api/users/#{uuid}", params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
         save_example "Update a user with a password that's too short"
-      end
-
-      test "update user with project memberships" do
-        skip
       end
 
       test "change user password" do

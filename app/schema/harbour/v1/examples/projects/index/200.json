@@ -8,44 +8,25 @@
       {
         "uuid": "90affbd9a1954ec9ff029b7ad7183a16",
         "name": "bogus",
-        "created_at": "2017-04-18T09:16:04.678Z",
-        "updated_at": "2017-04-18T09:16:04.678Z",
+        "created_at": "2017-04-20T08:41:47.255Z",
+        "updated_at": "2017-04-20T08:41:47.255Z",
         "links": [
           {
             "href": "https://my.datacentred.io/api/projects/90affbd9a1954ec9ff029b7ad7183a16",
             "rel": "self"
-          }
-        ],
-        "users": [
-          {
-            "uuid": "293c38b7ec52c355414c6e975cde882f",
-            "email": "bill.s.preston@bodacious.com",
-            "first_name": "Bill S.",
-            "last_name": "Preston",
-            "created_at": "2017-04-18T09:16:04.618Z",
-            "updated_at": "2017-04-18T09:16:04.618Z",
-            "links": [
-              {
-                "href": "https://my.datacentred.io/api/users/293c38b7ec52c355414c6e975cde882f",
-                "rel": "self"
-              }
-            ]
           }
         ]
       },
       {
         "uuid": "7a3af604e52e2577b3f5b77e96f3e01d",
         "name": "excellent",
-        "created_at": "2017-04-18T09:16:04.682Z",
-        "updated_at": "2017-04-18T09:16:04.682Z",
+        "created_at": "2017-04-20T08:41:47.260Z",
+        "updated_at": "2017-04-20T08:41:47.260Z",
         "links": [
           {
             "href": "https://my.datacentred.io/api/projects/7a3af604e52e2577b3f5b77e96f3e01d",
             "rel": "self"
           }
-        ],
-        "users": [
-
         ]
       }
     ]

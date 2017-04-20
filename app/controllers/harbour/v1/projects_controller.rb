@@ -7,7 +7,6 @@ module Harbour
 
       def create
         project = current_organization.projects.create!(create_or_update_params)
-        #set_project_memberships(user.id, create_params[:projects]) if create_params[:projects]&.any?
         respond_with({project: Harbour::V1::ProjectSerializer.new(project.reload).serialize},
                      status: :created)
       end
@@ -30,6 +29,10 @@ module Harbour
       end
 
       private
+
+      def scoped_projects
+        current_organization.projects.includes(:users)
+      end
 
       def project
         project = scoped_projects.find_by(uuid: params[:id])

@@ -68,10 +68,6 @@ module Harbour
         save_example "Create a new project with a name that's taken already"
       end
 
-      test "create project with user memberships" do
-        skip
-      end
-
       test "update project succeeds with valid params" do
         params = {project: {name: 'wild_stalyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
@@ -104,10 +100,6 @@ module Harbour
         put "/api/projects/unknown", params: params.to_json, headers: authorized_headers
         assert_response :not_found
         save_example "Update a non-existent project"
-      end
-
-      test "update project with user memberships" do
-        skip
       end
 
       test "delete project succeeds if project exists" do

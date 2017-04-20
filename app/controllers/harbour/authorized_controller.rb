@@ -26,13 +26,5 @@ module Harbour
     def current_organization
       @current_organization ||= authenticate_token&.organization
     end
-
-    def scoped_users
-      current_organization.users.includes(:projects)
-    end
-
-    def scoped_projects
-      current_organization.projects.includes(:users)
-    end
   end
 end
