@@ -10,9 +10,8 @@ module Harbour
     def serialize
       {
         resource: resource,
-        field: field,
-        detail: "#{resource.titleize} #{field} #{detail.downcase}."
-      }
+        detail: error_message
+      }.merge(field == "base" ? {} : {field: field})
     end
 
     private
@@ -22,7 +21,7 @@ module Harbour
         underscored_resource_name,
         scope: [:resources],
         locale: :api,
-        default: @record.class.to_s
+        default: @record.class.to_s.downcase
       )
     end
 
@@ -31,7 +30,7 @@ module Harbour
         @field,
         scope: [:fields, underscored_resource_name],
         locale: :api,
-        default: @field.to_s
+        default: @field.to_s.downcase
       )
     end
 
@@ -45,7 +44,15 @@ module Harbour
     end
     
     def underscored_resource_name
-      @record.class.to_s.gsub('::', '').underscore
+      @record.class.to_s.gsub('::', '').downcase.underscore
+    end
+
+    def error_message
+      if field == "base"
+        "#{detail.downcase.capitalize}."
+      else
+        "#{resource.titleize} #{field} #{detail.downcase}."
+      end
     end
   end
 end

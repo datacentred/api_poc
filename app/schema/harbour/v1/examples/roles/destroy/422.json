@@ -1,0 +1,16 @@
+{
+  "description": "Admin roles cannot be removed",
+  "verb": "DELETE",
+  "path": "/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b",
+  "request_data": null,
+  "response_data": {
+    "errors": [
+      {
+        "resource": "role",
+        "detail": "The admin role cannot be removed."
+      }
+    ]
+  },
+  "head": 422,
+  "api_version": 1
+}

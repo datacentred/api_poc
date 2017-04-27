@@ -8,3 +8,7 @@ dependencies:
   post:
     - bin/bundle-audit update
     - bin/bundle-audit
+
+test:
+  override:
+    - RUBYOPT=W0 bundle exec rake test

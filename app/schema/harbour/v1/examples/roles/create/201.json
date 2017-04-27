@@ -1,0 +1,35 @@
+{
+  "description": "Create a new role with basic permissions",
+  "verb": "POST",
+  "path": "/api/roles",
+  "request_data": {
+    "role": {
+      "name": "Staff",
+      "permissions": [
+        "usage.read",
+        "tickets.modify"
+      ]
+    }
+  },
+  "response_data": {
+    "role": {
+      "uuid": "8f7f93630c366dc55aec88eb8e9640d0",
+      "name": "Staff",
+      "admin": false,
+      "permissions": [
+        "usage.read",
+        "tickets.modify"
+      ],
+      "created_at": "2017-02-01T16:20:00.000Z",
+      "updated_at": "2017-02-01T16:20:00.000Z",
+      "links": [
+        {
+          "href": "https://my.datacentred.io/api/roles/8f7f93630c366dc55aec88eb8e9640d0",
+          "rel": "self"
+        }
+      ]
+    }
+  },
+  "head": 201,
+  "api_version": 1
+}

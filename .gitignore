@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/test/dummy/db/*
 /test/dummy/log/*
 /test/dummy/tmp/*
 

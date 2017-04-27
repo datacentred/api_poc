@@ -92,6 +92,7 @@ module Harbour
 
     def teardown
       DatabaseCleaner.clean
+      Timecop.return
     end
 
     def save_example(description)
@@ -113,7 +114,7 @@ module Harbour
         "api_version" => version
       }
 
-      File.write(file_path, JSON.pretty_generate(output))
+      File.write(file_path, JSON.pretty_generate(output) + "\n")
     end
   end
 end

@@ -11,7 +11,7 @@ module Harbour
             {
               "id": v.to_s.gsub("V",""),
               "status": (v == latest_version ? "CURRENT" : "SUPPORTED"),
-              "links": [{"href": Harbour::Engine.config.public_url, "rel": "self"}]
+              "links": [{"href": "#{Harbour::Engine.config.public_url}/api", "rel": "self"}]
             }
           end
         }

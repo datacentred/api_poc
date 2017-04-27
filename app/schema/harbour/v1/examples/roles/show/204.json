@@ -1,0 +1,9 @@
+{
+  "description": "Show role 1",
+  "verb": "GET",
+  "path": "/api/roles/1",
+  "request_data": null,
+  "response_data": null,
+  "head": 204,
+  "api_version": 1
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Update a non-existent role",
+  "verb": "PUT",
+  "path": "/api/roles/unknown",
+  "request_data": {
+    "role": {
+      "name": "Fail"
+    }
+  },
+  "response_data": null,
+  "head": 404,
+  "api_version": 1
+}

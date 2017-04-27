@@ -11,8 +11,8 @@
     "errors": [
       {
         "resource": "user",
-        "field": "password",
-        "detail": "User password too short."
+        "detail": "User password too short.",
+        "field": "password"
       }
     ]
   },

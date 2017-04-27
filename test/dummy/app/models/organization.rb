@@ -3,4 +3,5 @@ class Organization < ApplicationRecord
   has_many :users, through: :organization_users
   has_many :projects
   has_many :api_credentials
+  has_many :roles
 end
