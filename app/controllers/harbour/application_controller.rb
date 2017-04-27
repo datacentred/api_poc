@@ -19,7 +19,7 @@ module Harbour
                 detail: 'Content-Type must be application/json'
               }
             ]
-          }, status: 406
+          }, status: :unacceptable
         end
       end
     end
@@ -66,7 +66,7 @@ module Harbour
             links: [
               {href: Harbour::Engine.config.public_url, rel: 'help'}
             ] 
-          }, status: 406
+          }, status: :unacceptable
         end
       else
         version = Harbour::Engine.config.latest_api_version.to_s.scan(/V(\d+)/).first.first
