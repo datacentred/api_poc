@@ -30,7 +30,13 @@ module Harbour
 
     def render_unauthorized
       self.headers['WWW-Authenticate'] = 'Token realm="DataCentred"'
-      render json: {error: "Token authentication failed. Invalid credentials or API access is not authorized."}, status: 401
+      render json: {
+        errors: [
+          {
+            detail: "Token authentication failed. Invalid credentials or API access is not authorized."
+          }
+        ]
+      }, status: 401
     end
   end
 end

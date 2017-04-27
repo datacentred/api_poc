@@ -13,7 +13,13 @@ module Harbour
     def restrict_content_type
       if['POST', 'PUT'].include?(request.method)
         unless request.content_type == Mime[:json]
-          render json: {error:  'Content-Type must be application/json'}, status: 406
+          render json: {
+            errors: [
+              {
+                detail: 'Content-Type must be application/json'
+              }
+            ]
+          }, status: 406
         end
       end
     end
@@ -52,7 +58,11 @@ module Harbour
       if version
         unless Harbour::Engine.config.api_versions.include?("V#{version}".to_sym)
           render json: {
-            error: "Unknown API version #{version}.",
+            errors: [
+              {
+                detail: "Unknown API version #{version}."
+              }
+            ],
             links: [
               {href: Harbour::Engine.config.public_url, rel: 'help'}
             ] 

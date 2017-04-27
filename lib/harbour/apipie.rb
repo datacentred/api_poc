@@ -50,7 +50,11 @@ or
 <pre class="prettyprint">
 # HTTP/1.1 403 Unauthorized
 {
-  "error": "Token authentication failed. Invalid credentials or API access is not authorized."
+  "errors": [
+    {
+      "detail": "Token authentication failed. Invalid credentials or API access is not authorized."
+    }
+  ]
 }
 </pre>
 </li>
