@@ -8,10 +8,5 @@ module Harbour
       current_version = response_body['versions'].find{|v| v['status'] == 'CURRENT'}
       assert_equal Harbour::Engine.config.latest_api_version, "V#{current_version['id']}".to_sym
     end
-
-    test "redirects to docs when requested via HTML" do
-      get "/api/"
-      assert_redirected_to "/api/docs"
-    end
   end
 end
