@@ -77,7 +77,7 @@ module Harbour
 
     def render_error(status, errors)
       render json: {
-        errors: errors,
+        errors: errors.uniq,
         links: [
           {href: "#{Harbour::Engine.config.public_url}/api", rel: 'help'}
         ]
