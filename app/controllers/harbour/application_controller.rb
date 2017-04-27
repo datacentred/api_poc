@@ -14,7 +14,7 @@ module Harbour
       if['POST', 'PUT'].include?(request.method)
         unless request.content_type == Mime[:json]
           render_error(
-            :unacceptable,
+            :not_acceptable,
             [
               {
                 detail: 'Content-Type must be application/json'
@@ -61,7 +61,7 @@ module Harbour
       if version
         unless Harbour::Engine.config.api_versions.include?("V#{version}".to_sym)
           render_error(
-            :unacceptable,
+            :not_acceptable,
             [
               {
                 detail: "Unknown API version #{version}."
