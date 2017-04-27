@@ -16,6 +16,12 @@
         "detail": "Role permissions must be one of: 'cloud.read', 'roles.modify', 'roles.read', 'storage.read', 'tickets.modify', 'usage.read'. 'flying' is not allowed.",
         "field": "permissions"
       }
+    ],
+    "links": [
+      {
+        "href": "https://my.datacentred.io/api",
+        "rel": "help"
+      }
     ]
   },
   "head": 422,

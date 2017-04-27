@@ -14,6 +14,12 @@
         "detail": "User password too short.",
         "field": "password"
       }
+    ],
+    "links": [
+      {
+        "href": "https://my.datacentred.io/api",
+        "rel": "help"
+      }
     ]
   },
   "head": 422,

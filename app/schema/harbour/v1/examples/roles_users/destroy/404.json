@@ -8,6 +8,12 @@
       {
         "detail": "No such role 'boom'"
       }
+    ],
+    "links": [
+      {
+        "href": "https://my.datacentred.io/api",
+        "rel": "help"
+      }
     ]
   },
   "head": 404,

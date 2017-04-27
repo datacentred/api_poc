@@ -19,6 +19,12 @@
         "detail": "User password can't be blank.",
         "field": "password"
       }
+    ],
+    "links": [
+      {
+        "href": "https://my.datacentred.io/api",
+        "rel": "help"
+      }
     ]
   },
   "head": 422,

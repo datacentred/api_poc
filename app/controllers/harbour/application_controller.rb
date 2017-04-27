@@ -13,13 +13,14 @@ module Harbour
     def restrict_content_type
       if['POST', 'PUT'].include?(request.method)
         unless request.content_type == Mime[:json]
-          render json: {
-            errors: [
+          render_error(
+            :unacceptable,
+            [
               {
                 detail: 'Content-Type must be application/json'
               }
             ]
-          }, status: :unacceptable
+          )
         end
       end
     end
@@ -32,9 +33,10 @@ module Harbour
     rescue_from ActiveRecord::RecordInvalid, ActiveRecord::RecordNotDestroyed,  with: :render_unprocessable_entity_response
 
     def render_unprocessable_entity_response(exception)
-      render json: {
-        errors: ValidationErrorsSerializer.new(exception.record).serialize
-      }, status: :unprocessable_entity
+      render_error(
+        :unprocessable_entity,
+        ValidationErrorsSerializer.new(exception.record).serialize
+      )
     end
 
     rescue_from ActionController::RoutingError, with: :render_not_found
@@ -43,13 +45,14 @@ module Harbour
       if exception.failures.none?
         head :not_found
       else
-        render json: {
-          errors: exception.failures.map do |failure|
+        render_error(
+          :not_found,
+          exception.failures.map do |failure|
             {
               detail: failure
             }
           end
-        }, status: :not_found
+        )
       end
     end
 
@@ -57,21 +60,28 @@ module Harbour
       version = request.headers.fetch(:accept)&.scan(/version=(\d+)/)&.first&.first
       if version
         unless Harbour::Engine.config.api_versions.include?("V#{version}".to_sym)
-          render json: {
-            errors: [
+          render_error(
+            :unacceptable,
+            [
               {
                 detail: "Unknown API version #{version}."
               }
-            ],
-            links: [
-              {href: Harbour::Engine.config.public_url, rel: 'help'}
-            ] 
-          }, status: :unacceptable
+            ]
+          )
         end
       else
         version = Harbour::Engine.config.latest_api_version.to_s.scan(/V(\d+)/).first.first
       end
       response.headers['X-API-Version'] = version
+    end
+
+    def render_error(status, errors)
+      render json: {
+        errors: errors,
+        links: [
+          {href: "#{Harbour::Engine.config.public_url}/api", rel: 'help'}
+        ]
+      }, status: status  
     end
 
   end

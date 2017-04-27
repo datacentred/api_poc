@@ -26,8 +26,15 @@ module Harbour
 
       def destroy
         if user.id == current_user.id
-          respond_with({message: "You can't delete yourself."},
-                       status: :unprocessable_entity)
+          render_error(
+            :unprocessable_entity,
+            [
+              {
+                detail: "You can't delete yourself.",
+                resource: "user"
+              }
+            ]
+          )
         else
           user.destroy
           head :no_content

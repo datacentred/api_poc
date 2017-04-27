@@ -9,6 +9,12 @@
         "resource": "role",
         "detail": "The admin role cannot be removed."
       }
+    ],
+    "links": [
+      {
+        "href": "https://my.datacentred.io/api",
+        "rel": "help"
+      }
     ]
   },
   "head": 422,

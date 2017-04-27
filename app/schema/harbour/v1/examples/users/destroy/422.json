@@ -4,7 +4,18 @@
   "path": "/api/users/293c38b7ec52c355414c6e975cde882f",
   "request_data": null,
   "response_data": {
-    "message": "You can't delete yourself."
+    "errors": [
+      {
+        "detail": "You can't delete yourself.",
+        "resource": "user"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://my.datacentred.io/api",
+        "rel": "help"
+      }
+    ]
   },
   "head": 422,
   "api_version": 1
