@@ -13,11 +13,6 @@
         "resource": "user",
         "detail": "User password can't be blank.",
         "field": "password"
-      },
-      {
-        "resource": "user",
-        "detail": "User password can't be blank.",
-        "field": "password"
       }
     ],
     "links": [
