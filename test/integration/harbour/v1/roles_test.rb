@@ -29,10 +29,10 @@ module Harbour
 
       test "can find role 1" do
         get '/api/roles',   headers: authorized_headers
-        uuid = response_body['roles'][0]['uuid']
-        get "/api/roles/#{uuid}", headers: authorized_headers
+        id = response_body['roles'][0]['id']
+        get "/api/roles/#{id}", headers: authorized_headers
         assert_response :success
-        save_example "Show role #{uuid}"
+        save_example "Show role #{id}"
       end
 
       test "can't find role 2" do
@@ -43,8 +43,8 @@ module Harbour
 
       test "role 1 matches format" do
         get '/api/roles',   headers: authorized_headers
-        uuid = response_body['roles'][0]['uuid']
-        get "/api/roles/#{uuid}", headers: authorized_headers  
+        id = response_body['roles'][0]['id']
+        get "/api/roles/#{id}", headers: authorized_headers  
         role = response_body['role']
         JSON::Validator.validate!(schema(1, "role"), role)
       end
@@ -53,7 +53,7 @@ module Harbour
         params = {role: {name: 'Staff', permissions: ["usage.read", "tickets.modify"]}}
         post '/api/roles', params: params.to_json, headers: authorized_headers
         assert_response :created
-        assert_operator response_body['role']['uuid'].length, :>, 0
+        assert_operator response_body['role']['id'].length, :>, 0
         save_example "Create a new role with basic permissions"
       end
 
@@ -77,12 +77,12 @@ module Harbour
       test "update role succeeds with valid params" do
         params = {role: {name: "Finance Team"}}
         post '/api/roles', params: params.to_json, headers: authorized_headers
-        uuid = response_body['role']['uuid']
+        id = response_body['role']['id']
         params = {role: {permissions: ['usage.read']}}
-        put "/api/roles/#{uuid}", params: params.to_json, headers: authorized_headers
+        put "/api/roles/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :ok
         assert response_body['role']['permissions'].include? 'usage.read'
-        save_example "Update role #{uuid} with new permissions"
+        save_example "Update role #{id} with new permissions"
       end
 
       test "update unknown role fails" do
@@ -95,9 +95,9 @@ module Harbour
       test "update role fails with invalid params" do
         params = {role: {name: 'super powers!'}}
         post '/api/roles', params: params.to_json, headers: authorized_headers
-        uuid = response_body['role']['uuid']
+        id = response_body['role']['id']
         params = {role: {permissions: ["flying"]}}
-        put "/api/roles/#{uuid}", params: params.to_json, headers: authorized_headers
+        put "/api/roles/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
         save_example "Update a role with invalid permissions"
       end
@@ -105,8 +105,8 @@ module Harbour
       test "delete role succeeds if role exists" do
         params = {role: {name: 'delete_me'}}
         post '/api/roles/', params: params.to_json, headers: authorized_headers
-        uuid = response_body['role']['uuid']
-        delete "/api/roles/#{uuid}", headers: authorized_headers
+        id = response_body['role']['id']
+        delete "/api/roles/#{id}", headers: authorized_headers
         assert_response :no_content
         save_example "Delete a role"
       end
@@ -128,7 +128,7 @@ module Harbour
         assert_response :success
         assert_equal 1, response_body['users'].count
         user = Organization.first.users.first
-        assert_equal user.uuid, response_body['users'][0]['uuid']
+        assert_equal user.uuid, response_body['users'][0]['id']
         save_example "Get role users"
       end
 

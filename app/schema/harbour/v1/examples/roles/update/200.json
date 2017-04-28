@@ -11,7 +11,7 @@
   },
   "response_data": {
     "role": {
-      "uuid": "5e93407bb64839f1cba5a12af9f64bd0",
+      "id": "5e93407bb64839f1cba5a12af9f64bd0",
       "name": "Finance Team",
       "admin": false,
       "permissions": [

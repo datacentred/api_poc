@@ -9,11 +9,11 @@ module Harbour
 
       def serialize(options={})
         {
-          uuid:  project.uuid,
-          name:  project.name,
+          id:         project.uuid,
+          name:       project.name,
           created_at: project.created_at,
           updated_at: project.updated_at,
-          links: [{"href": "#{Harbour::Engine.config.public_url}/api/projects/#{project.uuid}", "rel": "self"}]
+          links:      [{"href": "#{Harbour::Engine.config.public_url}/api/projects/#{project.uuid}", "rel": "self"}]
         }
       end
     end

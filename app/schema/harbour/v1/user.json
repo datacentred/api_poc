@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "uuid": {
+    "id": {
       "description": "Unique identifier for this user",
       "type": "string"
     },
@@ -31,7 +31,7 @@
     }
   },
   "required": [
-    "uuid", "email"
+    "id", "email"
   ]
 }
 

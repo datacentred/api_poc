@@ -30,10 +30,10 @@ module Harbour
 
       test "can find user 1" do
         get '/api/users',   headers: authorized_headers
-        uuid = response_body['users'][0]['uuid']
-        get "/api/users/#{uuid}", headers: authorized_headers
+        id = response_body['users'][0]['id']
+        get "/api/users/#{id}", headers: authorized_headers
         assert_response :success
-        save_example "Show user #{uuid}"
+        save_example "Show user #{id}"
       end
 
       test "can't find user 2" do
@@ -44,8 +44,8 @@ module Harbour
 
       test "user 1 matches format" do
         get '/api/users',   headers: authorized_headers
-        uuid = response_body['users'][0]['uuid']
-        get "/api/users/#{uuid}", headers: authorized_headers  
+        id = response_body['users'][0]['id']
+        get "/api/users/#{id}", headers: authorized_headers  
         user = response_body['user']
         JSON::Validator.validate!(schema(1, "user"), user)
       end
@@ -54,7 +54,7 @@ module Harbour
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
         post '/api/users', params: params.to_json, headers: authorized_headers
         assert_response :created
-        assert_operator response_body['user']['uuid'].length, :>, 0
+        assert_operator response_body['user']['id'].length, :>, 0
         save_example "Create a new user with a password"
       end
 
@@ -71,12 +71,12 @@ module Harbour
       test "update user succeeds with valid params" do
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
         post '/api/users', params: params.to_json, headers: authorized_headers
-        uuid = response_body['user']['uuid']
+        id = response_body['user']['id']
         params = {user: {first_name: 'Grim'}}
-        put "/api/users/#{uuid}", params: params.to_json, headers: authorized_headers
+        put "/api/users/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :ok
         assert_equal 'Grim', response_body['user']['first_name']
-        save_example "Update user #{uuid} with a new first name"
+        save_example "Update user #{id} with a new first name"
       end
 
       test "update unknown user fails" do
@@ -91,9 +91,9 @@ module Harbour
       test "update user fails with invalid params" do
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
         post '/api/users', params: params.to_json, headers: authorized_headers
-        uuid = response_body['user']['uuid']
+        id = response_body['user']['id']
         params = {user: {password: 'tiny'}}
-        put "/api/users/#{uuid}", params: params.to_json, headers: authorized_headers
+        put "/api/users/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
         save_example "Update a user with a password that's too short"
       end
@@ -101,17 +101,17 @@ module Harbour
       test "change user password" do
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
         post '/api/users', params: params.to_json, headers: authorized_headers
-        uuid = response_body['user']['uuid']
+        id = response_body['user']['id']
         params = {user: {password: 'station'}}
-        put "/api/users/#{uuid}", params: params.to_json, headers: authorized_headers
+        put "/api/users/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :ok
       end
 
       test "delete user succeeds if user exists" do
         params = {user: {email: 'death@afterlife.com', password: 'melvin'}}
         post '/api/users', params: params.to_json, headers: authorized_headers
-        uuid = response_body['user']['uuid']
-        delete "/api/users/#{uuid}", headers: authorized_headers
+        id = response_body['user']['id']
+        delete "/api/users/#{id}", headers: authorized_headers
         assert_response :no_content
         save_example "Delete a user"
       end

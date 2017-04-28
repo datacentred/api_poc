@@ -35,17 +35,17 @@ module Harbour
       examples 'index'
       def index ; end
 
-      api :GET, '/users/:uuid', 'Show a user'
+      api :GET, '/users/:id', 'Show a user'
       description 'Show the specified user'
-      param :uuid, String, desc: 'The unique identifier for this user', required: true
+      param :id, String, desc: 'The unique identifier for this user', required: true
       error 200, "Success"
       error 404, "User couldn't be found"
       examples 'show'
       def show ; end
 
-      api :PUT, '/users/:uuid', 'Update a user'
+      api :PUT, '/users/:id', 'Update a user'
       description 'Update the specified user'
-      param :uuid, String, desc: 'The unique identifier for this user', required: true
+      param :id, String, desc: 'The unique identifier for this user', required: true
       param_group :user, as: :update
       error 200, "Updated user successfully"
       error 404, "User couldn't be found"
@@ -53,11 +53,11 @@ module Harbour
       examples 'update'
       def update ; end
 
-      api :DELETE, '/users/:uuid', 'Delete a user'
+      api :DELETE, '/users/:id', 'Delete a user'
       description 'Permanently remove the specified user.'
-      param :uuid, String, desc: 'The unique identifier for this user', required: true
+      param :id, String, desc: 'The unique identifier for this user', required: true
       error 204, "Removed project successfully"
-      error 404, "Project UUID couldn't be found"
+      error 404, "Project id couldn't be found"
       error 422, "Couldn't delete user. Details of failure returned in body."
       examples 'destroy'
       def destroy ; end

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "uuid": {
+    "id": {
       "description": "Unique identifier for this role",
       "type": "string"
     },
@@ -34,6 +34,6 @@
     }
   },
   "required": [
-    "uuid", "name"
+    "id", "name"
   ]
 }

@@ -6,7 +6,7 @@
   "response_data": {
     "users": [
       {
-        "uuid": "293c38b7ec52c355414c6e975cde882f",
+        "id": "293c38b7ec52c355414c6e975cde882f",
         "email": "bill.s.preston@bodacious.com",
         "first_name": "Bill S.",
         "last_name": "Preston",
@@ -20,7 +20,7 @@
         ]
       },
       {
-        "uuid": "fdd7020adf1ddff29b0f6b41a5a8a919",
+        "id": "fdd7020adf1ddff29b0f6b41a5a8a919",
         "email": "elizabeth@ironmaiden.com",
         "first_name": "Elizabeth",
         "last_name": "Princess",

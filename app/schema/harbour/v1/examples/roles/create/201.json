@@ -13,7 +13,7 @@
   },
   "response_data": {
     "role": {
-      "uuid": "8f7f93630c366dc55aec88eb8e9640d0",
+      "id": "8f7f93630c366dc55aec88eb8e9640d0",
       "name": "Staff",
       "admin": false,
       "permissions": [

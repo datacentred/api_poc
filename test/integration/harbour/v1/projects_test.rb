@@ -29,10 +29,10 @@ module Harbour
 
       test "can find project 1" do
         get '/api/projects', headers: authorized_headers
-        uuid = response_body['projects'][0]['uuid']
-        get "/api/projects/#{uuid}", headers: authorized_headers
+        id = response_body['projects'][0]['id']
+        get "/api/projects/#{id}", headers: authorized_headers
         assert_response :success
-        save_example "Show project #{uuid}"
+        save_example "Show project #{id}"
       end
 
       test "can't find project 3" do
@@ -43,8 +43,8 @@ module Harbour
 
       test "project 1 matches format" do
         get '/api/projects', headers: authorized_headers
-        uuid = response_body['projects'][1]['uuid']
-        get "/api/projects/#{uuid}", headers: authorized_headers 
+        id = response_body['projects'][1]['id']
+        get "/api/projects/#{id}", headers: authorized_headers 
         project = response_body['project']
         JSON::Validator.validate!(schema(1, "project"), project)
       end
@@ -53,7 +53,7 @@ module Harbour
         params = {project: {name: 'wild_stalyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
         assert_response :created
-        assert_operator response_body['project']['uuid'].length, :>, 0
+        assert_operator response_body['project']['id'].length, :>, 0
         save_example "Create a new project"
       end
 
@@ -71,12 +71,12 @@ module Harbour
       test "update project succeeds with valid params" do
         params = {project: {name: 'wild_stalyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
-        uuid = response_body['project']['uuid']
+        id = response_body['project']['id']
         params = {project: {name: 'wild_stalyns_rock'}}
-        put "/api/projects/#{uuid}", params: params.to_json, headers: authorized_headers
+        put "/api/projects/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :ok
         assert_equal 'wild_stalyns_rock', response_body['project']['name']
-        save_example "Update project #{uuid} with a new name"
+        save_example "Update project #{id} with a new name"
       end
 
       test "update project fails with invalid params" do
@@ -84,13 +84,13 @@ module Harbour
         post '/api/projects', params: params.to_json, headers: authorized_headers
         params = {project: {name: 'wild_stalyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
-        uuid = response_body['project']['uuid']
+        id = response_body['project']['id']
         params = {project: {name: 'wild_stalyns_rock'}}
-        put "/api/projects/#{uuid}", params: params.to_json, headers: authorized_headers
+        put "/api/projects/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
         assert_equal "project", response_body['errors'][0]["resource"]
         assert_equal "name",    response_body['errors'][0]["field"]
-        save_example "Update project #{uuid} with a name that's already taken"
+        save_example "Update project #{id} with a name that's already taken"
       end
 
       test "update unknown project fails" do
@@ -105,8 +105,8 @@ module Harbour
       test "delete project succeeds if project exists" do
         params = {project: {name: 'wild_stalyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
-        uuid = response_body['project']['uuid']
-        delete "/api/projects/#{uuid}", headers: authorized_headers
+        id = response_body['project']['id']
+        delete "/api/projects/#{id}", headers: authorized_headers
         assert_response :no_content
         save_example "Delete a project"
       end

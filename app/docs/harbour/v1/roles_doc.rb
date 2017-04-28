@@ -33,17 +33,17 @@ module Harbour
       examples 'index'
       def index ; end
 
-      api :GET, '/roles/:uuid', 'Show a role'
+      api :GET, '/roles/:id', 'Show a role'
       description 'Show the specified role'
-      param :uuid, String, desc: 'The unique identifier for this role', required: true
+      param :id, String, desc: 'The unique identifier for this role', required: true
       error 200, "Success"
       error 404, "Role couldn't be found"
       examples 'show'
       def show ; end
 
-      api :PUT, '/roles/:uuid', 'Update a role'
+      api :PUT, '/roles/:id', 'Update a role'
       description 'Update the specified role'
-      param :uuid, String, desc: 'The unique identifier for this role', required: true
+      param :id, String, desc: 'The unique identifier for this role', required: true
       param_group :role, as: :name
       error 200, "Updated role successfully"
       error 404, "Role couldn't be found"
@@ -51,29 +51,29 @@ module Harbour
       examples 'update'
       def update ; end
 
-      api :DELETE, '/roles/:uuid', 'Delete a role'
+      api :DELETE, '/roles/:id', 'Delete a role'
       description 'Permanently remove the specified role.'
-      param :uuid, String, desc: 'The unique identifier for this role', required: true
+      param :id, String, desc: 'The unique identifier for this role', required: true
       error 204, "Removed role successfully"
       error 404, "Role couldn't be found"
       error 422, "Couldn't delete role. Details of failure returned in body."
       examples 'destroy'
       def destroy ; end
 
-      api :GET, '/roles/:uuid/users', 'List all members of this role'
+      api :GET, '/roles/:id/users', 'List all members of this role'
       description "Show a list of all the members assigned to this role."
       error 200, "Success"
       examples 'index', "roles_users"
       def members ; end
 
-      api :PUT, '/roles/:uuid/users/:uuid', 'Add new member to this role'
+      api :PUT, '/roles/:role_id/users/:user_id', 'Add new member to this role'
       description "Add a new member (user) to this role, giving them the associated permissions."
       error 200, "Success"
       error 404, "Role/user couldn't be found"
       examples 'update', "roles_users"
       def add ; end
 
-      api :DELETE, '/roles/:uuid/users/:uuid', 'Remove member from this role'
+      api :DELETE, '/roles/:role_id/users/:user_id', 'Remove member from this role'
       description "Remove member (user) from this role, revoking the associated permissions."
       error 200, "Success"
       error 404, "Role/user couldn't be found"

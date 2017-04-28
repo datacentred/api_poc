@@ -6,7 +6,7 @@
   "response_data": {
     "users": [
       {
-        "uuid": "293c38b7ec52c355414c6e975cde882f",
+        "id": "293c38b7ec52c355414c6e975cde882f",
         "email": "bill.s.preston@bodacious.com",
         "first_name": "Bill S.",
         "last_name": "Preston",
