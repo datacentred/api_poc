@@ -1,10 +1,10 @@
 {
-  "description": "Update project a6cefae377c4e7345a49b3ce41b6f0ad with a name that's already taken",
+  "description": "Update project 736b4d4a6bc66f6b8bfbb7d0dd09ef9a with a name that's already taken",
   "verb": "PUT",
-  "path": "/api/projects/a6cefae377c4e7345a49b3ce41b6f0ad",
+  "path": "/api/projects/736b4d4a6bc66f6b8bfbb7d0dd09ef9a",
   "request_data": {
     "project": {
-      "name": "wild_stalyns_rock"
+      "name": "wyld_stallyns_rock"
     }
   },
   "response_data": {

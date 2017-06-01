@@ -24,7 +24,6 @@ module Harbour
       test "index user matches format" do
         get '/api/users', headers: authorized_headers
         user = response_body['users'][1]
-
         JSON::Validator.validate!(schema(1, "user"), user)
       end
 

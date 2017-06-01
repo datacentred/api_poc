@@ -138,8 +138,8 @@ module Harbour
         assert_equal 1, role.users.count
         put "/api/roles/#{role.uuid}/users/#{user.uuid}", headers: authorized_headers
         assert_response :no_content
-        save_example "Add new member to role"
         assert_equal 2, role.users.count
+        save_example "Add new member to role"
       end
 
       test "adding a new member is an idempotent action" do

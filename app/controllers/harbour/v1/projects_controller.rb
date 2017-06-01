@@ -31,7 +31,7 @@ module Harbour
       private
 
       def scoped_projects
-        current_organization.projects.includes(:users)
+        current_organization.projects
       end
 
       def project
@@ -47,7 +47,14 @@ module Harbour
       end
 
       def create_or_update_params
-        params.require(:project).permit(:name, :users)
+        params.require(:project).permit(
+          :name,
+          :quota_set => {
+            :compute => StartingQuota['standard']['compute'].keys.map(&:to_sym),
+            :volume  => StartingQuota['standard']['volume'].keys.map(&:to_sym),
+            :network => StartingQuota['standard']['network'].keys.map(&:to_sym)
+          }
+        )
       end
     end
   end

@@ -10,6 +10,27 @@
         "name": "bogus",
         "created_at": "2017-02-01T16:20:00.000Z",
         "updated_at": "2017-02-01T16:20:00.000Z",
+        "quota_set": {
+          "compute": {
+            "instances": 10,
+            "cores": 10,
+            "ram": 20480
+          },
+          "volume": {
+            "volumes": 4,
+            "snapshots": 4,
+            "gigabytes": 40
+          },
+          "network": {
+            "floatingip": 1,
+            "router": 1,
+            "security_group_rule": 100,
+            "security_group": 10,
+            "network": 10,
+            "port": 10,
+            "subnet": 10
+          }
+        },
         "links": [
           {
             "href": "https://my.datacentred.io/api/projects/90affbd9a1954ec9ff029b7ad7183a16",
@@ -22,6 +43,27 @@
         "name": "excellent",
         "created_at": "2017-02-01T16:20:00.000Z",
         "updated_at": "2017-02-01T16:20:00.000Z",
+        "quota_set": {
+          "compute": {
+            "instances": 10,
+            "cores": 10,
+            "ram": 20480
+          },
+          "volume": {
+            "volumes": 4,
+            "snapshots": 4,
+            "gigabytes": 40
+          },
+          "network": {
+            "floatingip": 1,
+            "router": 1,
+            "security_group_rule": 100,
+            "security_group": 10,
+            "network": 10,
+            "port": 10,
+            "subnet": 10
+          }
+        },
         "links": [
           {
             "href": "https://my.datacentred.io/api/projects/7a3af604e52e2577b3f5b77e96f3e01d",

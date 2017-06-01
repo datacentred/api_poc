@@ -50,7 +50,7 @@ module Harbour
       end
 
       test "create project succeeds with valid params" do
-        params = {project: {name: 'wild_stalyns'}}
+        params = {project: {name: 'wyld_stallyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
         assert_response :created
         assert_operator response_body['project']['id'].length, :>, 0
@@ -58,7 +58,7 @@ module Harbour
       end
 
       test "create project fails with invalid params" do
-        params = {project: {name: 'wild_stalyns'}}
+        params = {project: {name: 'wyld_stallyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
         post '/api/projects', params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
@@ -68,24 +68,33 @@ module Harbour
         save_example "Create a new project with a name that's taken already"
       end
 
+      test "create project fails with invalid quota params" do
+        params = {project: {name: 'wyld_stallyns', quota_set: {"compute": {"ram": "boom"}}}}
+        post '/api/projects', params: params.to_json, headers: authorized_headers
+        assert_response :unprocessable_entity
+        assert_operator response_body['errors'].length, :>, 0
+        assert_equal "project",   response_body['errors'][0]["resource"]
+        assert_equal "quota_set", response_body['errors'][0]["field"]
+      end
+
       test "update project succeeds with valid params" do
-        params = {project: {name: 'wild_stalyns'}}
+        params = {project: {name: 'wyld_stallyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
         id = response_body['project']['id']
-        params = {project: {name: 'wild_stalyns_rock'}}
+        params = {project: {quota_set: {compute: {cores: 5}}}}
         put "/api/projects/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :ok
-        assert_equal 'wild_stalyns_rock', response_body['project']['name']
-        save_example "Update project #{id} with a new name"
+        assert_equal 5, response_body['project']['quota_set']['compute']['cores']
+        save_example "Update project #{id} with new compute cores quota"
       end
 
       test "update project fails with invalid params" do
-        params = {project: {name: 'wild_stalyns_rock'}}
+        params = {project: {name: 'wyld_stallyns_rock'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
-        params = {project: {name: 'wild_stalyns'}}
+        params = {project: {name: 'wyld_stallyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
         id = response_body['project']['id']
-        params = {project: {name: 'wild_stalyns_rock'}}
+        params = {project: {name: 'wyld_stallyns_rock'}}
         put "/api/projects/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
         assert_equal "project", response_body['errors'][0]["resource"]
@@ -93,17 +102,28 @@ module Harbour
         save_example "Update project #{id} with a name that's already taken"
       end
 
-      test "update unknown project fails" do
-        params = {project: {name: 'wild_stalyns_rock'}}
+      test "update project fails with invalid quota params" do
+        params = {project: {name: 'wyld_stallyns_rock'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
-        params = {project: {name: 'wild_stalyns'}}
+        id = response_body['project']['id']
+        params = {project: {quota_set: {"compute": {"ram": "boom"}}}}
+        put "/api/projects/#{id}", params: params.to_json, headers: authorized_headers
+        assert_response :unprocessable_entity
+        assert_equal "project",   response_body['errors'][0]["resource"]
+        assert_equal "quota_set", response_body['errors'][0]["field"]
+      end
+
+      test "update unknown project fails" do
+        params = {project: {name: 'wyld_stallyns_rock'}}
+        post '/api/projects', params: params.to_json, headers: authorized_headers
+        params = {project: {name: 'wyld_stallyns'}}
         put "/api/projects/unknown", params: params.to_json, headers: authorized_headers
         assert_response :not_found
         save_example "Update a non-existent project"
       end
 
       test "delete project succeeds if project exists" do
-        params = {project: {name: 'wild_stalyns'}}
+        params = {project: {name: 'wyld_stallyns'}}
         post '/api/projects', params: params.to_json, headers: authorized_headers
         id = response_body['project']['id']
         delete "/api/projects/#{id}", headers: authorized_headers
@@ -132,8 +152,8 @@ module Harbour
         assert_equal 1, project.users.count
         put "/api/projects/#{project.uuid}/users/#{user.uuid}", headers: authorized_headers
         assert_response :no_content
-        save_example "Add new member to project"
         assert_equal 2, project.users.count
+        save_example "Add new member to project"
       end
 
       test "adding a new member to a project is an idempotent action" do

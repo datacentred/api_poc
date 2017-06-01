@@ -4,7 +4,7 @@
   "path": "/api/projects",
   "request_data": {
     "project": {
-      "name": "wild_stalyns"
+      "name": "wyld_stallyns"
     }
   },
   "response_data": {
