@@ -9,11 +9,16 @@ module Harbour
       end
 
       def update
-        head :no_content if project.users << user
+        UserProjectRole.required_role_ids.each do |role_uuid|
+          UserProjectRole.create user:      user,
+                                 project:   project,
+                                 role_uuid: role_uuid
+        end
+        head :no_content
       end
 
       def destroy
-        head :no_content if project.users -= [user]
+        head :no_content if UserProjectRole.where(project: project, user: user).destroy_all
       end
 
       private

@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20170425120000) do
   create_table "user_project_roles", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "project_id"
-    t.string   "role_id"
+    t.string   "role_uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

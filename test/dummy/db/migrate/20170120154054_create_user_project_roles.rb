@@ -3,7 +3,7 @@ class CreateUserProjectRoles < ActiveRecord::Migration[5.0]
     create_table :user_project_roles do |t|
       t.integer :user_id
       t.integer :project_id
-      t.string  :role_id
+      t.string  :role_uuid
       t.timestamps
     end
   end
