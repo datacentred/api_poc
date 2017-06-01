@@ -135,11 +135,10 @@ module Harbour
       test "add a new member to role" do
         role = Role.first
         user = User.all[2]
+        assert_equal 1, role.users.count
         put "/api/roles/#{role.uuid}/users/#{user.uuid}", headers: authorized_headers
         assert_response :no_content
-        assert_equal 2, role.users.count
         save_example "Add new member to role"
-        put "/api/roles/#{role.uuid}/users/#{user.uuid}", headers: authorized_headers
         assert_equal 2, role.users.count
       end
 
