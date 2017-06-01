@@ -58,6 +58,26 @@ module Harbour
       error 422, "Couldn't delete project. Details of failure returned in body."
       examples 'destroy'
       def destroy ; end
+
+      api :GET, '/projects/:id/users', 'List all members of this project'
+      description "Show a list of all the members assigned to this project."
+      error 200, "Success"
+      examples 'index', "projects_users"
+      def members ; end
+
+      api :PUT, '/projects/:project_id/users/:user_id', 'Add new member to this project'
+      description "Add a new member (user) to this project, giving them access to it via OpenStack."
+      error 200, "Success"
+      error 404, "Project/user couldn't be found"
+      examples 'update', "projects_users"
+      def add ; end
+
+      api :DELETE, '/projects/:project_id/users/:user_id', 'Remove member from this project'
+      description "Remove member (user) from this project, revoking their access to it on OpenStack."
+      error 200, "Success"
+      error 404, "Project/user couldn't be found"
+      examples 'destroy', "projects_users"
+      def remove ; end
     end
   end
 end
