@@ -9,11 +9,13 @@ module Harbour
       end
 
       def update
-        head :no_content if role.users << user
+        role.users << user unless role.users.include? user
+        head :no_content 
       end
 
       def destroy
-        head :no_content if role.users -= [user]
+        role.users -= [user] if role.users.include? user
+        head :no_content
       end
 
       private

@@ -10,9 +10,9 @@ module Harbour
 
       def update
         UserProjectRole.required_role_ids.each do |role_uuid|
-          UserProjectRole.create user:      user,
-                                 project:   project,
-                                 role_uuid: role_uuid
+          UserProjectRole.find_or_create_by user:      user,
+                                            project:   project,
+                                            role_uuid: role_uuid
         end
         head :no_content
       end

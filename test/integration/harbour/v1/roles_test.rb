@@ -142,6 +142,17 @@ module Harbour
         assert_equal 2, role.users.count
       end
 
+      test "adding a new member is an idempotent action" do
+        role = Role.first
+        user = User.all[2]
+        assert_equal 1, role.users.count
+        2.times do
+          put "/api/roles/#{role.uuid}/users/#{user.uuid}", headers: authorized_headers
+          assert_response :no_content
+          assert_equal 2, role.users.count
+        end
+      end
+
       test "add a non-existent user to role" do
         role = Role.first
         put "/api/roles/#{role.uuid}/users/boom", headers: authorized_headers
@@ -159,6 +170,19 @@ module Harbour
         assert_response :no_content
         assert_equal 1, role.users.count
         save_example "Remove member from role"
+      end
+
+      test "removing a member is an idempotent action" do
+        role = Role.first
+        user = User.all[2]
+        put "/api/roles/#{role.uuid}/users/#{user.uuid}", headers: authorized_headers
+        assert_response :no_content
+        assert_equal 2, role.users.count
+        2.times do
+          delete "/api/roles/#{role.uuid}/users/#{user.uuid}", headers: authorized_headers
+          assert_response :no_content
+          assert_equal 1, role.users.count
+        end
       end
 
       test "remove member from a non-existent role" do

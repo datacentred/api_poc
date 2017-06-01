@@ -136,6 +136,17 @@ module Harbour
         assert_equal 2, project.users.count
       end
 
+      test "adding a new member to a project is an idempotent action" do
+        project = Project.first
+        user = User.all[2]
+        assert_equal 1, project.users.count
+        2.times do
+          put "/api/projects/#{project.uuid}/users/#{user.uuid}", headers: authorized_headers
+          assert_response :no_content
+          assert_equal 2, project.users.count
+        end
+      end
+
       test "add a non-existent user to project" do
         project = Project.first
         put "/api/projects/#{project.uuid}/users/boom", headers: authorized_headers
@@ -153,6 +164,19 @@ module Harbour
         assert_response :no_content
         assert_equal 1, project.users.count
         save_example "Remove member from project"
+      end
+
+      test "removing a member from a project is an idempotent action" do
+        project = Project.first
+        user = User.all[2]
+        put "/api/projects/#{project.uuid}/users/#{user.uuid}", headers: authorized_headers
+        assert_response :no_content
+        assert_equal 2, project.users.count
+        2.times do
+          delete "/api/projects/#{project.uuid}/users/#{user.uuid}", headers: authorized_headers
+          assert_response :no_content
+          assert_equal 1, project.users.count
+        end
       end
 
       test "remove member from a non-existent project" do
