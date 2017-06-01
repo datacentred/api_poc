@@ -1,19 +1,9 @@
 module Harbour
   def self.app_info
     <<-EOS
-## Why does this exist?
+## What is this API for?
 
-In short, this API exists to plug gaps in what the OpenStack native APIs will allow.
-
-We want to allow our users to automate all their interactions with us. Ideally, this will be via the OpenStack APIs themselves and we're actively working on upstream changes in the OpenStack codebase to make this possible.
-
-Over time, we intended to deprecate parts of this API as OpenStack adds more features natively until there is no further need for it and we can retire it completely.
-
-## What does it do?
-
-This API allows you to automate operations against your DataCentred account
-in a similar way to how you would automate operations against your OpenStack
-infrastructure.
+This API allows you to automate operations against your DataCentred account.
 
 Operations include:
 
@@ -23,6 +13,16 @@ Operations include:
 * Viewing detailed usage/billing information for your account.
 
 If you have any questions or need any help, please [raise a support ticket](https://my.datacentred.io/account/tickets)!
+
+<div class="bg-info">
+<p><strong>💭 Can this be accomplished in the OpenStack APIs?</strong></p>
+
+<p>Eventually, yes. This API exists to plug gaps in what the OpenStack native APIs will currently allow.</p>
+
+<p>We want to allow our users to automate all their interactions with our systems so we're actively working on upstream changes in the OpenStack codebase to make this possible.</p>
+</div>
+
+<hr>
 
 ## Getting Started
 
@@ -87,6 +87,7 @@ curl -I -s '#{Harbour::Engine.config.public_url}/api/projects' \\
 
 <div class="bg-info"><strong>💡 Note:</strong> You can discover information about API versions by visiting <a href="/api/docs/v1/versions/index">the versions index</a>.</div>
 
+<hr>
     EOS
   end
 
