@@ -1,7 +1,15 @@
 module Harbour
   def self.app_info
     <<-EOS
-## Welcome to the DataCentred API documentation
+## Why does this exist?
+
+In short, this API exists to plug gaps in what the OpenStack native APIs will allow.
+
+We want to allow our users to automate all their interactions with us. Ideally, this will be via the OpenStack APIs themselves and we're actively working on upstream changes in the OpenStack codebase to make this possible.
+
+Over time, we intended to deprecate parts of this API as OpenStack adds more features natively until there is no further need for it and we can retire it completely.
+
+## What does it do?
 
 This API allows you to automate operations against your DataCentred account
 in a similar way to how you would automate operations against your OpenStack
@@ -16,7 +24,9 @@ Operations include:
 
 If you have any questions or need any help, please [raise a support ticket](https://my.datacentred.io/account/tickets)!
 
-## 🔑 Authentication
+## Getting Started
+
+### 🔑 Authentication
 
 The API uses two pieces of information to authenticate access.
 
@@ -60,7 +70,7 @@ or
 </li>
 </ol>
 
-## 📌 API Versioning
+### 📌 API Versioning
 
 Target specific versions by using the `Accept` header:
 
