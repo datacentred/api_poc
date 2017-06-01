@@ -1,0 +1,21 @@
+{
+  "description": "Remove member from a non-existent project",
+  "verb": "DELETE",
+  "path": "/api/projects/boom/users/fdd7020adf1ddff29b0f6b41a5a8a919",
+  "request_data": null,
+  "response_data": {
+    "errors": [
+      {
+        "detail": "No such project 'boom'"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://my.datacentred.io/api",
+        "rel": "help"
+      }
+    ]
+  },
+  "head": 404,
+  "api_version": 1
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Remove member from project",
+  "verb": "DELETE",
+  "path": "/api/projects/90affbd9a1954ec9ff029b7ad7183a16/users/fdd7020adf1ddff29b0f6b41a5a8a919",
+  "request_data": null,
+  "response_data": null,
+  "head": 204,
+  "api_version": 1
+}

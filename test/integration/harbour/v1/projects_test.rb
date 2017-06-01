@@ -116,6 +116,51 @@ module Harbour
         assert_response :not_found
         save_example "Can't delete a non-existent project"
       end
+
+      test "view project users" do
+        get "/api/projects/#{Project.first.uuid}/users", headers: authorized_headers
+        assert_response :success
+        assert_equal 1, response_body['users'].count
+        user = Organization.first.users.first
+        assert_equal user.uuid, response_body['users'][0]['id']
+        save_example "Get project users"
+      end
+
+      test "add a new member to project" do
+        project = Project.first
+        user = User.all[2]
+        assert_equal 1, project.users.count
+        put "/api/projects/#{project.uuid}/users/#{user.uuid}", headers: authorized_headers
+        assert_response :no_content
+        save_example "Add new member to project"
+        assert_equal 2, project.users.count
+      end
+
+      test "add a non-existent user to project" do
+        project = Project.first
+        put "/api/projects/#{project.uuid}/users/boom", headers: authorized_headers
+        assert_response :not_found
+        save_example "Add non-existent member to project"
+      end
+
+      test "remove member from a project" do
+        project = Project.first
+        user = User.all[2]
+        put "/api/projects/#{project.uuid}/users/#{user.uuid}", headers: authorized_headers
+        assert_response :no_content
+        assert_equal 2, project.users.count
+        delete "/api/projects/#{project.uuid}/users/#{user.uuid}", headers: authorized_headers
+        assert_response :no_content
+        assert_equal 1, project.users.count
+        save_example "Remove member from project"
+      end
+
+      test "remove member from a non-existent project" do
+        user = User.all[2]
+        delete "/api/projects/boom/users/#{user.uuid}", headers: authorized_headers
+        assert_response :not_found
+        save_example "Remove member from a non-existent project"
+      end
     end
   end
 end

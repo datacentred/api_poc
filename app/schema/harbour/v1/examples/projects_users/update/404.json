@@ -1,0 +1,21 @@
+{
+  "description": "Add non-existent member to project",
+  "verb": "PUT",
+  "path": "/api/projects/90affbd9a1954ec9ff029b7ad7183a16/users/boom",
+  "request_data": null,
+  "response_data": {
+    "errors": [
+      {
+        "detail": "No such user 'boom'"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://my.datacentred.io/api",
+        "rel": "help"
+      }
+    ]
+  },
+  "head": 404,
+  "api_version": 1
+}
