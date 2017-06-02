@@ -86,7 +86,7 @@ module Harbour
     end
 
     def setup
-      t = Time.local(2017, 2, 1, 16, 20, 0)
+      t = Time.local(2017, 6, 7, 16, 20, 0)
       Timecop.freeze(t)
     end
 

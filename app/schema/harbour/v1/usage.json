@@ -1,0 +1,737 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "last_updated_at": {
+      "description": "Time this data was last recalculated",
+      "type": "string",
+      "format": "datetime"
+    },
+    "projects": {
+      "description": "List of projects",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier for this project",
+            "type": "string"
+          },
+          "name": {
+            "description": "Project's name",
+            "type": "string"
+          },
+          "usage": {
+            "description": "Usage information for this project",
+            "type": "object",
+            "properties": {
+              "images": {
+                "description": "Images that incurred usage",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "created_at": {
+                      "description": "Time this image was created",
+                      "type": "string",
+                      "format": "datetime"
+                    },
+                    "deleted_at": {
+                      "description": "Time this image was deleted",
+                      "type": ["string", "null"],
+                      "format": "datetime"
+                    },
+                    "id": {
+                      "description": "Unique identifier for this image",
+                      "type": "string"
+                    },
+                    "latest_size_gb": {
+                      "description": "Latest size of image in gigabytes",
+                      "type": "number"
+                    },
+                    "name": {
+                      "description": "Name of this image",
+                      "type": "string"
+                    },
+                    "owner": {
+                      "description": "UUID of the owning user",
+                      "type": ["string", "null"]
+                    },
+                    "usage": {
+                      "description": "Usage for this image",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cost": {
+                            "description": "Cost data for this image",
+                            "type": "object",
+                            "properties": {
+                              "currency": {
+                                "description": "Currency of the cost",
+                                "type": "string",
+                                "enum": ["gbp"]
+                              },
+                              "rate": {
+                                "description": "Rate per unit",
+                                "type": "number"
+                              },
+                              "value": {
+                                "description": "Value of the cost",
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "currency",
+                              "rate",
+                              "value"
+                            ]
+                          },
+                          "meta": {
+                            "description": "Metadata",
+                            "type": "object"
+                          },
+                          "unit": {
+                            "description": "Unit by which the usage is measured",
+                            "type": "string"
+                          },
+                          "value": {
+                            "description": "Value of the usage for this image",
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "cost",
+                          "meta",
+                          "unit",
+                          "value"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "deleted_at",
+                    "id",
+                    "latest_size_gb",
+                    "name",
+                    "usage"
+                  ]
+                }
+              },
+              "instances": {
+                "description": "Instances that incurred usage",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "current_flavor": {
+                      "description": "The current flavor of this instance",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "description": "Unique ID of this flavor",
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Name of this flavor",
+                          "type": "string"
+                        },
+                        "ram_mb": {
+                          "description": "Allocated MB of RAM for this flavor",
+                          "type": "integer"
+                        },
+                        "root_disk_gb": {
+                          "description": "Allocated GB of disk space for this flavor",
+                          "type": "integer"
+                        },
+                        "vcpus_count": {
+                          "description": "Allocated VCPUs for this flavor",
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "first_booted_at": {
+                      "description": "Time this instance was created",
+                      "type": "string",
+                      "format": "datetime"
+                    },
+                    "history": {
+                      "description": "Historical state changes for this instance",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "billable": {
+                            "description": "Is this state billable?",
+                            "type": "boolean"
+                          },
+                          "event_name": {
+                            "description": "Name of the event that triggered this state change",
+                            "type": "string"
+                          },
+                          "flavor": {
+                            "description": "Name of the flavor of this instance when this event occurred",
+                            "type": "string"
+                          },
+                          "recorded_at": {
+                            "description": "Time this event was recorded at",
+                            "type": "string",
+                            "format": "datetime"
+                          },
+                          "seconds": {
+                            "description": "Number of seconds this instance has been in this state",
+                            "type": "integer"
+                          },
+                          "state": {
+                            "description": "The name of the state this instance is running as",
+                            "type": "string"
+                          },
+                          "user_id": {
+                            "description": "The ID of the user that initiated this state change",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "billable",
+                          "event_name",
+                          "flavor",
+                          "recorded_at",
+                          "seconds",
+                          "state",
+                          "user_id"
+                        ]
+                      }
+                    },
+                    "id": {
+                      "description": "Unique identifier for this instance",
+                      "type": "string"
+                    },
+                    "latest_state": {
+                      "description": "The latest recorded state of this instance",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name of this instance",
+                      "type": "string"
+                    },
+                    "tags": {
+                      "description": "Data labels this instance may be tagged with",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "terminated_at": {
+                      "description": "Time this instance was deleted",
+                      "type": ["string", "null"],
+                      "format": "datetime"
+                    },
+                    "usage": {
+                      "description": "Usage for this instance",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cost": {
+                            "description": "Cost data for this instance",
+                            "type": "object",
+                            "properties": {
+                              "currency": {
+                                "description": "Currency of the cost",
+                                "type": "string",
+                                "enum": ["gbp"]
+                              },
+                              "rate": {
+                                "description": "Rate per unit",
+                                "type": "number"
+                              },
+                              "value": {
+                                "description": "Value of the cost",
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "currency",
+                              "rate",
+                              "value"
+                            ]
+                          },
+                          "meta": {
+                            "description": "Metadata",
+                            "type": "object"
+                          },
+                          "unit": {
+                            "description": "Unit by which the usage is measured",
+                            "type": "string"
+                          },
+                          "value": {
+                            "description": "Value of the usage for this instance",
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "cost",
+                          "meta",
+                          "unit",
+                          "value"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "current_flavor",
+                    "first_booted_at",
+                    "history",
+                    "id",
+                    "latest_state",
+                    "name",
+                    "tags",
+                    "terminated_at",
+                    "usage"
+                  ]
+                }
+              },
+              "ips": {
+                "current_quota": {
+                  "description": "Number of IPs allocated by quota to this project",
+                  "type": "integer"
+                },
+                "quota_changes": {
+                  "description": "All quota changes for this project during this period",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "previous": {
+                        "description": "The previous quota",
+                        "type": ["integer", "null"]
+                      },
+                      "quota": {
+                        "description": "The new quota value",
+                        "type": "integer"
+                      },
+                      "recorded_at": {
+                        "description": "The time at which the quota change occurred",
+                        "type": "string",
+                        "format": "datetime"
+                      }
+                    },
+                    "required": [
+                      "previous",
+                      "quota",
+                      "recorded_at"
+                    ]
+                  }
+                },
+                "usage": {
+                  "description": "Usage for public IPs on this project",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "cost": {
+                        "description": "Cost data for the publics IPs on this project",
+                        "type": "object",
+                        "properties": {
+                          "currency": {
+                            "description": "Currency of the cost",
+                            "type": "string",
+                            "enum": ["gbp"]
+                          },
+                          "rate": {
+                            "description": "Rate per unit",
+                            "type": "number"
+                          },
+                          "value": {
+                            "description": "Value of the cost",
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "currency",
+                          "rate",
+                          "value"
+                        ]
+                      },
+                      "meta": {
+                        "description": "Metadata",
+                        "type": "object"
+                      },
+                      "unit": {
+                        "description": "Unit by which the usage is measured",
+                        "type": "string"
+                      },
+                      "value": {
+                        "description": "Value of the public IP usage on this project",
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "cost",
+                      "meta",
+                      "unit",
+                      "value"
+                    ]
+                  }
+                }
+              },
+              "load_balancers": {
+                "description": "Load balancers that incurred usage",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Unique ID for this load balancer",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name for this load balancer",
+                      "type": "string"
+                    },
+                    "owner": {
+                      "description": "User ID of the user who created this load balancer",
+                      "type": "string"
+                    },
+                    "started_at": {
+                      "description": "Time this load balancer was started at",
+                      "type": ["string", "null"],
+                      "format": "datetime"
+                    },
+                    "terminated_at": {
+                      "description": "Time this load balancer was terminated at",
+                      "type": ["string", "null"],
+                      "format": "datetime"
+                    },
+                    "usage": {
+                      "description": "Usage for this load balancer",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cost": {
+                            "description": "Cost data for this load balancer",
+                            "type": "object",
+                            "properties": {
+                              "currency": {
+                                "description": "Currency of the cost",
+                                "type": "string",
+                                "enum": ["gbp"]
+                              },
+                              "rate": {
+                                "description": "Rate per unit",
+                                "type": "number"
+                              },
+                              "value": {
+                                "description": "Value of the cost",
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "currency",
+                              "rate",
+                              "value"
+                            ]
+                          },
+                          "meta": {
+                            "description": "Metadata",
+                            "type": "object"
+                          },
+                          "unit": {
+                            "description": "Unit by which the usage is measured",
+                            "type": "string"
+                          },
+                          "value": {
+                            "description": "Value of the usage for the load balancer",
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "cost",
+                          "meta",
+                          "unit",
+                          "value"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "usage",
+                    "owner",
+                    "started_at",
+                    "terminated_at"
+                  ]
+                }
+              },
+              "object_storage": {
+                "usage": {
+                  "description": "Usage for object storage on this project",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "cost": {
+                        "description": "Cost data for the object storage on this project",
+                        "type": "object",
+                        "properties": {
+                          "currency": {
+                            "description": "Currency of the cost",
+                            "type": "string",
+                            "enum": ["gbp"]
+                          },
+                          "rate": {
+                            "description": "Rate per unit",
+                            "type": "number"
+                          },
+                          "value": {
+                            "description": "Value of the cost",
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "currency",
+                          "rate",
+                          "value"
+                        ]
+                      },
+                      "meta": {
+                        "description": "Metadata",
+                        "type": "object"
+                      },
+                      "unit": {
+                        "description": "Unit by which the usage is measured",
+                        "type": "string"
+                      },
+                      "value": {
+                        "description": "Value of the usage for this instance",
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "cost",
+                      "meta",
+                      "unit",
+                      "value"
+                    ]
+                  }
+                }
+              },
+              "volumes": {
+                "description": "Volumes that incurred usage",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "created_at": {
+                      "description": "Time this volume was created at",
+                      "type": "string",
+                      "format": "datetime"
+                    },
+                    "deleted_at": {
+                      "description": "Time this volume was deleted at",
+                      "type": ["string", "null"],
+                      "format": "datetime"
+                    },
+                    "id": {
+                      "description": "Unique ID of this volume",
+                      "type": "string"
+                    },
+                    "latest_size_gb": {
+                      "description": "Latest recorded size of this volume in gigabytes",
+                      "type": "integer"
+                    },
+                    "name": {
+                      "description": "The name of this volume",
+                      "type": "string"
+                    },
+                    "owner": {
+                      "description": "User ID of the user who created this volume",
+                      "type": "string"
+                    },
+                    "tags": {
+                      "description": "Data labels this volume may be tagged with",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "usage": {
+                      "description": "Usage for the volumes on this project",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cost": {
+                            "description": "Cost data for this volume",
+                            "type": "object",
+                            "properties": {
+                              "currency": {
+                                "description": "Currency of the cost",
+                                "type": "string",
+                                "enum": ["gbp"]
+                              },
+                              "rate": {
+                                "description": "Rate per unit",
+                                "type": "number"
+                              },
+                              "value": {
+                                "description": "Value of the cost",
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "currency",
+                              "rate",
+                              "value"
+                            ]
+                          },
+                          "meta": {
+                            "description": "Metadata",
+                            "type": "object"
+                          },
+                          "unit": {
+                            "description": "Unit by which the usage is measured",
+                            "type": "string"
+                          },
+                          "value": {
+                            "description": "Value of the usage for this volume",
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "cost",
+                          "meta",
+                          "unit",
+                          "value"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "deleted_at",
+                    "id",
+                    "latest_size_gb",
+                    "name",
+                    "owner",
+                    "tags",
+                    "usage"
+                  ]
+                }
+              },
+              "vpns": {
+                "description": "VPNs that incurred usage",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Unique ID for this VPN",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name for this VPN",
+                      "type": "string"
+                    },
+                    "owner": {
+                      "description": "User ID of the user who created this VPN",
+                      "type": "string"
+                    },
+                    "started_at": {
+                      "description": "Time this VPN was started at",
+                      "type": ["string", "null"],
+                      "format": "datetime"
+                    },
+                    "terminated_at": {
+                      "description": "Time this VPN was terminated at",
+                      "type": ["string", "null"],
+                      "format": "datetime"
+                    },
+                    "usage": {
+                      "description": "Usage for this VPN",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "cost": {
+                            "description": "Cost data for this VPN",
+                            "type": "object",
+                            "properties": {
+                              "currency": {
+                                "description": "Currency of the cost",
+                                "type": "string",
+                                "enum": ["gbp"]
+                              },
+                              "rate": {
+                                "description": "Rate per unit",
+                                "type": "number"
+                              },
+                              "value": {
+                                "description": "Value of the cost",
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "currency",
+                              "rate",
+                              "value"
+                            ]
+                          },
+                          "meta": {
+                            "description": "Metadata",
+                            "type": "object"
+                          },
+                          "unit": {
+                            "description": "Unit by which the usage is measured",
+                            "type": "string"
+                          },
+                          "value": {
+                            "description": "Value of the usage for this VPN",
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "cost",
+                          "meta",
+                          "unit",
+                          "value"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "usage",
+                    "owner",
+                    "started_at",
+                    "terminated_at"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "images",
+              "instances",
+              "ips",
+              "load_balancers",
+              "object_storage",
+              "volumes",
+              "vpns"
+            ]
+          }
+        },
+        "required": [
+          "id", "name", "usage"
+        ]
+      }
+    }
+  },
+  "required": [
+    "last_updated_at",
+    "projects"
+  ]
+}
