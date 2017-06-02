@@ -37,7 +37,7 @@ EOS
       "links": [
         {
           "href": "#{Harbour::Engine.config.public_url}/api",
-          "rel":"self"
+          "rel": "self"
         }
       ]
     }

@@ -14,7 +14,8 @@ module Harbour
 
       def_param_group :project do
         param   :project, Hash,   desc: 'Project information', required: true, action_aware: true do
-          param :name,    String, desc: 'Name of the project', required: true, as: :create
+          param :name,      String, desc: 'Name of the project', required: true, as: :create
+          param :quota_set, Hash, desc: 'Quotas values for this project', required: false
         end
       end
 

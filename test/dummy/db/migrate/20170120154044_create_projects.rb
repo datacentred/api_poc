@@ -4,6 +4,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :uuid
       t.string :name
       t.integer :organization_id
+      t.text :quota_set
       t.timestamps
     end
   end

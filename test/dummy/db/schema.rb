@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170425120000) do
     t.string   "uuid"
     t.string   "name"
     t.integer  "organization_id"
+    t.text     "quota_set"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

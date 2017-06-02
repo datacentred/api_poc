@@ -10,6 +10,90 @@
       "description": "Project's unique name",
       "type": "string"
     },
+    "quota_set": {
+      "description": "Project's assigned resource quota values",
+      "type": "object",
+      "properties": {
+        "compute": {
+          "type": "object",
+          "properties": {
+            "instances": {
+              "type": "integer"
+            },
+            "cores": {
+              "type": "integer"
+            },
+            "ram": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "instances",
+            "cores",
+            "ram"
+          ]
+        },
+        "volume": {
+          "type": "object",
+          "properties": {
+            "volumes": {
+              "type": "integer"
+            },
+            "snapshots": {
+              "type": "integer"
+            },
+            "gigabytes": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "volumes",
+            "snapshots",
+            "gigabytes"
+          ]
+        },
+        "network": {
+          "type": "object",
+          "properties": {
+            "floatingip": {
+              "type": "integer"
+            },
+            "router": {
+              "type": "integer"
+            },
+            "security_group_rule": {
+              "type": "integer"
+            },
+            "security_group": {
+              "type": "integer"
+            },
+            "network": {
+              "type": "integer"
+            },
+            "port": {
+              "type": "integer"
+            },
+            "subnet": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "floatingip",
+            "router",
+            "security_group_rule",
+            "security_group",
+            "network",
+            "port",
+            "subnet"
+          ]
+        }
+      },
+      "required": [
+        "compute",
+        "volume",
+        "network"
+      ]
+    },
     "created_at": {
       "description": "Date/time this project was created",
       "type": "string",
@@ -22,6 +106,8 @@
     }
   },
   "required": [
-    "id", "name"
+    "id",
+    "name",
+    "quota_set"
   ]
 }
