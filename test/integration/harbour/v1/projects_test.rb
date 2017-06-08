@@ -132,7 +132,7 @@ module Harbour
       end
 
       test "delete project fails if project can't be found" do
-        delete "/api/projects/notarealproject", headers: authorized_headers
+        delete "/api/projects/military_school", headers: authorized_headers
         assert_response :not_found
         save_example "Can't delete a non-existent project"
       end
@@ -169,7 +169,7 @@ module Harbour
 
       test "add a non-existent user to project" do
         project = Project.first
-        put "/api/projects/#{project.uuid}/users/boom", headers: authorized_headers
+        put "/api/projects/#{project.uuid}/users/station", headers: authorized_headers
         assert_response :not_found
         save_example "Add non-existent member to project"
       end
@@ -201,7 +201,7 @@ module Harbour
 
       test "remove member from a non-existent project" do
         user = User.all[2]
-        delete "/api/projects/boom/users/#{user.uuid}", headers: authorized_headers
+        delete "/api/projects/psychoanalysts/users/#{user.uuid}", headers: authorized_headers
         assert_response :not_found
         save_example "Remove member from a non-existent project"
       end

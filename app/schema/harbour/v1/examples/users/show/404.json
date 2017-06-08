@@ -1,7 +1,7 @@
 {
   "description": "Can't find non-existent user",
   "verb": "GET",
-  "path": "/api/users/not_found",
+  "path": "/api/users/station",
   "request_data": null,
   "response_data": null,
   "head": 404,

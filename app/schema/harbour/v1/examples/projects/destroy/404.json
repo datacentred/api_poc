@@ -1,7 +1,7 @@
 {
   "description": "Can't delete a non-existent project",
   "verb": "DELETE",
-  "path": "/api/projects/notarealproject",
+  "path": "/api/projects/military_school",
   "request_data": null,
   "response_data": null,
   "head": 404,

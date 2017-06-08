@@ -4,9 +4,9 @@
   "path": "/api/roles",
   "request_data": {
     "role": {
-      "name": "weird perms",
+      "name": "Genghis Khan",
       "permissions": [
-        "dancing"
+        "fighting"
       ]
     }
   },
@@ -14,7 +14,7 @@
     "errors": [
       {
         "resource": "role",
-        "detail": "Role permissions must be one of: 'cloud.read', 'roles.modify', 'roles.read', 'storage.read', 'tickets.modify', 'usage.read'. 'dancing' is not allowed.",
+        "detail": "Role permissions must be one of: 'cloud.read', 'roles.modify', 'roles.read', 'storage.read', 'tickets.modify', 'usage.read'. 'fighting' is not allowed.",
         "field": "permissions"
       }
     ],

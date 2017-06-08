@@ -1,12 +1,12 @@
 {
   "description": "Add non-existent member to role",
   "verb": "PUT",
-  "path": "/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b/users/boom",
+  "path": "/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b/users/station",
   "request_data": null,
   "response_data": {
     "errors": [
       {
-        "detail": "No such user 'boom'"
+        "detail": "No such user 'station'"
       }
     ],
     "links": [

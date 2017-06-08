@@ -50,7 +50,7 @@ module Harbour
       end
 
       test "create role succeeds with valid params" do
-        params = {role: {name: 'Staff', permissions: ["usage.read", "tickets.modify"]}}
+        params = {role: {name: 'Historical Figures', permissions: ["usage.read", "tickets.modify"]}}
         post '/api/roles', params: params.to_json, headers: authorized_headers
         assert_response :created
         assert_operator response_body['role']['id'].length, :>, 0
@@ -65,7 +65,7 @@ module Harbour
       end
 
       test "create role fails with invalid params" do
-        params = {role: {name: 'weird perms', permissions: ["dancing"]}}
+        params = {role: {name: 'Genghis Khan', permissions: ["fighting"]}}
         post '/api/roles', params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
         assert_operator response_body['errors'].length, :>, 0
@@ -75,7 +75,7 @@ module Harbour
       end
 
       test "update role succeeds with valid params" do
-        params = {role: {name: "Finance Team"}}
+        params = {role: {name: "Waterslide"}}
         post '/api/roles', params: params.to_json, headers: authorized_headers
         id = response_body['role']['id']
         params = {role: {permissions: ['usage.read']}}
@@ -86,24 +86,24 @@ module Harbour
       end
 
       test "update unknown role fails" do
-        params = {role: {name: 'Fail'}}
+        params = {role: {name: 'Military School'}}
         put "/api/roles/unknown", params: params.to_json, headers: authorized_headers
         assert_response :not_found
         save_example "Update a non-existent role"
       end
 
       test "update role fails with invalid params" do
-        params = {role: {name: 'super powers!'}}
+        params = {role: {name: 'Napolean'}}
         post '/api/roles', params: params.to_json, headers: authorized_headers
         id = response_body['role']['id']
-        params = {role: {permissions: ["flying"]}}
+        params = {role: {permissions: ["bowling"]}}
         put "/api/roles/#{id}", params: params.to_json, headers: authorized_headers
         assert_response :unprocessable_entity
         save_example "Update a role with invalid permissions"
       end
 
       test "delete role succeeds if role exists" do
-        params = {role: {name: 'delete_me'}}
+        params = {role: {name: 'Chuck Denomolus'}}
         post '/api/roles/', params: params.to_json, headers: authorized_headers
         id = response_body['role']['id']
         delete "/api/roles/#{id}", headers: authorized_headers
@@ -112,7 +112,7 @@ module Harbour
       end
 
       test "delete role fails if role can't be found" do
-        delete "/api/roles/notarealrole", headers: authorized_headers
+        delete "/api/roles/every_rose", headers: authorized_headers
         assert_response :not_found
         save_example "Can't delete a non-existent role"
       end
@@ -155,7 +155,7 @@ module Harbour
 
       test "add a non-existent user to role" do
         role = Role.first
-        put "/api/roles/#{role.uuid}/users/boom", headers: authorized_headers
+        put "/api/roles/#{role.uuid}/users/station", headers: authorized_headers
         assert_response :not_found
         save_example "Add non-existent member to role"
       end
@@ -187,7 +187,7 @@ module Harbour
 
       test "remove member from a non-existent role" do
         user = User.all[2]
-        delete "/api/roles/boom/users/#{user.uuid}", headers: authorized_headers
+        delete "/api/roles/psychoanalyst/users/#{user.uuid}", headers: authorized_headers
         assert_response :not_found
         save_example "Remove member from a non-existent role"
       end

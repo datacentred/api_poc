@@ -1,12 +1,12 @@
 {
   "description": "Remove member from a non-existent role",
   "verb": "DELETE",
-  "path": "/api/roles/boom/users/fdd7020adf1ddff29b0f6b41a5a8a919",
+  "path": "/api/roles/psychoanalyst/users/fdd7020adf1ddff29b0f6b41a5a8a919",
   "request_data": null,
   "response_data": {
     "errors": [
       {
-        "detail": "No such role 'boom'"
+        "detail": "No such role 'psychoanalyst'"
       }
     ],
     "links": [

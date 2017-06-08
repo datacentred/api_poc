@@ -4,7 +4,7 @@
   "path": "/api/roles",
   "request_data": {
     "role": {
-      "name": "Staff",
+      "name": "Historical Figures",
       "permissions": [
         "usage.read",
         "tickets.modify"
@@ -13,8 +13,8 @@
   },
   "response_data": {
     "role": {
-      "id": "8f7f93630c366dc55aec88eb8e9640d0",
-      "name": "Staff",
+      "id": "60b01aa51c38e7a952d2760bf1584915",
+      "name": "Historical Figures",
       "admin": false,
       "permissions": [
         "usage.read",
@@ -24,7 +24,7 @@
       "updated_at": "2017-02-01T16:20:00.000Z",
       "links": [
         {
-          "href": "https://my.datacentred.io/api/roles/8f7f93630c366dc55aec88eb8e9640d0",
+          "href": "https://my.datacentred.io/api/roles/60b01aa51c38e7a952d2760bf1584915",
           "rel": "self"
         }
       ]

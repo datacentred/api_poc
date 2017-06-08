@@ -1,7 +1,7 @@
 {
   "description": "Delete a role",
   "verb": "DELETE",
-  "path": "/api/roles/f01b46b8084a48f2dfa0565040e71919",
+  "path": "/api/roles/2810947a7071529ff414475177a3b2bc",
   "request_data": null,
   "response_data": null,
   "head": 204,

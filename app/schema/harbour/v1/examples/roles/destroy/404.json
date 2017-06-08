@@ -1,7 +1,7 @@
 {
   "description": "Can't delete a non-existent role",
   "verb": "DELETE",
-  "path": "/api/roles/notarealrole",
+  "path": "/api/roles/every_rose",
   "request_data": null,
   "response_data": null,
   "head": 404,

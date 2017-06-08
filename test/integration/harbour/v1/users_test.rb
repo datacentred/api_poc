@@ -36,7 +36,7 @@ module Harbour
       end
 
       test "can't find user 2" do
-        get '/api/users/not_found', headers: authorized_headers
+        get '/api/users/station', headers: authorized_headers
         assert_response :not_found
         save_example "Can't find non-existent user"
       end
@@ -116,7 +116,7 @@ module Harbour
       end
 
       test "delete user fails if user can't be found" do
-        delete "/api/users/notarealuser", headers: authorized_headers
+        delete "/api/users/station", headers: authorized_headers
         assert_response :not_found
         save_example "Can't delete a non-existent user"
       end

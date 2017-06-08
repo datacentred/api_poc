@@ -4,7 +4,7 @@
   "path": "/api/roles/unknown",
   "request_data": {
     "role": {
-      "name": "Fail"
+      "name": "Military School"
     }
   },
   "response_data": null,

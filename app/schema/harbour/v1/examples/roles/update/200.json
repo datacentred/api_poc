@@ -1,7 +1,7 @@
 {
-  "description": "Update role 5e93407bb64839f1cba5a12af9f64bd0 with new permissions",
+  "description": "Update role b214c2a84fd4eafae21de36205e20f2d with new permissions",
   "verb": "PUT",
-  "path": "/api/roles/5e93407bb64839f1cba5a12af9f64bd0",
+  "path": "/api/roles/b214c2a84fd4eafae21de36205e20f2d",
   "request_data": {
     "role": {
       "permissions": [
@@ -11,8 +11,8 @@
   },
   "response_data": {
     "role": {
-      "id": "5e93407bb64839f1cba5a12af9f64bd0",
-      "name": "Finance Team",
+      "id": "b214c2a84fd4eafae21de36205e20f2d",
+      "name": "Waterslide",
       "admin": false,
       "permissions": [
         "usage.read"
@@ -21,7 +21,7 @@
       "updated_at": "2017-02-01T16:20:00.000Z",
       "links": [
         {
-          "href": "https://my.datacentred.io/api/roles/5e93407bb64839f1cba5a12af9f64bd0",
+          "href": "https://my.datacentred.io/api/roles/b214c2a84fd4eafae21de36205e20f2d",
           "rel": "self"
         }
       ]

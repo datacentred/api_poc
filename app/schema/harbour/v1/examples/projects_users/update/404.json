@@ -1,12 +1,12 @@
 {
   "description": "Add non-existent member to project",
   "verb": "PUT",
-  "path": "/api/projects/90affbd9a1954ec9ff029b7ad7183a16/users/boom",
+  "path": "/api/projects/90affbd9a1954ec9ff029b7ad7183a16/users/station",
   "request_data": null,
   "response_data": {
     "errors": [
       {
-        "detail": "No such user 'boom'"
+        "detail": "No such user 'station'"
       }
     ],
     "links": [

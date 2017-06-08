@@ -1,7 +1,7 @@
 {
   "description": "Can't delete a non-existent user",
   "verb": "DELETE",
-  "path": "/api/users/notarealuser",
+  "path": "/api/users/station",
   "request_data": null,
   "response_data": null,
   "head": 404,

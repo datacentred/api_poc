@@ -1,11 +1,11 @@
 {
   "description": "Update a role with invalid permissions",
   "verb": "PUT",
-  "path": "/api/roles/a3bf089ce69066316c4cf946579651ea",
+  "path": "/api/roles/aa5f67f8f3ee998ca5209e1c60382cf9",
   "request_data": {
     "role": {
       "permissions": [
-        "flying"
+        "bowling"
       ]
     }
   },
@@ -13,7 +13,7 @@
     "errors": [
       {
         "resource": "role",
-        "detail": "Role permissions must be one of: 'cloud.read', 'roles.modify', 'roles.read', 'storage.read', 'tickets.modify', 'usage.read'. 'flying' is not allowed.",
+        "detail": "Role permissions must be one of: 'cloud.read', 'roles.modify', 'roles.read', 'storage.read', 'tickets.modify', 'usage.read'. 'bowling' is not allowed.",
         "field": "permissions"
       }
     ],
