@@ -22,8 +22,8 @@ module Harbour
       end
 
       def usage
-        t = Time.parse("#{year}-#{month}-01 00:00:00 UTC")
-        raise ActionController::RoutingError.new('Not Found') if t > Time.now
+        t = Time.parse("#{year}-#{month}-01 00:00:00 UTC") rescue nil
+        raise ActionController::RoutingError.new('Not Found') unless t && t < Time.now
         raise ActionController::RoutingError.new('Not Found') if t < current_organization.created_at.beginning_of_month
         UsageDecorator.new(current_organization, year, month).usage_data
       end

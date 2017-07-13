@@ -13,8 +13,8 @@ module Harbour
           name:        role.name,
           admin:       role.power_user,
           permissions: role.permissions,
-          created_at:  role.created_at,
-          updated_at:  role.updated_at,
+          created_at:  role.created_at.utc.iso8601,
+          updated_at:  role.updated_at.utc.iso8601,
           links:       [{"href": "#{Harbour::Engine.config.public_url}/api/roles/#{role.uuid}", "rel": "self"}]
         }
       end
