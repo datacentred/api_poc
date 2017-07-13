@@ -1,6 +1,7 @@
 module Harbour
   module V1
     class UsageSerializer
+      include Harbour::Utc
 
       attr_reader :usage_data
 
@@ -11,7 +12,7 @@ module Harbour
       end
 
       def serialize(options={})
-        usage_data.merge(
+        convert_dates_to_utc(usage_data).merge(
           {
             links: [
               {
