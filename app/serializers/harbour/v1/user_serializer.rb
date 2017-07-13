@@ -13,8 +13,8 @@ module Harbour
           email:      user.email,
           first_name: user.first_name,
           last_name:  user.last_name,
-          created_at: user.created_at,
-          updated_at: user.updated_at,
+          created_at: user.created_at.utc.iso8601,
+          updated_at: user.updated_at.utc.iso8601,
           links:      [{"href": "#{Harbour::Engine.config.public_url}/api/users/#{user.uuid}", "rel": "self"}]
         }
       end
