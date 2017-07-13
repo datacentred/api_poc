@@ -13,7 +13,7 @@ module Harbour
       end
 
       def serialize(options={})
-        convert_dates_to_utc(sort_alphabetically(usage_data)).merge(
+        sort_alphabetically(usage_data).merge(
           {
             links: [
               {
