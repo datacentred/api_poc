@@ -7,7 +7,7 @@
     "roles": [
       {
         "admin": true,
-        "created_at": "2017-02-01T16:20:00.000Z",
+        "created_at": "2017-02-01T16:20:00Z",
         "id": "7b7bc2512ee1fedcd76bdc68926d4f7b",
         "links": [
           {
@@ -19,11 +19,11 @@
         "permissions": [
 
         ],
-        "updated_at": "2017-02-01T16:20:00.000Z"
+        "updated_at": "2017-02-01T16:20:00Z"
       },
       {
         "admin": false,
-        "created_at": "2017-02-01T16:20:00.000Z",
+        "created_at": "2017-02-01T16:20:00Z",
         "id": "ce2c8aed9c2fa0cfbed56cbda4d8bf07",
         "links": [
           {
@@ -35,7 +35,7 @@
         "permissions": [
 
         ],
-        "updated_at": "2017-02-01T16:20:00.000Z"
+        "updated_at": "2017-02-01T16:20:00Z"
       }
     ]
   },

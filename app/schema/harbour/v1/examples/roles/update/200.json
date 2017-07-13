@@ -12,7 +12,7 @@
   "response_data": {
     "role": {
       "admin": false,
-      "created_at": "2017-02-01T16:20:00.000Z",
+      "created_at": "2017-02-01T16:20:00Z",
       "id": "b214c2a84fd4eafae21de36205e20f2d",
       "links": [
         {
@@ -24,7 +24,7 @@
       "permissions": [
         "usage.read"
       ],
-      "updated_at": "2017-02-01T16:20:00.000Z"
+      "updated_at": "2017-02-01T16:20:00Z"
     }
   },
   "head": 200,

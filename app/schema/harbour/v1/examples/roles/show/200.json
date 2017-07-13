@@ -6,7 +6,7 @@
   "response_data": {
     "role": {
       "admin": true,
-      "created_at": "2017-02-01T16:20:00.000Z",
+      "created_at": "2017-02-01T16:20:00Z",
       "id": "7b7bc2512ee1fedcd76bdc68926d4f7b",
       "links": [
         {
@@ -18,7 +18,7 @@
       "permissions": [
 
       ],
-      "updated_at": "2017-02-01T16:20:00.000Z"
+      "updated_at": "2017-02-01T16:20:00Z"
     }
   },
   "head": 200,
