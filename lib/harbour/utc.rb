@@ -1,7 +1,7 @@
 module Harbour
   module Utc
     def convert_dates_to_utc(enum)
-      time_format = /^\d\d\d\d\-\d\d\-\d\dT\d\d:\d\d:\d\d/
+      time_format = /^\d\d\d\d\-\d\d\-\d\dT\d\d:\d\d:\d\d.*$/
       
       if enum.is_a?(Array)
         enum.each_with_index do |element, i|
