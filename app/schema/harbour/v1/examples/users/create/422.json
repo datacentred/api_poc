@@ -10,9 +10,9 @@
   "response_data": {
     "errors": [
       {
-        "resource": "user",
         "detail": "User password can't be blank.",
-        "field": "password"
+        "field": "password",
+        "resource": "user"
       }
     ],
     "links": [

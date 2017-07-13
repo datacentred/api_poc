@@ -10,9 +10,9 @@
   "response_data": {
     "errors": [
       {
-        "resource": "project",
         "detail": "Project name is already in use.",
-        "field": "name"
+        "field": "name",
+        "resource": "project"
       }
     ],
     "links": [

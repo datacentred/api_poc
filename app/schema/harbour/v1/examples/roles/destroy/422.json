@@ -6,8 +6,8 @@
   "response_data": {
     "errors": [
       {
-        "resource": "role",
-        "detail": "The admin role cannot be removed."
+        "detail": "The admin role cannot be removed.",
+        "resource": "role"
       }
     ],
     "links": [

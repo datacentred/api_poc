@@ -32,6 +32,7 @@ end
 
 module Harbour
   class ApiTest < ActionDispatch::IntegrationTest
+    include Sortable
 
     def response_body
       JSON.parse(response.body)
@@ -109,7 +110,7 @@ module Harbour
         "verb" => request.method,
         "path" => request.path,
         "request_data" => request_object,
-        "response_data" => response_data,
+        "response_data" => sort_alphabetically(response_data),
         "head" => response.status,
         "api_version" => version
       }

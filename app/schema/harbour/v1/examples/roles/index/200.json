@@ -6,36 +6,36 @@
   "response_data": {
     "roles": [
       {
-        "id": "7b7bc2512ee1fedcd76bdc68926d4f7b",
-        "name": "Administrator",
         "admin": true,
-        "permissions": [
-
-        ],
         "created_at": "2017-02-01T16:20:00.000Z",
-        "updated_at": "2017-02-01T16:20:00.000Z",
+        "id": "7b7bc2512ee1fedcd76bdc68926d4f7b",
         "links": [
           {
             "href": "https://my.datacentred.io/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b",
             "rel": "self"
           }
-        ]
-      },
-      {
-        "id": "ce2c8aed9c2fa0cfbed56cbda4d8bf07",
-        "name": "Empty",
-        "admin": false,
+        ],
+        "name": "Administrator",
         "permissions": [
 
         ],
+        "updated_at": "2017-02-01T16:20:00.000Z"
+      },
+      {
+        "admin": false,
         "created_at": "2017-02-01T16:20:00.000Z",
-        "updated_at": "2017-02-01T16:20:00.000Z",
+        "id": "ce2c8aed9c2fa0cfbed56cbda4d8bf07",
         "links": [
           {
             "href": "https://my.datacentred.io/api/roles/ce2c8aed9c2fa0cfbed56cbda4d8bf07",
             "rel": "self"
           }
-        ]
+        ],
+        "name": "Empty",
+        "permissions": [
+
+        ],
+        "updated_at": "2017-02-01T16:20:00.000Z"
       }
     ]
   },

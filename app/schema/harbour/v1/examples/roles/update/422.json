@@ -12,9 +12,9 @@
   "response_data": {
     "errors": [
       {
-        "resource": "role",
         "detail": "Role permissions must be one of: 'cloud.read', 'roles.modify', 'roles.read', 'storage.read', 'tickets.modify', 'usage.read'. 'bowling' is not allowed.",
-        "field": "permissions"
+        "field": "permissions",
+        "resource": "role"
       }
     ],
     "links": [

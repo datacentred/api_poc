@@ -4,7 +4,13 @@
   "path": "/api/usage/2017/6",
   "request_data": null,
   "response_data": {
-    "last_updated_at": "2017-07-12T09:46:54Z",
+    "last_updated_at": "2017-07-12T10:46:54Z",
+    "links": [
+      {
+        "href": "https://my.datacentred.io/api/usage/2017/6",
+        "rel": "self"
+      }
+    ],
     "projects": [
       {
         "id": "3e516421b80a4b70aa816aef1dfd79fd",
@@ -12,7 +18,7 @@
         "usage": {
           "images": [
             {
-              "created_at": "2017-06-06T13:26:38Z",
+              "created_at": "2017-06-06T14:26:38Z",
               "deleted_at": null,
               "id": "72d6058a-ce79-4556-8adb-b669cadeea07",
               "latest_size_gb": 0.01,
@@ -33,7 +39,7 @@
               ]
             },
             {
-              "created_at": "2017-06-07T15:23:06Z",
+              "created_at": "2017-06-07T16:23:06Z",
               "deleted_at": null,
               "id": "f61ea97c-dd83-4a5b-90d7-a1f151d7120e",
               "latest_size_gb": 0.88,
@@ -63,13 +69,13 @@
                 "root_disk_gb": 40,
                 "vcpus_count": 1
               },
-              "first_booted_at": "2017-06-06T13:32:05Z",
+              "first_booted_at": "2017-06-06T14:32:05Z",
               "history": [
                 {
                   "billable": false,
                   "event_name": "compute.instance.create.start",
                   "flavor": "b671216b-1c68-4765-b752-0e8e6b6d015f",
-                  "recorded_at": "2017-06-06T13:31:59Z",
+                  "recorded_at": "2017-06-06T14:31:59Z",
                   "seconds": 7,
                   "state": "building",
                   "user_id": "2bd21ee25cde40fdb9454954e4fbb4b5"
@@ -78,7 +84,7 @@
                   "billable": true,
                   "event_name": "compute.instance.create.end",
                   "flavor": "b671216b-1c68-4765-b752-0e8e6b6d015f",
-                  "recorded_at": "2017-06-06T13:32:05Z",
+                  "recorded_at": "2017-06-06T14:32:05Z",
                   "seconds": 2107675,
                   "state": "active",
                   "user_id": "2bd21ee25cde40fdb9454954e4fbb4b5"
@@ -120,13 +126,13 @@
                 "root_disk_gb": 80,
                 "vcpus_count": 4
               },
-              "first_booted_at": "2017-06-06T13:24:21Z",
+              "first_booted_at": "2017-06-06T14:24:21Z",
               "history": [
                 {
                   "billable": false,
                   "event_name": "compute.instance.create.start",
                   "flavor": "9cf6e43b-e191-47ca-8665-f8592e2d6227",
-                  "recorded_at": "2017-06-06T13:23:59Z",
+                  "recorded_at": "2017-06-06T14:23:59Z",
                   "seconds": 23,
                   "state": "building",
                   "user_id": "2bd21ee25cde40fdb9454954e4fbb4b5"
@@ -135,7 +141,7 @@
                   "billable": true,
                   "event_name": "compute.instance.create.end",
                   "flavor": "9cf6e43b-e191-47ca-8665-f8592e2d6227",
-                  "recorded_at": "2017-06-06T13:24:21Z",
+                  "recorded_at": "2017-06-06T14:24:21Z",
                   "seconds": 2108139,
                   "state": "active",
                   "user_id": "2bd21ee25cde40fdb9454954e4fbb4b5"
@@ -176,7 +182,7 @@
               {
                 "previous": null,
                 "quota": 3,
-                "recorded_at": "2017-06-06T14:06:55Z"
+                "recorded_at": "2017-06-06T15:06:55Z"
               }
             ],
             "usage": [
@@ -193,30 +199,10 @@
           },
           "load_balancers": [
             {
-              "id": "f516b45f-9a4a-4c57-90cf-5ad9da6751cc",
-              "name": "metal",
-              "owner": "2bd21ee25cde40fdb9454954e4fbb4b5",
-              "started_at": "2017-06-13T10:06:01Z",
-              "terminated_at": null,
-              "usage": [
-                {
-                  "cost": {
-                    "currency": "gbp",
-                    "rate": 0.062,
-                    "value": 26.1
-                  },
-                  "meta": {
-                  },
-                  "unit": "hours",
-                  "value": 421
-                }
-              ]
-            },
-            {
               "id": "3c7e7ddb-f5a1-4470-b2e7-3b28233e3369",
               "name": "tubular",
               "owner": "2bd21ee25cde40fdb9454954e4fbb4b5",
-              "started_at": "2017-06-07T08:32:28Z",
+              "started_at": "2017-06-07T09:32:28Z",
               "terminated_at": null,
               "usage": [
                 {
@@ -229,6 +215,26 @@
                   },
                   "unit": "hours",
                   "value": 567
+                }
+              ]
+            },
+            {
+              "id": "f516b45f-9a4a-4c57-90cf-5ad9da6751cc",
+              "name": "metal",
+              "owner": "2bd21ee25cde40fdb9454954e4fbb4b5",
+              "started_at": "2017-06-13T11:06:01Z",
+              "terminated_at": null,
+              "usage": [
+                {
+                  "cost": {
+                    "currency": "gbp",
+                    "rate": 0.062,
+                    "value": 26.1
+                  },
+                  "meta": {
+                  },
+                  "unit": "hours",
+                  "value": 421
                 }
               ]
             }
@@ -248,7 +254,7 @@
           },
           "volumes": [
             {
-              "created_at": "2017-06-06T13:24:46Z",
+              "created_at": "2017-06-06T14:24:46Z",
               "deleted_at": null,
               "id": "7587d8b3-ddff-4ea3-b562-cf0fe2fe5864",
               "latest_size_gb": 30,
@@ -279,7 +285,7 @@
               "name": "melvin",
               "owner": "2bd21ee25cde40fdb9454954e4fbb4b5",
               "started_at": "2016-12-13T15:47:46Z",
-              "terminated_at": "2017-06-06T15:47:47Z",
+              "terminated_at": "2017-06-06T16:47:47Z",
               "usage": [
                 {
                   "cost": {
@@ -296,12 +302,6 @@
             }
           ]
         }
-      }
-    ],
-    "links": [
-      {
-        "href": "https://my.datacentred.io/api/usage/2017/6",
-        "rel": "self"
       }
     ]
   },

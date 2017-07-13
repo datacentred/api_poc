@@ -13,37 +13,37 @@
   },
   "response_data": {
     "project": {
-      "id": "736b4d4a6bc66f6b8bfbb7d0dd09ef9a",
-      "name": "wyld_stallyns",
       "created_at": "2017-02-01T16:20:00.000Z",
-      "updated_at": "2017-02-01T16:20:00.000Z",
-      "quota_set": {
-        "compute": {
-          "instances": 10,
-          "cores": 5,
-          "ram": 20480
-        },
-        "volume": {
-          "volumes": 4,
-          "snapshots": 4,
-          "gigabytes": 40
-        },
-        "network": {
-          "floatingip": 1,
-          "router": 1,
-          "security_group_rule": 100,
-          "security_group": 10,
-          "network": 10,
-          "port": 10,
-          "subnet": 10
-        }
-      },
+      "id": "736b4d4a6bc66f6b8bfbb7d0dd09ef9a",
       "links": [
         {
           "href": "https://my.datacentred.io/api/projects/736b4d4a6bc66f6b8bfbb7d0dd09ef9a",
           "rel": "self"
         }
-      ]
+      ],
+      "name": "wyld_stallyns",
+      "quota_set": {
+        "compute": {
+          "cores": 5,
+          "instances": 10,
+          "ram": 20480
+        },
+        "network": {
+          "floatingip": 1,
+          "network": 10,
+          "port": 10,
+          "router": 1,
+          "security_group": 10,
+          "security_group_rule": 100,
+          "subnet": 10
+        },
+        "volume": {
+          "gigabytes": 40,
+          "snapshots": 4,
+          "volumes": 4
+        }
+      },
+      "updated_at": "2017-02-01T16:20:00.000Z"
     }
   },
   "head": 200,

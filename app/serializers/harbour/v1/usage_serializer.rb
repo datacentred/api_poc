@@ -1,8 +1,6 @@
 module Harbour
   module V1
     class UsageSerializer
-      include Harbour::Sortable
-      include Harbour::Utc
 
       attr_reader :usage_data
 
@@ -13,7 +11,7 @@ module Harbour
       end
 
       def serialize(options={})
-        sort_alphabetically(usage_data).merge(
+        usage_data.merge(
           {
             links: [
               {

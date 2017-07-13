@@ -38,15 +38,15 @@ class UsageDecorator
                   "tags" : [
                      "ssd"
                   ],
-                  "created_at" : "2017-06-06T14:24:46.006+01:00",
+                  "created_at" : "2017-06-06T14:24:46Z",
                   "owner" : "2bd21ee25cde40fdb9454954e4fbb4b5"
                }
             ],
             "vpns" : [
                {
                   "name" : "melvin",
-                  "terminated_at" : "2017-06-06T16:47:47.000+01:00",
-                  "started_at" : "2016-12-13T15:47:46.000+00:00",
+                  "terminated_at" : "2017-06-06T16:47:47Z",
+                  "started_at" : "2016-12-13T15:47:46Z",
                   "usage" : [
                      {
                         "value" : 137,
@@ -90,7 +90,7 @@ class UsageDecorator
                ],
                "quota_changes" : [
                   {
-                     "recorded_at" : "2017-06-06T15:06:55.125+01:00",
+                     "recorded_at" : "2017-06-06T15:06:55Z",
                      "previous" : null,
                      "quota" : 3
                   }
@@ -100,7 +100,7 @@ class UsageDecorator
             "load_balancers" : [
                {
                   "name" : "tubular",
-                  "started_at" : "2017-06-07T09:32:28.000+01:00",
+                  "started_at" : "2017-06-07T09:32:28Z",
                   "terminated_at" : null,
                   "usage" : [
                      {
@@ -132,7 +132,7 @@ class UsageDecorator
                   ],
                   "id" : "f516b45f-9a4a-4c57-90cf-5ad9da6751cc",
                   "owner" : "2bd21ee25cde40fdb9454954e4fbb4b5",
-                  "started_at" : "2017-06-13T11:06:01.000+01:00",
+                  "started_at" : "2017-06-13T11:06:01Z",
                   "terminated_at" : null,
                   "name" : "metal"
                }
@@ -155,11 +155,11 @@ class UsageDecorator
                   ],
                   "owner" : "2bd21ee25cde40fdb9454954e4fbb4b5",
                   "id" : "72d6058a-ce79-4556-8adb-b669cadeea07",
-                  "created_at" : "2017-06-06T14:26:38.402+01:00",
+                  "created_at" : "2017-06-06T14:26:38Z",
                   "latest_size_gb" : 0.01
                },
                {
-                  "created_at" : "2017-06-07T16:23:06.576+01:00",
+                  "created_at" : "2017-06-07T16:23:06Z",
                   "owner" : "2bd21ee25cde40fdb9454954e4fbb4b5",
                   "usage" : [
                      {
@@ -216,7 +216,7 @@ class UsageDecorator
                         "billable" : false,
                         "state" : "building",
                         "user_id" : "2bd21ee25cde40fdb9454954e4fbb4b5",
-                        "recorded_at" : "2017-06-06T14:31:59.397+01:00",
+                        "recorded_at" : "2017-06-06T14:31:59Z",
                         "flavor" : "b671216b-1c68-4765-b752-0e8e6b6d015f",
                         "seconds" : 7,
                         "event_name" : "compute.instance.create.start"
@@ -226,13 +226,13 @@ class UsageDecorator
                         "state" : "active",
                         "user_id" : "2bd21ee25cde40fdb9454954e4fbb4b5",
                         "flavor" : "b671216b-1c68-4765-b752-0e8e6b6d015f",
-                        "recorded_at" : "2017-06-06T14:32:05.673+01:00",
+                        "recorded_at" : "2017-06-06T14:32:05Z",
                         "seconds" : 2107675,
                         "event_name" : "compute.instance.create.end"
                      }
                   ],
                   "terminated_at" : null,
-                  "first_booted_at" : "2017-06-06T14:32:05.673+01:00",
+                  "first_booted_at" : "2017-06-06T14:32:05Z",
                   "latest_state" : "active"
                },
                {
@@ -264,13 +264,13 @@ class UsageDecorator
                         "state" : "building",
                         "billable" : false,
                         "user_id" : "2bd21ee25cde40fdb9454954e4fbb4b5",
-                        "recorded_at" : "2017-06-06T14:23:59.217+01:00",
+                        "recorded_at" : "2017-06-06T14:23:59Z",
                         "flavor" : "9cf6e43b-e191-47ca-8665-f8592e2d6227",
                         "seconds" : 23,
                         "event_name" : "compute.instance.create.start"
                      },
                      {
-                        "recorded_at" : "2017-06-06T14:24:21.646+01:00",
+                        "recorded_at" : "2017-06-06T14:24:21Z",
                         "flavor" : "9cf6e43b-e191-47ca-8665-f8592e2d6227",
                         "event_name" : "compute.instance.create.end",
                         "seconds" : 2108139,
@@ -287,14 +287,14 @@ class UsageDecorator
                      "name" : "dc1.4x8"
                   },
                   "latest_state" : "active",
-                  "first_booted_at" : "2017-06-06T14:24:21.646+01:00",
+                  "first_booted_at" : "2017-06-06T14:24:21Z",
                   "terminated_at" : null
                }
             ]
          }
       }
    ],
-   "last_updated_at" : "2017-07-12T10:46:54.000+01:00"
+   "last_updated_at" : "2017-07-12T10:46:54Z"
 }
 EOS
   end

@@ -5,20 +5,20 @@
   "request_data": null,
   "response_data": {
     "role": {
-      "id": "7b7bc2512ee1fedcd76bdc68926d4f7b",
-      "name": "Administrator",
       "admin": true,
-      "permissions": [
-
-      ],
       "created_at": "2017-02-01T16:20:00.000Z",
-      "updated_at": "2017-02-01T16:20:00.000Z",
+      "id": "7b7bc2512ee1fedcd76bdc68926d4f7b",
       "links": [
         {
           "href": "https://my.datacentred.io/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b",
           "rel": "self"
         }
-      ]
+      ],
+      "name": "Administrator",
+      "permissions": [
+
+      ],
+      "updated_at": "2017-02-01T16:20:00.000Z"
     }
   },
   "head": 200,
