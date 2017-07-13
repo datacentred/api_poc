@@ -1,0 +1,9 @@
+{
+  "description": "Usage info not found",
+  "verb": "GET",
+  "path": "/api/usage/2012/6",
+  "request_data": null,
+  "response_data": null,
+  "head": 404,
+  "api_version": 1
+}

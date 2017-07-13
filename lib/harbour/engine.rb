@@ -22,5 +22,6 @@ module Harbour
     config.api_versions = [:V1]
     config.latest_api_version = config.api_versions.sort.last
     config.public_url = public_url
+    config.time_zone = 'UTC'
   end
 end
