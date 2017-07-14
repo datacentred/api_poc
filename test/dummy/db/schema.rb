@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425120000) do
+ActiveRecord::Schema.define(version: 20170714144229) do
 
   create_table "api_credentials", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "organization_id"
     t.string   "access_key"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "enabled",         default: true, null: false
   end
 
   create_table "organizations", force: :cascade do |t|

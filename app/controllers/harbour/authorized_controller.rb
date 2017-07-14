@@ -9,7 +9,7 @@ module Harbour
     def api_credential
       @api_credential ||= authenticate_with_http_token do |token, _|
         access, secret = token.split(':')
-        credential = ApiCredential.find_by_access_key(access)
+        credential = ApiCredential.enabled.find_by_access_key(access)
         credential&.authenticate_and_authorize(secret) ? credential : nil
       end
       @api_credential || render_unauthorized
