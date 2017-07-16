@@ -18,6 +18,10 @@ module Harbour
               {
                 "href": "#{Harbour::Engine.config.public_url}/api/usage/#{@year}/#{@month}",
                 "rel": "self"
+              },
+              {
+                "href": "#{Harbour::Engine.config.public_url}/api/schemas/usage",
+                "rel":  "schema"
               }
             ]
           }

@@ -15,7 +15,16 @@ module Harbour
           permissions: role.permissions,
           created_at:  role.created_at.utc.iso8601,
           updated_at:  role.updated_at.utc.iso8601,
-          links:       [{"href": "#{Harbour::Engine.config.public_url}/api/roles/#{role.uuid}", "rel": "self"}]
+          links:       [
+            {
+              "href": "#{Harbour::Engine.config.public_url}/api/roles/#{role.uuid}",
+              "rel":  "self"
+            },
+            {
+              "href": "#{Harbour::Engine.config.public_url}/api/schemas/role",
+              "rel":  "schema"
+            }
+          ]
         }
       end
     end

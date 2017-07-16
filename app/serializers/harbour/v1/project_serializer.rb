@@ -14,7 +14,16 @@ module Harbour
           created_at: project.created_at.utc.iso8601,
           updated_at: project.updated_at.utc.iso8601,
           quota_set:  cast_to_integer(project.quota_set),
-          links:      [{"href": "#{Harbour::Engine.config.public_url}/api/projects/#{project.uuid}", "rel": "self"}]
+          links:      [
+            {
+              "href": "#{Harbour::Engine.config.public_url}/api/projects/#{project.uuid}",
+              "rel":  "self"
+            },
+            {
+              "href": "#{Harbour::Engine.config.public_url}/api/schemas/project",
+              "rel":  "schema"
+            }
+          ]
         }
       end
 

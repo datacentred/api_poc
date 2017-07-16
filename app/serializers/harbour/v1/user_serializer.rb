@@ -15,7 +15,16 @@ module Harbour
           last_name:  user.last_name,
           created_at: user.created_at.utc.iso8601,
           updated_at: user.updated_at.utc.iso8601,
-          links:      [{"href": "#{Harbour::Engine.config.public_url}/api/users/#{user.uuid}", "rel": "self"}]
+          links:      [
+            {
+              "href": "#{Harbour::Engine.config.public_url}/api/users/#{user.uuid}",
+              "rel":  "self"
+            },
+            {
+              "href": "#{Harbour::Engine.config.public_url}/api/schemas/user",
+              "rel":  "schema"
+            }
+          ]
         }
       end
     end

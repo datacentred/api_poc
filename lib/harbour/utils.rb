@@ -21,6 +21,13 @@ module Harbour
       end
     end
 
+    def json_schema(controller, name)
+      version   = Harbour::Utils.api_version(controller.class)
+      file_path = Harbour::Engine.root.join("app/schema/harbour/v#{version}/#{name.parameterize}.json")
+      return nil unless File.exists? file_path
+      JSON.parse File.read(file_path)
+    end
+
     private
 
     def curl_method(example)

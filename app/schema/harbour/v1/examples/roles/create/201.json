@@ -20,6 +20,10 @@
         {
           "href": "https://my.datacentred.io/api/roles/60b01aa51c38e7a952d2760bf1584915",
           "rel": "self"
+        },
+        {
+          "href": "https://my.datacentred.io/api/schemas/role",
+          "rel": "schema"
         }
       ],
       "name": "Historical Figures",

@@ -18,6 +18,10 @@
         {
           "href": "https://my.datacentred.io/api/roles/b214c2a84fd4eafae21de36205e20f2d",
           "rel": "self"
+        },
+        {
+          "href": "https://my.datacentred.io/api/schemas/role",
+          "rel": "schema"
         }
       ],
       "name": "Waterslide",

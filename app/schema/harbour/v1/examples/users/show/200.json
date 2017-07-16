@@ -14,6 +14,10 @@
         {
           "href": "https://my.datacentred.io/api/users/293c38b7ec52c355414c6e975cde882f",
           "rel": "self"
+        },
+        {
+          "href": "https://my.datacentred.io/api/schemas/user",
+          "rel": "schema"
         }
       ],
       "updated_at": "2017-02-01T16:20:00Z"

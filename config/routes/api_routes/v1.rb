@@ -3,6 +3,7 @@ module ApiRoutes
     def self.extended(router)
       router.instance_exec do
         resources :users,    constraints: { format: 'json' }
+        resources :schemas,  constraints: { format: 'json' }, only: [:show]
         resources :projects, constraints: { format: 'json' } do
            resources :users,
                     constraints: { format: 'json' },
