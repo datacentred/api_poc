@@ -9,6 +9,10 @@
       {
         "href": "https://my.datacentred.io/api/usage/2017/6",
         "rel": "self"
+      },
+      {
+        "href": "https://my.datacentred.io/api/schemas/usage",
+        "rel": "schema"
       }
     ],
     "projects": [

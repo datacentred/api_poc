@@ -12,6 +12,10 @@
           {
             "href": "https://my.datacentred.io/api/projects/90affbd9a1954ec9ff029b7ad7183a16",
             "rel": "self"
+          },
+          {
+            "href": "https://my.datacentred.io/api/schemas/project",
+            "rel": "schema"
           }
         ],
         "name": "bogus",
@@ -45,6 +49,10 @@
           {
             "href": "https://my.datacentred.io/api/projects/7a3af604e52e2577b3f5b77e96f3e01d",
             "rel": "self"
+          },
+          {
+            "href": "https://my.datacentred.io/api/schemas/project",
+            "rel": "schema"
           }
         ],
         "name": "excellent",

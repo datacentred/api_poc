@@ -13,6 +13,10 @@
           {
             "href": "https://my.datacentred.io/api/roles/7b7bc2512ee1fedcd76bdc68926d4f7b",
             "rel": "self"
+          },
+          {
+            "href": "https://my.datacentred.io/api/schemas/role",
+            "rel": "schema"
           }
         ],
         "name": "Administrator",
@@ -29,6 +33,10 @@
           {
             "href": "https://my.datacentred.io/api/roles/ce2c8aed9c2fa0cfbed56cbda4d8bf07",
             "rel": "self"
+          },
+          {
+            "href": "https://my.datacentred.io/api/schemas/role",
+            "rel": "schema"
           }
         ],
         "name": "Empty",

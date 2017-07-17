@@ -15,6 +15,10 @@
         {
           "href": "https://my.datacentred.io/api/projects/736b4d4a6bc66f6b8bfbb7d0dd09ef9a",
           "rel": "self"
+        },
+        {
+          "href": "https://my.datacentred.io/api/schemas/project",
+          "rel": "schema"
         }
       ],
       "name": "wyld_stallyns",
