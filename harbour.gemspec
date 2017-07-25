@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,lib}/**/*", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "5.0.2"
+  s.add_dependency "rails", "5.1.2"
 
   s.add_dependency "apipie-rails", "~> 0.4"
   s.add_dependency "maruku", "~> 0.3"
@@ -27,5 +27,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "simplecov", "~> 0.10"
   s.add_development_dependency "database_cleaner", "~> 1.5"
   s.add_development_dependency "timecop", "~> 0.8"
-  s.add_development_dependency  "minitest", "~> 5.10", "!= 5.10.2"
+  s.add_development_dependency "minitest", "~> 5.10", "!= 5.10.2"
 end
