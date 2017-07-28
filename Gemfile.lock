@@ -6,7 +6,7 @@ PATH
       json-schema (~> 2.7)
       maruku (~> 0.3)
       nokogiri (~> 1.7.2)
-      rails (= 5.1.2)
+      rails (>= 5.0)
       responders (~> 2.2)
 
 GEM
