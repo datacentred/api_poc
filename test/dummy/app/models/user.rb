@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   has_many :organization_users, dependent: :destroy
   has_many :organizations, through: :organization_users
-  has_many :api_credentials
+  
   has_many :user_project_roles, dependent: :destroy
   has_many :projects, -> { distinct }, :through => :user_project_roles
   has_secure_password

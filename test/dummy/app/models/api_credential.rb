@@ -1,7 +1,7 @@
 class ApiCredential < ApplicationRecord
   has_secure_password
-  belongs_to :user
-  belongs_to :organization
+
+  belongs_to :organization_user
 
   scope :enabled, -> { where(enabled: true) }
 

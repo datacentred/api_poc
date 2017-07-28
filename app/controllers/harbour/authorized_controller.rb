@@ -16,16 +16,21 @@ module Harbour
     end
 
     def current_user
-      api_credential&.user
+      current_organization_user&.user
     end
 
     def current_organization
-      api_credential&.organization
+      current_organization_user&.organization
+    end
+
+    def current_organization_user
+      api_credential&.organization_user
     end
 
     def set_authorization
-      Authorization.current_user         = current_user
-      Authorization.current_organization = current_organization
+      Authorization.current_user              = current_user
+      Authorization.current_organization      = current_organization
+      Authorization.current_organization_user = current_organization_user
     end
 
     def render_unauthorized
