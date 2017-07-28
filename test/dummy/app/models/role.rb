@@ -1,7 +1,12 @@
 class Role < ApplicationRecord
-  ALLOWED_KEYS = ['roles.read', 'roles.modify', 'tickets.modify', 'usage.read', 'cloud.read', 'storage.read']
-  has_and_belongs_to_many :users, -> { distinct }
-  belongs_to :organization
+  ALLOWED_KEYS = [
+    'roles.read', 'roles.modify', 'tickets.modify',
+    'usage.read', 'cloud.read', 'storage.read',
+    'api.read'
+  ]
+
+  has_and_belongs_to_many :organization_users, -> { distinct }
+  has_many :users, through: :organization_users
 
   serialize :permissions
 

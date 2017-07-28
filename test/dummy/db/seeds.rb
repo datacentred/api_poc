@@ -22,12 +22,13 @@ project4 = organization2.projects.create! name: "station"
 project1.update_attributes users: [user1]
 project3.update_attributes users: [user2]
 
+organization_user1 = OrganizationUser.find_by(user: user1, organization: organization1)
+organization_user2 = OrganizationUser.find_by(user: user2, organization: organization2)
 
-user1.api_credentials.create! organization: organization1, access_key: "bill", password: "ilovejoanna"
-user2.api_credentials.create! organization: organization2, access_key: "ted",  password: "iloveelizabeth"
+organization_user1.api_credentials.create! access_key: "bill", password: "ilovejoanna"
+organization_user2.api_credentials.create! access_key: "ted",  password: "iloveelizabeth"
 
 role1 = organization1.roles.create! name: "Administrator", power_user: true
 organization1.roles.create! name: "Empty"
 
-role1.users << user1
-
+role1.organization_users << organization_user1

@@ -9,12 +9,16 @@ module Harbour
       end
 
       def update
-        role.users << user unless role.users.include? user
+        unless role.organization_users.include? organization_user
+          role.organization_users << organization_user
+        end
         head :no_content 
       end
 
       def destroy
-        role.users -= [user] if role.users.include? user
+        if role.organization_users.include? organization_user
+          role.organization_users -= [organization_user]
+        end
         head :no_content
       end
 
@@ -28,6 +32,10 @@ module Harbour
         current_organization.users
       end
 
+      def scoped_organization_users
+        current_organization.organization_users
+      end
+
       def role
         role = scoped_roles.find_by(uuid: params[:role_id])
         raise ActionController::RoutingError.new('Not Found', ["No such role '#{params[:role_id]}'"]) unless role
@@ -38,6 +46,12 @@ module Harbour
         user = scoped_users.find_by(uuid: params[:id])
         raise ActionController::RoutingError.new('Not Found', ["No such user '#{params[:id]}'"]) unless user
         user
+      end
+
+      def organization_user
+        organization_user = scoped_organization_users.find_by(user: user)
+        raise ActionController::RoutingError.new('Not Found', ["No such user '#{params[:id]}'"]) unless organization_user
+        organization_user
       end
 
       def serialized_users
