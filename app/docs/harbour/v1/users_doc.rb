@@ -56,7 +56,7 @@ module Harbour
       api :DELETE, '/users/:id', 'Delete a user'
       description 'Permanently remove the specified user.'
       param :id, String, desc: 'The unique identifier for this user', required: true
-      error 204, "Removed project successfully"
+      error 204, "Removed user successfully"
       error 404, "Project id couldn't be found"
       error 422, "Couldn't delete user. Details of failure returned in body."
       examples 'destroy'
