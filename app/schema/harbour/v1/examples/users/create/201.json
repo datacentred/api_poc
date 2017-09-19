@@ -21,7 +21,7 @@
           "rel": "self"
         },
         {
-          "href": "https://my.datacentred.io/api/schemas/user",
+          "href": "https://my.datacentred.io/api/v1/schemas/user",
           "rel": "schema"
         }
       ],

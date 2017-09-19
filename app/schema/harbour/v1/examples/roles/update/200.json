@@ -20,7 +20,7 @@
           "rel": "self"
         },
         {
-          "href": "https://my.datacentred.io/api/schemas/role",
+          "href": "https://my.datacentred.io/api/v1/schemas/role",
           "rel": "schema"
         }
       ],

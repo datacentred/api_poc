@@ -20,7 +20,7 @@ module Harbour
                 "rel": "self"
               },
               {
-                "href": "#{Harbour::Engine.config.public_url}/api/schemas/usage",
+                "href": "#{Harbour::Engine.config.public_url}/api/v1/schemas/usage",
                 "rel":  "schema"
               }
             ]

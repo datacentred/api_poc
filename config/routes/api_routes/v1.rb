@@ -3,7 +3,6 @@ module ApiRoutes
     def self.extended(router)
       router.instance_exec do
         resources :users,    constraints: { format: 'json' }
-        resources :schemas,  constraints: { format: 'json' }, only: [:show]
         resources :projects, constraints: { format: 'json' } do
            resources :users,
                     constraints: { format: 'json' },
@@ -19,6 +18,11 @@ module ApiRoutes
                     controller: "roles_users"
         end
         get "/usage/:year/:month", :controller => 'usage', :action => 'show'
+
+        namespace :v1 do
+          resources :schemas,  constraints: { format: 'json' }, only: [:show]
+        end
+        resources :schemas,  constraints: { format: 'json' }, only: [:show]
       end
     end
   end
