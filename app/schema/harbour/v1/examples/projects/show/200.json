@@ -13,7 +13,7 @@
           "rel": "self"
         },
         {
-          "href": "https://my.datacentred.io/api/schemas/project",
+          "href": "https://my.datacentred.io/api/v1/schemas/project",
           "rel": "schema"
         }
       ],

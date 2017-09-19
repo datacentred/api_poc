@@ -21,7 +21,7 @@ module Harbour
               "rel":  "self"
             },
             {
-              "href": "#{Harbour::Engine.config.public_url}/api/schemas/role",
+              "href": "#{Harbour::Engine.config.public_url}/api/v1/schemas/role",
               "rel":  "schema"
             }
           ]
