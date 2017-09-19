@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 5.0"
 
-  s.add_dependency "apipie-rails", "0.5.4"
+  s.add_dependency "apipie-rails", "0.5.1"
   s.add_dependency "maruku", "~> 0.3"
   s.add_dependency "responders", "~> 2.2"
   s.add_dependency "json-schema", "~> 2.7"
